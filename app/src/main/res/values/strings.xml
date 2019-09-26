@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Transporter App</string>
+    <string name="access_control_btn">Login with Access Control</string>
+    <string name="landing_text">Find the closest transporter to you</string>
+    <string name="btn_add_transport">Add New Transporter</string>
+</resources>

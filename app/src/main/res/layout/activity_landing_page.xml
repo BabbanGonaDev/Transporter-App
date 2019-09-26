@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LandingPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="2"
+            android:text="@string/landing_text"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
+
+        <androidx.appcompat.widget.SearchView
+            style="@android:style/Widget.Material.SearchView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="#D3D3D3"
+            android:elevation="3dp"
+            app:queryHint="Search Transporter"
+            app:showDividers="end" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_transporter"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="15dp"
+            android:text="@string/btn_add_transport"
+            app:icon="@drawable/ic_add_transporter"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
