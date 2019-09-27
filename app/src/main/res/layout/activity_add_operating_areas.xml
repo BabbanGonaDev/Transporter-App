@@ -32,6 +32,34 @@
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_operating_state"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:hint="State">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_operating_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                    android:id="@+id/chkbox_entire_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Operate in entire State" />
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_operating_lga"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
@@ -50,7 +78,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/chkbox_entire_lga"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
@@ -58,32 +86,6 @@
                     android:layout_marginRight="15dp"
                     android:layout_marginBottom="5dp"
                     android:text="Operate in entire LGA" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_operating_village"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="5dp"
-                    android:hint="Village/Town">
-
-                    <AutoCompleteTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="Operate in entire Ward" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_operating_ward"
@@ -100,6 +102,34 @@
                         android:id="@+id/edit_operating_ward"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                    android:id="@+id/chkbox_entire_ward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Operate in entire Ward" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_operating_village"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="5dp"
+                        android:hint="Village/Town">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/edit_operating_village"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -110,14 +140,24 @@
                         android:layout_marginBottom="5dp">
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/button"
+                            android:id="@+id/btn_add_area"
                             style="@style/Widget.MaterialComponents.Button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="Add" />
+                            android:layout_margin="15dp"
+                            android:text="Add Area" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_cancel"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:layout_toLeftOf="@id/btn_add_area"
+                            android:text="Cancel" />
                     </RelativeLayout>
-                </com.google.android.material.textfield.TextInputLayout>
+
 
             </LinearLayout>
 
@@ -132,7 +172,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:text="Added Areas" />
+                    android:background="@drawable/rounded_corners"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_finish_reg"

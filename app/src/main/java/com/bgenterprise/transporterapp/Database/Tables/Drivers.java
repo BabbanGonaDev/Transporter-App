@@ -15,6 +15,7 @@ public class Drivers {
     private String phone_number;
     private String no_of_vehicles;
     private String training_date;
+    private String driver_state;
     private String driver_lga;
     private String driver_ward;
     private String driver_village;
@@ -22,13 +23,15 @@ public class Drivers {
     private String template;
     private String reg_date;
 
-    public Drivers(@NonNull String driver_id, String first_name, String last_name, String phone_number, String no_of_vehicles, String training_date, String driver_lga, String driver_ward, String driver_village, String manager_id, String template, String reg_date) {
+
+    public Drivers(@NonNull String driver_id, String first_name, String last_name, String phone_number, String no_of_vehicles, String training_date, String driver_state, String driver_lga, String driver_ward, String driver_village, String manager_id, String template, String reg_date) {
         this.driver_id = driver_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone_number = phone_number;
         this.no_of_vehicles = no_of_vehicles;
         this.training_date = training_date;
+        this.driver_state = driver_state;
         this.driver_lga = driver_lga;
         this.driver_ward = driver_ward;
         this.driver_village = driver_village;
@@ -60,6 +63,10 @@ public class Drivers {
 
     public String getTraining_date() {
         return training_date;
+    }
+
+    public String getDriver_state() {
+        return driver_state;
     }
 
     public String getDriver_lga() {

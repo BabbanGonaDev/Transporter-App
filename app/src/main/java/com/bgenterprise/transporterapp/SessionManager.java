@@ -13,6 +13,7 @@ public class SessionManager {
 
     private static final String PREF_NAME = "Transporter Preferences";
 
+    public static final String KEY_IMPORT_LOCATION = "import_location";
     public static final String KEY_DRIVER_DETAILS = "driver_details";
     public static final String KEY_VEHICLE_DETAILS = "vehicle_details";
     public static final String KEY_OPERATING_AREA_DETAILS = "operating_area_details";
@@ -60,6 +61,15 @@ public class SessionManager {
     public void SET_TOTAL_VEHICLE(String value){
         editor.putString(KEY_TOTAL_VEHICLE, value);
         editor.commit();
+    }
+
+    public void SET_IMPORT_LOCATION(boolean status){
+        editor.putBoolean(KEY_IMPORT_LOCATION, status);
+        editor.commit();
+    }
+
+    public Boolean getImportStatus(){
+        return prefs.getBoolean(KEY_IMPORT_LOCATION, false);
     }
 
     public HashMap<String, String> getTransporterDetails(){

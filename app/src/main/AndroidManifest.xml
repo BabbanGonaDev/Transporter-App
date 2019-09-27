@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddOperatingAreas"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".AddOperatingAreas"/>
         <activity android:name=".AddVehicle"/>
         <activity android:name=".AddTransporter"/>
         <activity android:name=".LandingPage" />

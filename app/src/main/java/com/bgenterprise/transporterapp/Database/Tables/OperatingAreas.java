@@ -8,6 +8,7 @@ public class OperatingAreas {
 
     @NonNull
     private String driver_id;
+    private String state_id;
     @NonNull
     private String village_id;
     @NonNull
@@ -15,11 +16,12 @@ public class OperatingAreas {
     @NonNull
     private String lga_id;
 
-    public OperatingAreas(@NonNull String driver_id, @NonNull String village_id, @NonNull String ward_id, @NonNull String lga_id) {
+    public OperatingAreas(@NonNull String driver_id, String state_id, @NonNull String lga_id, @NonNull String ward_id, @NonNull String village_id) {
         this.driver_id = driver_id;
-        this.village_id = village_id;
-        this.ward_id = ward_id;
+        this.state_id = state_id;
         this.lga_id = lga_id;
+        this.ward_id = ward_id;
+        this.village_id = village_id;
     }
 
     @NonNull
@@ -27,9 +29,13 @@ public class OperatingAreas {
         return driver_id;
     }
 
+    public String getState_id() {
+        return state_id;
+    }
+
     @NonNull
-    public String getVillage_id() {
-        return village_id;
+    public String getLga_id() {
+        return lga_id;
     }
 
     @NonNull
@@ -38,7 +44,8 @@ public class OperatingAreas {
     }
 
     @NonNull
-    public String getLga_id() {
-        return lga_id;
+    public String getVillage_id() {
+        return village_id;
     }
+
 }

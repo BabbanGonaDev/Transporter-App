@@ -4,14 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.SearchView;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Spinner;
 
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
+import com.bgenterprise.transporterapp.Database.TransporterDatabase;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
@@ -31,6 +38,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnItemSelected;
 
 public class AddTransporter extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     @BindView(R.id.btn_next) MaterialButton btn_next;
@@ -42,12 +50,14 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
     @BindView(R.id.edit_phone_number) TextInputEditText edit_phone_number;
     @BindView(R.id.input_no_of_vehicles) TextInputLayout input_no_of_vehicles;
     @BindView(R.id.edit_no_of_vehicles) TextInputEditText edit_no_of_vehicles;
+    @BindView(R.id.input_state) TextInputLayout input_state;
+    @BindView(R.id.edit_state) AutoCompleteTextView edit_state;
     @BindView(R.id.input_lga) TextInputLayout input_lga;
     @BindView(R.id.edit_lga) AutoCompleteTextView edit_lga;
     @BindView(R.id.input_ward) TextInputLayout input_ward;
     @BindView(R.id.edit_ward) AutoCompleteTextView edit_ward;
     @BindView(R.id.input_village) TextInputLayout input_village;
-    @BindView(R.id.edit_village) AutoCompleteTextView edit_village;
+    @BindView(R.id.edit_village) TextInputEditText edit_village;
     @BindView(R.id.isDriver) MaterialCheckBox chkIsDriver;
     @BindView(R.id.btn_select_training_date) MaterialButton btn_select_training_date;
     @BindView(R.id.mtv_select_training_date) MaterialTextView mtv_select_training_date;
@@ -60,6 +70,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
     List<Drivers> drivers;
     SessionManager sessionM;
     String driver_id, driver_template, manager_id;
+    TransporterDatabase transportdb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +79,28 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
         ButterKnife.bind(this);
         customizeActionBar();
         manager_layout.setVisibility(View.GONE);
+        transportdb = TransporterDatabase.getInstance(AddTransporter.this);
         sessionM = new SessionManager(AddTransporter.this);
         driver_id = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(new Date());
         driver_template = "AAAAAxxxxxxeefwdqwwqewq";
+        initStateAdapter();
+
+        edit_state.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                edit_lga.setText("");
+                edit_ward.setText("");
+                initLGAdapter();
+            }
+        });
+
+        edit_lga.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                edit_ward.setText("");
+                initWardsAdapter();
+            }
+        });
 
         //TODO ---> Check whether the manager_id variable is empty, especially if the person acknowledges working for a transporter.
     }
@@ -100,7 +130,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
 
     @OnClick(R.id.btn_next)
     public void next_to_vehicle(){
-        if(!checkEmptyInputs()){
+        if(/*!checkEmptyInputs()*/ 1==1){
             if(!chkIsDriver.isChecked()){
                 /**Set manager_id as the driver_id if the driver is an independent.*/
                 manager_id = driver_id;
@@ -116,6 +146,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
                         edit_phone_number.getText().toString(),
                         edit_no_of_vehicles.getText().toString(),
                         mtv_select_training_date.getText().toString(),
+                        edit_state.getText().toString(),
                         edit_lga.getText().toString(),
                         edit_ward.getText().toString(),
                         edit_village.getText().toString(),
@@ -178,6 +209,10 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
             edit_phone_number.setError("Phone Number must be 11 digits.");
             return true;
         }
+        if(edit_state.getText().toString().equals("")){
+            edit_state.setError("This input is needed");
+            return true;
+        }
         if(edit_lga.getText().toString().equals("")){
             edit_lga.setError("This input is needed");
             return true;
@@ -207,6 +242,92 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
         }catch (NullPointerException e){
             e.printStackTrace();
             Log.d("CHECK", "Unable to customize Actionbar");
+        }
+    }
+
+    public void initStateAdapter(){
+
+        @SuppressLint("StaticFieldLeak") getStates getS = new getStates(AddTransporter.this){
+            @Override
+            protected void onPostExecute(List<String> strings) {
+                super.onPostExecute(strings);
+                ArrayAdapter<String> stateAdapter =
+                        new ArrayAdapter<>(getApplicationContext(),
+                                R.layout.dropdown_menu_popup_item,
+                                strings);
+                edit_state.setAdapter(stateAdapter);
+            }
+        };getS.execute();
+
+    }
+
+    public void initLGAdapter(){
+        @SuppressLint("StaticFieldLeak") getLGAs getLga = new getLGAs(AddTransporter.this){
+            @Override
+            protected void onPostExecute(List<String> strings) {
+                super.onPostExecute(strings);
+                ArrayAdapter<String> lgaAdapter =
+                        new ArrayAdapter<>(getApplicationContext(),
+                                R.layout.dropdown_menu_popup_item,
+                                strings);
+                edit_lga.setAdapter(lgaAdapter);
+            }
+        };getLga.execute(edit_state.getText().toString());
+    }
+
+    public void initWardsAdapter(){
+        @SuppressLint("StaticFieldLeak") getWards getWard = new getWards(AddTransporter.this){
+            @Override
+            protected void onPostExecute(List<String> strings) {
+                super.onPostExecute(strings);
+                ArrayAdapter<String> wardAdapter =
+                        new ArrayAdapter<>(getApplicationContext(),
+                                R.layout.dropdown_menu_popup_item,
+                                strings);
+                edit_ward.setAdapter(wardAdapter);
+            }
+        } ;getWard.execute(edit_lga.getText().toString());
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public class getStates extends AsyncTask<Void, Void, List<String>>{
+        Context context;
+
+        public getStates(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected List<String> doInBackground(Void... voids) {
+            return transportdb.getLocationDao().getStates();
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public class getLGAs extends AsyncTask<String, Void, List<String>>{
+        Context context;
+
+        public getLGAs(Context context){
+            this.context = context;
+        }
+
+        @Override
+        protected List<String> doInBackground(String... params) {
+            return transportdb.getLocationDao().getLGA(params[0]);
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public class getWards extends AsyncTask<String, Void, List<String>>{
+        Context context;
+
+        public getWards(Context context){
+            this.context = context;
+        }
+
+        @Override
+        protected List<String> doInBackground(String... params) {
+            return transportdb.getLocationDao().getWard(params[0]);
         }
     }
 }

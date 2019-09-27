@@ -15,18 +15,23 @@ public class Vehicles {
     private String vehicle_condition;
     private String livestock_status;
     private String vehicle_capacity;
+    private String vehicle_state;
     private String vehicle_lga;
     private String vehicle_ward;
     private String vehicle_village;
     private String owner_id;
 
-    public Vehicles(@NonNull String vehicle_id, String vehicle_plate_no, String vehicle_type, String vehicle_condition, String livestock_status, String vehicle_capacity, String vehicle_lga, String vehicle_ward, String vehicle_village, String owner_id) {
+    public Vehicles(@NonNull String vehicle_id, String vehicle_plate_no, String vehicle_type,
+                    String vehicle_condition, String livestock_status, String vehicle_capacity,
+                    String vehicle_state, String vehicle_lga, String vehicle_ward, String vehicle_village, String owner_id) {
+
         this.vehicle_id = vehicle_id;
         this.vehicle_plate_no = vehicle_plate_no;
         this.vehicle_type = vehicle_type;
         this.vehicle_condition = vehicle_condition;
         this.livestock_status = livestock_status;
         this.vehicle_capacity = vehicle_capacity;
+        this.vehicle_state = vehicle_state;
         this.vehicle_lga = vehicle_lga;
         this.vehicle_ward = vehicle_ward;
         this.vehicle_village = vehicle_village;
@@ -56,6 +61,10 @@ public class Vehicles {
 
     public String getVehicle_capacity() {
         return vehicle_capacity;
+    }
+
+    public String getVehicle_state(){
+        return vehicle_state;
     }
 
     public String getVehicle_lga() {
