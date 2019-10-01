@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddOperatingAreas">
+    tools:context=".InputPages.AddOperatingAreas">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_operating_state"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
@@ -42,10 +42,11 @@
                     android:layout_marginBottom="5dp"
                     android:hint="State">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <AutoCompleteTextView
                         android:id="@+id/edit_operating_state"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:focusable="false" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,7 +74,8 @@
                     <AutoCompleteTextView
                         android:id="@+id/edit_operating_lga"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:focusable="false" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +103,8 @@
                     <AutoCompleteTextView
                         android:id="@+id/edit_operating_ward"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:focusable="false" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <CheckBox
@@ -116,7 +119,7 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/input_operating_village"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
@@ -125,7 +128,7 @@
                         android:layout_marginBottom="5dp"
                         android:hint="Village/Town">
 
-                        <AutoCompleteTextView
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/edit_operating_village"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />

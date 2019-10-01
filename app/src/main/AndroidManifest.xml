@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.bgenterprise.transporterapp">
 
     <application
@@ -8,10 +9,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".AddOperatingAreas"/>
-        <activity android:name=".AddVehicle"/>
-        <activity android:name=".AddTransporter"/>
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:roundIcon,android:theme">
+        <activity android:name=".ConfirmPages.ConfirmTransporter" />
+        <activity android:name=".InputPages.AddOperatingAreas" />
+        <activity android:name=".InputPages.AddVehicle" />
+        <activity android:name=".InputPages.AddTransporter" />
         <activity android:name=".LandingPage" />
         <activity android:name=".MainActivity">
             <intent-filter>

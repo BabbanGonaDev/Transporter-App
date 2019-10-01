@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':BG_FACE'
 rootProject.name='Transporter App'

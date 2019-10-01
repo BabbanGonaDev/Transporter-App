@@ -1,0 +1,17 @@
+[33mcommit b4d20bbf791b2b56822fc75effa6508ba71d667d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Rehoboth <rehobothi@yahoo.com>
+Date:   Tue Oct 1 23:46:21 2019 +0100
+
+    Register Transporter without confirmation.
+
+[33mcommit 0ad4f513766c6be5f859045d7cb44fdc3526b0a6[m
+Author: Rehoboth <rehobothi@yahoo.com>
+Date:   Fri Sep 27 20:22:56 2019 +0100
+
+    Added First Part of Dropdowns and done up till add operating areas
+
+[33mcommit 2ea3a1de9d2b980e71c77c99b03e2682017ec23b[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Rehoboth <rehobothi@yahoo.com>
+Date:   Thu Sep 26 18:39:01 2019 +0100
+
+    First Commit. Developed transporter recruitment process up to adding vehicles.

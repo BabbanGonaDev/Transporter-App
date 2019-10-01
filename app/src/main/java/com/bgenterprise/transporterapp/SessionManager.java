@@ -21,6 +21,7 @@ public class SessionManager {
     public static final String KEY_DRIVER_TEMPLATE = "driver_template";
     public static final String KEY_VEHICLE_NO = "vehicle_no";
     public static final String KEY_TOTAL_VEHICLE = "total_vehicle";
+    public static final String KEY_REG_TEMPLATE = "registered_template";
 
     public SessionManager(Context context) {
         this.mCtx = context;
@@ -68,6 +69,11 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void SET_REG_TEMPLATE(String value){
+        editor.putString(KEY_REG_TEMPLATE, value);
+        editor.commit();
+    }
+
     public Boolean getImportStatus(){
         return prefs.getBoolean(KEY_IMPORT_LOCATION, false);
     }
@@ -82,6 +88,7 @@ public class SessionManager {
         transport.put(KEY_DRIVER_TEMPLATE, prefs.getString(KEY_DRIVER_TEMPLATE, ""));
         transport.put(KEY_VEHICLE_NO, prefs.getString(KEY_VEHICLE_NO,"0"));
         transport.put(KEY_TOTAL_VEHICLE, prefs.getString(KEY_TOTAL_VEHICLE, "0"));
+        transport.put(KEY_REG_TEMPLATE, prefs.getString(KEY_REG_TEMPLATE, ""));
 
         return transport;
     }

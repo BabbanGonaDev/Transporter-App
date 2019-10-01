@@ -1,4 +1,4 @@
-package com.bgenterprise.transporterapp;
+package com.bgenterprise.transporterapp.InputPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
@@ -15,10 +15,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Spinner;
 
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.TransporterDatabase;
+import com.bgenterprise.transporterapp.R;
+import com.bgenterprise.transporterapp.SessionManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
@@ -38,7 +39,6 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnItemSelected;
 
 public class AddTransporter extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     @BindView(R.id.btn_next) MaterialButton btn_next;
@@ -67,6 +67,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
     DatePickerDialog datePickerDialog ;
     int Year, Month, Day;
     Calendar calendar;
+    HashMap<String, String> transport_details;
     List<Drivers> drivers;
     SessionManager sessionM;
     String driver_id, driver_template, manager_id;
@@ -82,7 +83,8 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
         transportdb = TransporterDatabase.getInstance(AddTransporter.this);
         sessionM = new SessionManager(AddTransporter.this);
         driver_id = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(new Date());
-        driver_template = "AAAAAxxxxxxeefwdqwwqewq";
+        transport_details = sessionM.getTransporterDetails();
+        driver_template = transport_details.get(SessionManager.KEY_REG_TEMPLATE);
         initStateAdapter();
 
         edit_state.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -22,16 +22,25 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
 
-        <androidx.appcompat.widget.SearchView
-            style="@android:style/Widget.Material.SearchView"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="15dp"
             android:layout_weight="1"
-            android:background="#D3D3D3"
-            android:elevation="3dp"
-            app:queryHint="Search Transporter"
-            app:showDividers="end" />
+            android:visibility="invisible"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp">
+
+            <androidx.appcompat.widget.SearchView
+                style="@android:style/Widget.Material.SearchView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#D3D3D3"
+                app:iconifiedByDefault="false"
+                app:queryHint="Search Transporter Details"
+                app:showDividers="none" />
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_add_transporter"
@@ -42,6 +51,7 @@
             android:text="@string/btn_add_transport"
             app:icon="@drawable/ic_add_transporter"
             app:iconGravity="textStart" />
+
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

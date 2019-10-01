@@ -1,16 +1,26 @@
-package com.bgenterprise.transporterapp;
+package com.bgenterprise.transporterapp.InputPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
+import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
+import com.bgenterprise.transporterapp.Database.TransporterDatabase;
+import com.bgenterprise.transporterapp.LandingPage;
+import com.bgenterprise.transporterapp.R;
+import com.bgenterprise.transporterapp.SessionManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -56,6 +66,7 @@ public class AddVehicle extends AppCompatActivity {
     @BindView(R.id.edit_vehicle_village) TextInputEditText edit_vehicle_village;
 
 
+    TransporterDatabase transportdb;
     SessionManager sessionM;
     HashMap<String, String> transport_details;
     int current_vehicle_no, total_vehicle_no;
@@ -69,6 +80,7 @@ public class AddVehicle extends AppCompatActivity {
         ButterKnife.bind(this);
         sessionM = new SessionManager(AddVehicle.this);
         transport_details = sessionM.getTransporterDetails();
+        transportdb = TransporterDatabase.getInstance(AddVehicle.this);
         customizeActionBar();
         getNumberOfVehicles();
         vehicle_id = "XXSSRRRR" + new SimpleDateFormat("HHmmss", Locale.getDefault()).format(new Date());
@@ -78,6 +90,24 @@ public class AddVehicle extends AppCompatActivity {
         initLivestockDropdown();
         initVehicleCapacity();
         initVehicleCondition();
+        initStateAdapter();
+
+        atv_vehicle_state.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                atv_vehicle_lga.setText("");
+                atv_vehicle_ward.setText("");
+                initLGAdapter();
+            }
+        });
+
+        atv_vehicle_lga.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                atv_vehicle_ward.setText("");
+                initWardsAdapter();
+            }
+        });
 
     }
 
@@ -121,6 +151,25 @@ public class AddVehicle extends AppCompatActivity {
                         dialogInterface.dismiss();
                     }
                 }).show();
+    }
+
+    @OnClick(R.id.isTransporterAddress)
+    public void isTransporterAddressChkBox(MaterialCheckBox mChkBox){
+        Gson gson = new Gson();
+        List<Drivers> driver = gson.fromJson(transport_details.get(SessionManager.KEY_DRIVER_DETAILS), new TypeToken<List<Drivers>>(){}.getType());
+
+        if(mChkBox.isChecked()){
+            atv_vehicle_state.setText(driver.get(0).getDriver_state());
+            atv_vehicle_lga.setText(driver.get(0).getDriver_lga());
+            atv_vehicle_ward.setText(driver.get(0).getDriver_ward());
+            edit_vehicle_village.setText(driver.get(0).getDriver_village());
+        }else{
+            //Empty inputs.
+            atv_vehicle_state.setText("");
+            atv_vehicle_lga.setText("");
+            atv_vehicle_ward.setText("");
+            edit_vehicle_village.setText("");
+        }
     }
 
     public void customizeActionBar(){
@@ -232,6 +281,7 @@ public class AddVehicle extends AppCompatActivity {
         new MaterialAlertDialogBuilder(AddVehicle.this)
                 .setIcon(R.drawable.ic_success_checked)
                 .setTitle("Success")
+                .setCancelable(false)
                 .setMessage("You've successfully registered transporter's vehicles. Click 'Next' to continue.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -279,6 +329,92 @@ public class AddVehicle extends AppCompatActivity {
                         R.layout.dropdown_menu_popup_item,
                         condition);
         atv_vehicle_condition.setAdapter(conditionAdapter);
+    }
+
+    public void initStateAdapter(){
+
+        @SuppressLint("StaticFieldLeak") getStates getS = new getStates(AddVehicle.this){
+            @Override
+            protected void onPostExecute(List<String> strings) {
+                super.onPostExecute(strings);
+                ArrayAdapter<String> stateAdapter =
+                        new ArrayAdapter<>(getApplicationContext(),
+                                R.layout.dropdown_menu_popup_item,
+                                strings);
+                atv_vehicle_state.setAdapter(stateAdapter);
+            }
+        };getS.execute();
+
+    }
+
+    public void initLGAdapter(){
+        @SuppressLint("StaticFieldLeak") getLGAs getLga = new getLGAs(AddVehicle.this){
+            @Override
+            protected void onPostExecute(List<String> strings) {
+                super.onPostExecute(strings);
+                ArrayAdapter<String> lgaAdapter =
+                        new ArrayAdapter<>(getApplicationContext(),
+                                R.layout.dropdown_menu_popup_item,
+                                strings);
+                atv_vehicle_lga.setAdapter(lgaAdapter);
+            }
+        };getLga.execute(atv_vehicle_state.getText().toString());
+    }
+
+    public void initWardsAdapter(){
+        @SuppressLint("StaticFieldLeak") getWards getWard = new getWards(AddVehicle.this){
+            @Override
+            protected void onPostExecute(List<String> strings) {
+                super.onPostExecute(strings);
+                ArrayAdapter<String> wardAdapter =
+                        new ArrayAdapter<>(getApplicationContext(),
+                                R.layout.dropdown_menu_popup_item,
+                                strings);
+                atv_vehicle_ward.setAdapter(wardAdapter);
+            }
+        } ;getWard.execute(atv_vehicle_lga.getText().toString());
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public class getStates extends AsyncTask<Void, Void, List<String>> {
+        Context context;
+
+        public getStates(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected List<String> doInBackground(Void... voids) {
+            return transportdb.getLocationDao().getStates();
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public class getLGAs extends AsyncTask<String, Void, List<String>>{
+        Context context;
+
+        public getLGAs(Context context){
+            this.context = context;
+        }
+
+        @Override
+        protected List<String> doInBackground(String... params) {
+            return transportdb.getLocationDao().getLGA(params[0]);
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public class getWards extends AsyncTask<String, Void, List<String>>{
+        Context context;
+
+        public getWards(Context context){
+            this.context = context;
+        }
+
+        @Override
+        protected List<String> doInBackground(String... params) {
+            return transportdb.getLocationDao().getWard(params[0]);
+        }
     }
 
     @Override
