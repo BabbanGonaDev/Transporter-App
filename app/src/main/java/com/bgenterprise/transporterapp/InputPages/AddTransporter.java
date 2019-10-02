@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.TransporterDatabase;
@@ -50,6 +51,8 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
     @BindView(R.id.edit_phone_number) TextInputEditText edit_phone_number;
     @BindView(R.id.input_no_of_vehicles) TextInputLayout input_no_of_vehicles;
     @BindView(R.id.edit_no_of_vehicles) TextInputEditText edit_no_of_vehicles;
+    @BindView(R.id.input_select_date) TextInputLayout input_select_date;
+    @BindView(R.id.edit_select_date) TextInputEditText edit_select_date;
     @BindView(R.id.input_state) TextInputLayout input_state;
     @BindView(R.id.edit_state) AutoCompleteTextView edit_state;
     @BindView(R.id.input_lga) TextInputLayout input_lga;
@@ -104,6 +107,26 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
             }
         });
 
+        input_select_date.setEndIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                datePickerDialog = DatePickerDialog.newInstance(AddTransporter.this, Year, Month, Day);
+                datePickerDialog.setThemeDark(false);
+                datePickerDialog.showYearPickerFirst(false);
+                datePickerDialog.setMinDate(Calendar.getInstance());
+                datePickerDialog.setTitle("Select Training Date");
+
+                datePickerDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+
+                    }
+                });
+
+                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+            }
+        });
+
         //TODO ---> Check whether the manager_id variable is empty, especially if the person acknowledges working for a transporter.
     }
 
@@ -127,7 +150,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        mtv_select_training_date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+        edit_select_date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
     }
 
     @OnClick(R.id.btn_next)
@@ -147,7 +170,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
                         edit_last_name.getText().toString(),
                         edit_phone_number.getText().toString(),
                         edit_no_of_vehicles.getText().toString(),
-                        mtv_select_training_date.getText().toString(),
+                        edit_select_date.getText().toString(),
                         edit_state.getText().toString(),
                         edit_lga.getText().toString(),
                         edit_ward.getText().toString(),
@@ -227,8 +250,8 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
             edit_no_of_vehicles.setError("This input is needed");
             return true;
         }
-        if(mtv_select_training_date.getText().toString().equals("")){
-            mtv_select_training_date.setError("Kindly Select a Training Date");
+        if(edit_select_date.getText().toString().equals("")){
+            edit_select_date.setError("Kindly Select a Training Date");
             return true;
         }
         if(edit_village.getText().toString().equals("")){

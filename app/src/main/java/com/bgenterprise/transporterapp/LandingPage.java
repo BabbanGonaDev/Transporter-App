@@ -41,8 +41,9 @@ public class LandingPage extends AppCompatActivity {
 
     @OnClick(R.id.btn_add_transporter)
     public void addTransport(){
-        Intent LuxandIntent = new Intent(this, LuxandActivity.class);
-        startActivityForResult(LuxandIntent, 519);
+        startActivity(new Intent(LandingPage.this, AddTransporter.class));
+        /*Intent LuxandIntent = new Intent(this, LuxandActivity.class);
+        startActivityForResult(LuxandIntent, 519);*/
     }
 
     @Override
