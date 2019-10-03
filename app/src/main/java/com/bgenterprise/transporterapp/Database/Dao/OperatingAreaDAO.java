@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
+import androidx.room.Query;
 import androidx.room.Update;
 
 import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
@@ -24,4 +25,13 @@ public interface OperatingAreaDAO {
 
     @Delete
     void DeleteOperatingArea(OperatingAreas operatingAreas);
+
+    @Query("UPDATE operating_areas_table SET owner_id = :new_driver_id WHERE owner_id = :old_driver_id")
+    void UpdateAreaDriverId(String new_driver_id, String old_driver_id);
+
+    @Query("SELECT * FROM operating_areas_table WHERE sync_status = :status")
+    List<OperatingAreas> getAllUnsyncedAreas(String status);
+
+    @Query("UPDATE operating_areas_table SET sync_status = :status WHERE owner_id = :owner_id")
+    void updateSyncStatus(String owner_id, String status);
 }

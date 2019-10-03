@@ -93,6 +93,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
                 android:hint="Preferred Training Date"
+                android:visibility="gone"
                 app:endIconContentDescription="Click to select date"
                 app:endIconDrawable="@drawable/ic_calendar_icon"
                 app:endIconMode="custom">
@@ -103,46 +104,6 @@
                     android:layout_height="wrap_content"
                     android:focusable="false" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_select_training_date"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="Choose Preferred Training Date"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:orientation="horizontal"
-                android:visibility="gone"
-                android:weightSum="3">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/mtv_date_text"
-                    style="@android:style/Widget.Material.TextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="DATE:"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16dp" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/mtv_select_training_date"
-                    style="@android:style/Widget.Material.TextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text=""
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16dp" />
-            </LinearLayout>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView3"
@@ -227,7 +188,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="Do you drive for a registered transporter ?" />
+                android:text="Do you drive for a registered transporter ?"
+                android:visibility="gone" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/manager_layout"

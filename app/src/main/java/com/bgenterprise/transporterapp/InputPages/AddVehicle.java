@@ -84,7 +84,7 @@ public class AddVehicle extends AppCompatActivity {
         customizeActionBar();
         getNumberOfVehicles();
         vehicle_id = "XXSSRRRR" + new SimpleDateFormat("HHmmss", Locale.getDefault()).format(new Date());
-        vehicle_owner_id = "CC";
+        vehicle_owner_id = transport_details.get(SessionManager.KEY_DRIVER_ID);
         disableButton(btn_next);
         initVehicleType();
         initLivestockDropdown();
@@ -118,17 +118,20 @@ public class AddVehicle extends AppCompatActivity {
 
     @OnClick(R.id.btn_another_vehicle)
     public void addAnother(){
-        addNewVehicleToArrayList();
-        if(current_vehicle_no <= total_vehicle_no){
-            finish();
-            startActivity(getIntent());
-        }else{
-            enableButton(btn_next);
-            disableButton(btn_another_vehicle);
-            clearAllInputs();
-            displayFinishVehiclesRegDialog();
-            Toast.makeText(AddVehicle.this, "You have finished all vehicles.", Toast.LENGTH_LONG).show();
+        if(!checkEmptyInputs()){
+            addNewVehicleToArrayList();
+            if(current_vehicle_no <= total_vehicle_no){
+                finish();
+                startActivity(getIntent());
+            }else{
+                enableButton(btn_next);
+                disableButton(btn_another_vehicle);
+                clearAllInputs();
+                displayFinishVehiclesRegDialog();
+                Toast.makeText(AddVehicle.this, "You have finished all vehicles.", Toast.LENGTH_LONG).show();
+            }
         }
+
     }
 
     @OnClick(R.id.btn_cancel)
@@ -189,14 +192,6 @@ public class AddVehicle extends AppCompatActivity {
             atv_vehicle_type.setError("This input is needed");
             return true;
         }
-        if(atv_vehicle_condition.getText().toString().equals("")){
-            atv_vehicle_condition.setError("This input is needed");
-            return true;
-        }
-        if(atv_carry_livestock.getText().toString().equals("")){
-            atv_carry_livestock.setError("This input is needed");
-            return true;
-        }
         if(atv_capacity.getText().toString().equals("")){
             atv_capacity.setError("This input is needed");
             return true;
@@ -221,14 +216,15 @@ public class AddVehicle extends AppCompatActivity {
         vehicles.add(new Vehicles(vehicle_id,
                 edit_plate_number.getText().toString(),
                 atv_vehicle_type.getText().toString(),
-                atv_vehicle_condition.getText().toString(),
-                atv_carry_livestock.getText().toString(),
+                "",
+                "",
                 atv_capacity.getText().toString(),
                 atv_vehicle_state.getText().toString(),
                 atv_vehicle_lga.getText().toString(),
                 atv_vehicle_ward.getText().toString(),
                 edit_vehicle_village.getText().toString(),
-                vehicle_owner_id));
+                vehicle_owner_id,
+                "no"));
         return vehicles;
     }
 
@@ -292,7 +288,7 @@ public class AddVehicle extends AppCompatActivity {
     }
 
     public void initVehicleType(){
-        String[] vehicleType = new String[]{"Pick-up", "Truck", "Mini-van", "18-Seater Bus", "30-Seater Bus", "Salon Car", "SUV", "Trailer"};
+        String[] vehicleType = new String[]{"Big Truck", "Small Truck", "Motorcycle", "Bus", "Car"};
 
         ArrayAdapter<String> vehicleAdapter =
                 new ArrayAdapter<>(AddVehicle.this,

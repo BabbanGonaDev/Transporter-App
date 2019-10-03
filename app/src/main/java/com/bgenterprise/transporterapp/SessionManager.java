@@ -17,7 +17,7 @@ public class SessionManager {
     public static final String KEY_DRIVER_DETAILS = "driver_details";
     public static final String KEY_VEHICLE_DETAILS = "vehicle_details";
     public static final String KEY_OPERATING_AREA_DETAILS = "operating_area_details";
-    public static final String KEY_DRIVER_ID = "driver_id";
+    public static final String KEY_DRIVER_ID = "owner_id";
     public static final String KEY_DRIVER_TEMPLATE = "driver_template";
     public static final String KEY_VEHICLE_NO = "vehicle_no";
     public static final String KEY_TOTAL_VEHICLE = "total_vehicle";

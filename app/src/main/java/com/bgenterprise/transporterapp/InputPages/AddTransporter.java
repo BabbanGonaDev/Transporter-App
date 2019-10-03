@@ -62,8 +62,6 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
     @BindView(R.id.input_village) TextInputLayout input_village;
     @BindView(R.id.edit_village) TextInputEditText edit_village;
     @BindView(R.id.isDriver) MaterialCheckBox chkIsDriver;
-    @BindView(R.id.btn_select_training_date) MaterialButton btn_select_training_date;
-    @BindView(R.id.mtv_select_training_date) MaterialTextView mtv_select_training_date;
     @BindView(R.id.manager_layout) LinearLayoutCompat manager_layout;
     @BindView(R.id.manager_search) SearchView manager_search;
 
@@ -130,24 +128,6 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
         //TODO ---> Check whether the manager_id variable is empty, especially if the person acknowledges working for a transporter.
     }
 
-    @OnClick(R.id.btn_select_training_date)
-    public void training_date_picker(){
-        datePickerDialog = DatePickerDialog.newInstance(AddTransporter.this, Year, Month, Day);
-        datePickerDialog.setThemeDark(false);
-        datePickerDialog.showYearPickerFirst(false);
-        datePickerDialog.setMinDate(Calendar.getInstance());
-        datePickerDialog.setTitle("Select Training Date");
-
-        datePickerDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialogInterface) {
-
-            }
-        });
-
-        datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
-    }
-
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
         edit_select_date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
@@ -155,9 +135,9 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
 
     @OnClick(R.id.btn_next)
     public void next_to_vehicle(){
-        if(/*!checkEmptyInputs()*/ 1==1){
+        if(!checkEmptyInputs()){
             if(!chkIsDriver.isChecked()){
-                /**Set manager_id as the driver_id if the driver is an independent.*/
+                /**Set manager_id as the owner_id if the driver is an independent.*/
                 manager_id = driver_id;
             }
 
@@ -170,14 +150,15 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
                         edit_last_name.getText().toString(),
                         edit_phone_number.getText().toString(),
                         edit_no_of_vehicles.getText().toString(),
-                        edit_select_date.getText().toString(),
+                        "",
                         edit_state.getText().toString(),
                         edit_lga.getText().toString(),
                         edit_ward.getText().toString(),
                         edit_village.getText().toString(),
                         manager_id,
                         driver_template,
-                        new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date())));
+                        new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()),
+                        "no"));
 
                 //Convert model class to gson and store in shared preferences.
                 Gson gson = new Gson();
@@ -248,10 +229,6 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
         }
         if(edit_no_of_vehicles.getText().toString().equals("") && !chkIsDriver.isChecked()){
             edit_no_of_vehicles.setError("This input is needed");
-            return true;
-        }
-        if(edit_select_date.getText().toString().equals("")){
-            edit_select_date.setError("Kindly Select a Training Date");
             return true;
         }
         if(edit_village.getText().toString().equals("")){

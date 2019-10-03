@@ -52,7 +52,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:hint="Vehicle Condition">
+                    android:hint="Vehicle Condition"
+                    android:visibility="gone">
 
                     <AutoCompleteTextView
                         android:id="@+id/atv_vehicle_condition"
@@ -67,7 +68,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:hint="Do you carry livestock ?">
+                    android:hint="Do you carry livestock ?"
+                    android:visibility="gone">
 
                     <AutoCompleteTextView
                         android:id="@+id/atv_carry_livestock"

@@ -43,6 +43,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
 public class AddOperatingAreas extends AppCompatActivity {
@@ -80,7 +81,7 @@ public class AddOperatingAreas extends AppCompatActivity {
         sessionM = new SessionManager(AddOperatingAreas.this);
         transport_details = sessionM.getTransporterDetails();
         transportdb = TransporterDatabase.getInstance(AddOperatingAreas.this);
-        owner_id = "SAADFKGLDDDDE";
+        owner_id = transport_details.get(SessionManager.KEY_DRIVER_ID);
         initStateAdapter();
         displayCurrentAreasAdded();
 
@@ -131,9 +132,12 @@ public class AddOperatingAreas extends AppCompatActivity {
 
     @OnClick(R.id.btn_add_area)
     public void addNewArea(){
-        addNewAreaToArrayList();
-        finish();
-        startActivity(getIntent());
+        if(!checkEmptyInputs()){
+            addNewAreaToArrayList();
+            finish();
+            startActivity(getIntent());
+        }
+
     }
 
     @OnClick(R.id.btn_finish_reg)
@@ -153,6 +157,7 @@ public class AddOperatingAreas extends AppCompatActivity {
                         dialogInterface.dismiss();
                     }
                 }).show();
+
     }
 
     @OnClick(R.id.chkbox_entire_state)
@@ -214,7 +219,8 @@ public class AddOperatingAreas extends AppCompatActivity {
                 edit_operating_state.getText().toString(),
                 edit_operating_lga.getText().toString(),
                 edit_operating_ward.getText().toString(),
-                edit_operating_village.getText().toString()));
+                edit_operating_village.getText().toString(),
+                "no"));
 
         return area;
     }
@@ -479,4 +485,63 @@ public class AddOperatingAreas extends AppCompatActivity {
                     }
                 }).show();
     }
+
+    public boolean checkEmptyInputs(){
+
+        if(chkbox_entire_state.isChecked()){
+
+            if(edit_operating_state.getText().toString().equals("")){
+                edit_operating_state.setError("This input is needed");
+                return true;
+            }
+
+        }else if(chkbox_entire_lga.isChecked()){
+
+            if(edit_operating_state.getText().toString().equals("")){
+                edit_operating_state.setError("This input is needed");
+                return true;
+            }
+            if(edit_operating_lga.getText().toString().equals("")) {
+                edit_operating_lga.setError("This input is needed");
+                return true;
+            }
+
+        }else if(chkbox_entire_ward.isChecked()){
+
+            if(edit_operating_state.getText().toString().equals("")){
+                edit_operating_state.setError("This input is needed");
+                return true;
+            }
+            if(edit_operating_lga.getText().toString().equals("")) {
+                edit_operating_lga.setError("This input is needed");
+                return true;
+            }
+            if(edit_operating_ward.getText().toString().equals("")) {
+                edit_operating_ward.setError("This input is needed");
+                return true;
+            }
+
+        }else if(!chkbox_entire_state.isChecked() && !chkbox_entire_lga.isChecked() && !chkbox_entire_ward.isChecked()){
+            if(edit_operating_state.getText().toString().equals("")){
+                edit_operating_state.setError("This input is needed");
+                return true;
+            }
+            if(edit_operating_lga.getText().toString().equals("")) {
+                edit_operating_lga.setError("This input is needed");
+                return true;
+            }
+            if(edit_operating_ward.getText().toString().equals("")) {
+                edit_operating_ward.setError("This input is needed");
+                return true;
+            }
+            if(edit_operating_village.getText().toString().equals("")){
+                edit_operating_village.setError("This input is needed");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }
