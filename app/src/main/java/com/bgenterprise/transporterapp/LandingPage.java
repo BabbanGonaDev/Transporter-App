@@ -3,6 +3,7 @@ package com.bgenterprise.transporterapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.ContentLoadingProgressBar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.babbangona.bg_face.LuxandActivity;
@@ -21,13 +23,18 @@ import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
 import com.bgenterprise.transporterapp.InputPages.AddTransporter;
 import com.bgenterprise.transporterapp.Network.Responses.DriverResponse;
+import com.bgenterprise.transporterapp.Network.Responses.DriverSync;
 import com.bgenterprise.transporterapp.Network.Responses.OperatingAreaResponse;
+import com.bgenterprise.transporterapp.Network.Responses.OperatingAreaSync;
 import com.bgenterprise.transporterapp.Network.Responses.VehicleResponse;
+import com.bgenterprise.transporterapp.Network.Responses.VehicleSync;
 import com.bgenterprise.transporterapp.Network.RetrofitApiCalls;
 import com.bgenterprise.transporterapp.Network.RetrofitClient;
 import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -42,7 +49,11 @@ public class LandingPage extends AppCompatActivity {
     @BindView(R.id.btn_add_transporter)
     MaterialButton btnAddTransporter;
 
+    @BindView(R.id.sync_progress_bar)
+    ContentLoadingProgressBar sync_progress_bar;
+
     SessionManager sessionM;
+    HashMap<String, String> transport_details;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +62,9 @@ public class LandingPage extends AppCompatActivity {
         ButterKnife.bind(this);
         sessionM = new SessionManager(LandingPage.this);
         importLocations();
-        sessionM.CLEAR_ALL_SESSION();
+        sync_progress_bar.setVisibility(View.GONE);
+        sessionM.CLEAR_REGISTRATION_SESSION();
+        transport_details = sessionM.getTransporterDetails();
 
         //TODO --> Check Phone date if it's earlier than date of app development.
     }
@@ -109,6 +122,7 @@ public class LandingPage extends AppCompatActivity {
     }
 
     public void executeDriverSyncFunctions(){
+        sync_progress_bar.setVisibility(View.VISIBLE);
         @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedTransporters unsyncedDriversApi = new DatabaseApiCalls.getAllUnsyncedTransporters(LandingPage.this){
             @Override
             protected void onPostExecute(List<Drivers> drivers) {
@@ -165,7 +179,6 @@ public class LandingPage extends AppCompatActivity {
             }
         };unsyncedVehicles.execute();
 
-
         @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedAreas unsyncedAreas = new DatabaseApiCalls.getAllUnsyncedAreas(LandingPage.this){
             @Override
             protected void onPostExecute(List<OperatingAreas> operatingAreas) {
@@ -181,6 +194,7 @@ public class LandingPage extends AppCompatActivity {
 
                             List<OperatingAreaResponse> opAreaRes = response.body();
                             updateOpAreaSyncStatus(opAreaRes);
+                            sync_progress_bar.setVisibility(View.GONE);
                         }
                     }
 
@@ -191,6 +205,10 @@ public class LandingPage extends AppCompatActivity {
                 });
             }
         };unsyncedAreas.execute();
+
+        syncDownDrivers();
+        syncDownVehicles();
+        syncDownAreas();
     }
 
     public void updateDriverSyncStatus(List<DriverResponse> response){
@@ -220,6 +238,131 @@ public class LandingPage extends AppCompatActivity {
                 super.onPostExecute(aVoid);
             }
         };updateAreaStatus.execute(response);
+    }
+
+    public void syncDownDrivers(){
+
+        RetrofitApiCalls service = RetrofitClient.getRetrofitInstance().create(RetrofitApiCalls.class);
+        Call<List<DriverSync>> call = service.syncDownDrivers(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_DRIVER));
+        call.enqueue(new Callback<List<DriverSync>>() {
+            @Override
+            public void onResponse(Call<List<DriverSync>> call, Response<List<DriverSync>> response) {
+                if(response.isSuccessful()){
+                    List<DriverSync> first = response.body();
+                    List<Drivers> driveResponse = new ArrayList<>();
+
+                    for(DriverSync z: first){
+                        driveResponse.add(new Drivers(z.getDriver_id(),
+                                z.getFirst_name(),
+                                z.getLast_name(),
+                                z.getPhone_number(),
+                                z.getNo_of_vehicles(),
+                                z.getTraining_date(),
+                                z.getDriver_state(),
+                                z.getDriver_lga(),
+                                z.getDriver_ward(),
+                                z.getDriver_village(),
+                                z.getManager_id(),
+                                z.getTemplate(),
+                                z.getReg_date(),
+                                z.getSync_status()));
+                        sessionM.SET_LAST_SYNC_DOWN_DRIVER(z.getLast_sync_time());
+                    }
+
+                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoDriverTable insert = new DatabaseApiCalls.insertIntoDriverTable(LandingPage.this){
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                        }
+                    }; insert.execute(driveResponse);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<DriverSync>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void syncDownVehicles(){
+
+        RetrofitApiCalls service = RetrofitClient.getRetrofitInstance().create(RetrofitApiCalls.class);
+        Call<List<VehicleSync>> call = service.syncDownVehicles(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_VEHICLE));
+        call.enqueue(new Callback<List<VehicleSync>>() {
+            @Override
+            public void onResponse(Call<List<VehicleSync>> call, Response<List<VehicleSync>> response) {
+                if(response.isSuccessful()){
+                    List<VehicleSync> first = response.body();
+                    List<Vehicles> vehicleResponse = new ArrayList<>();
+
+                    for(VehicleSync y: first){
+                        vehicleResponse.add(new Vehicles(y.getVehicle_id(),
+                                y.getVehicle_plate_no(),
+                                y.getVehicle_type(),
+                                y.getVehicle_condition(),
+                                y.getLivestock_status(),
+                                y.getVehicle_capacity(),
+                                y.getVehicle_state(),
+                                y.getVehicle_lga(),
+                                y.getVehicle_ward(),
+                                y.getVehicle_village(),
+                                y.getOwner_id(),
+                                y.getSync_status()));
+                        sessionM.SET_LAST_SYNC_DOWN_VEHICLE(SessionManager.KEY_LAST_SYNC_DOWN_VEHICLE);
+                    }
+
+                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoVehicleTable insert = new DatabaseApiCalls.insertIntoVehicleTable(LandingPage.this){
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                        }
+                    }; insert.execute(vehicleResponse);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<VehicleSync>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void syncDownAreas(){
+
+        RetrofitApiCalls service = RetrofitClient.getRetrofitInstance().create(RetrofitApiCalls.class);
+        Call<List<OperatingAreaSync>> call = service.syncDownOperatingAreas(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_AREA));
+        call.enqueue(new Callback<List<OperatingAreaSync>>() {
+            @Override
+            public void onResponse(Call<List<OperatingAreaSync>> call, Response<List<OperatingAreaSync>> response) {
+                if(response.isSuccessful()){
+                    List<OperatingAreaSync> first = response.body();
+                    List<OperatingAreas> opAreasResponse = new ArrayList<>();
+
+                    for(OperatingAreaSync x: first){
+                        opAreasResponse.add(new OperatingAreas(x.getOwner_id(),
+                                x.getState_id(),
+                                x.getVillage_id(),
+                                x.getWard_id(),
+                                x.getLga_id(),
+                                x.getSync_status()));
+                        sessionM.SET_LAST_SYNC_DOWN_AREA(x.getLast_sync_time());
+                    }
+
+                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoAreaTable insert = new DatabaseApiCalls.insertIntoAreaTable(LandingPage.this){
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                        }
+                    }; insert.execute(opAreasResponse);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<OperatingAreaSync>> call, Throwable t) {
+
+            }
+        });
     }
 
 

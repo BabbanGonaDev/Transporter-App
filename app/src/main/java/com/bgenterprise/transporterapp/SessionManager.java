@@ -22,6 +22,9 @@ public class SessionManager {
     public static final String KEY_VEHICLE_NO = "vehicle_no";
     public static final String KEY_TOTAL_VEHICLE = "total_vehicle";
     public static final String KEY_REG_TEMPLATE = "registered_template";
+    public static final String KEY_LAST_SYNC_DOWN_DRIVER = "last_sync_down_driver";
+    public static final String KEY_LAST_SYNC_DOWN_VEHICLE = "last_sync_down_vehicle";
+    public static final String KEY_LAST_SYNC_DOWN_AREA = "last_sync_down_area";
 
     public SessionManager(Context context) {
         this.mCtx = context;
@@ -74,6 +77,21 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void SET_LAST_SYNC_DOWN_DRIVER(String value){
+        editor.putString(KEY_LAST_SYNC_DOWN_DRIVER, value);
+        editor.commit();
+    }
+
+    public void SET_LAST_SYNC_DOWN_VEHICLE(String value){
+        editor.putString(KEY_LAST_SYNC_DOWN_VEHICLE, value);
+        editor.commit();
+    }
+
+    public void SET_LAST_SYNC_DOWN_AREA(String value){
+        editor.putString(KEY_LAST_SYNC_DOWN_AREA, value);
+        editor.commit();
+    }
+
     public Boolean getImportStatus(){
         return prefs.getBoolean(KEY_IMPORT_LOCATION, false);
     }
@@ -89,11 +107,14 @@ public class SessionManager {
         transport.put(KEY_VEHICLE_NO, prefs.getString(KEY_VEHICLE_NO,"0"));
         transport.put(KEY_TOTAL_VEHICLE, prefs.getString(KEY_TOTAL_VEHICLE, "0"));
         transport.put(KEY_REG_TEMPLATE, prefs.getString(KEY_REG_TEMPLATE, ""));
+        transport.put(KEY_LAST_SYNC_DOWN_DRIVER, prefs.getString(KEY_LAST_SYNC_DOWN_DRIVER, "2019-10-04 18:00:00"));
+        transport.put(KEY_LAST_SYNC_DOWN_AREA, prefs.getString(KEY_LAST_SYNC_DOWN_AREA, "2019-10-04 18:00:00"));
+        transport.put(KEY_LAST_SYNC_DOWN_VEHICLE, prefs.getString(KEY_LAST_SYNC_DOWN_VEHICLE, "2019-10-04 18:00:00"));
 
         return transport;
     }
 
-    public void CLEAR_ALL_SESSION(){
+    public void CLEAR_REGISTRATION_SESSION(){
         editor.remove(KEY_DRIVER_DETAILS);
         editor.remove(KEY_VEHICLE_DETAILS);
         editor.remove(KEY_OPERATING_AREA_DETAILS);

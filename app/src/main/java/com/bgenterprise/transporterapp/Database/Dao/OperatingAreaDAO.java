@@ -14,7 +14,7 @@ import java.util.List;
 @Dao
 public interface OperatingAreaDAO {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void InsertOperatingArea(OperatingAreas operatingArea);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

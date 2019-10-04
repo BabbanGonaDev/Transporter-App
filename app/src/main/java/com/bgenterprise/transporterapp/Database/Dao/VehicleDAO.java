@@ -14,8 +14,8 @@ import java.util.List;
 @Dao
 public interface VehicleDAO {
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
-    void InsertVehicles(Vehicles... vehicles);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void InsertVehicles(Vehicles vehicles);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void InsertVehiclesFromList(List<Vehicles> vehicles);

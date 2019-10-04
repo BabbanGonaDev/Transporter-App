@@ -143,7 +143,7 @@ public class AddVehicle extends AppCompatActivity {
                 .setPositiveButton("Yes, Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        sessionM.CLEAR_ALL_SESSION();
+                        sessionM.CLEAR_REGISTRATION_SESSION();
                         startActivity(new Intent(AddVehicle.this, LandingPage.class)
                                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                     }

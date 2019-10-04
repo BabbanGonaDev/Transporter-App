@@ -2,7 +2,6 @@ package com.bgenterprise.transporterapp.InputPages;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,7 +18,6 @@ import android.widget.Toast;
 
 import com.babbangona.bg_face.LuxandActivity;
 import com.babbangona.bg_face.LuxandInfo;
-import com.bgenterprise.transporterapp.ConfirmPages.ConfirmTransporter;
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
@@ -43,7 +41,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
 public class AddOperatingAreas extends AppCompatActivity {
@@ -117,7 +114,7 @@ public class AddOperatingAreas extends AppCompatActivity {
                 .setPositiveButton("Yes, Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        sessionM.CLEAR_ALL_SESSION();
+                        sessionM.CLEAR_REGISTRATION_SESSION();
                         startActivity(new Intent(AddOperatingAreas.this, LandingPage.class)
                                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                     }

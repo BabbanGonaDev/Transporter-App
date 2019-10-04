@@ -15,7 +15,7 @@ import java.util.List;
 public interface DriverDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void InsertDrivers(Drivers... drivers);
+    void InsertDrivers(Drivers drivers);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void InsertDriverFromList(List<Drivers> list);
