@@ -3,20 +3,19 @@ package com.bgenterprise.transporterapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.babbangona.bg_face.LuxandActivity;
@@ -39,7 +38,6 @@ import com.bgenterprise.transporterapp.RecyclerAdapters.ViewTransporterAdapter;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
-import com.opencsv.bean.CsvBindByName;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,7 +51,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LandingPage extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
     @BindView(R.id.btn_add_transporter)
     MaterialButton btnAddTransporter;
 
@@ -66,13 +64,29 @@ public class LandingPage extends AppCompatActivity {
     SessionManager sessionM;
     HashMap<String, String> transport_details;
     ViewTransporterAdapter adapter;
+    String staff_id;
+    ProgressDialog pdSync;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
         ButterKnife.bind(this);
-        sessionM = new SessionManager(LandingPage.this);
+        sessionM = new SessionManager(Main2Activity.this);
+        pdSync = new ProgressDialog(Main2Activity.this);
+        pdSync.setTitle("Loading");
+        pdSync.setMessage("Synchronizing local database");
+        pdSync.setCancelable(true);
+
+        try {
+            Intent intent = getIntent();
+            Bundle b = intent.getExtras();
+            staff_id = (String) b.get("staff_id");
+            sessionM.SET_STAFF_ID(staff_id);
+        } catch (Exception e) {
+            Log.d("HERE", "" + staff_id);
+        }
+
         importLocations();
         sessionM.CLEAR_REGISTRATION_SESSION();
         transport_details = sessionM.getTransporterDetails();
@@ -84,7 +98,7 @@ public class LandingPage extends AppCompatActivity {
 
     @OnClick(R.id.btn_add_transporter)
     public void addTransport(){
-        //startActivity(new Intent(LandingPage.this, AddTransporter.class));
+        //startActivity(new Intent(Main2Activity.this, AddTransporter.class));
         Intent LuxandIntent = new Intent(this, LuxandActivity.class);
         startActivityForResult(LuxandIntent, 519);
     }
@@ -96,21 +110,21 @@ public class LandingPage extends AppCompatActivity {
             //Face detected
             String faceTemplate = new LuxandInfo(this).getTemplate();
             sessionM.SET_REG_TEMPLATE(faceTemplate);
-            startActivity(new Intent(LandingPage.this, AddTransporter.class));
+            startActivity(new Intent(Main2Activity.this, AddTransporter.class));
         }else{
             //NO Face was captured.
-            Toast.makeText(LandingPage.this, "Unable to capture facial template", Toast.LENGTH_LONG).show();
+            Toast.makeText(Main2Activity.this, "Unable to capture facial template", Toast.LENGTH_LONG).show();
         }
     }
 
     public void importLocations(){
         if(!sessionM.getImportStatus()){
-            @SuppressLint("StaticFieldLeak") PopulateLocation populateLocation = new PopulateLocation(LandingPage.this){
+            @SuppressLint("StaticFieldLeak") PopulateLocation populateLocation = new PopulateLocation(Main2Activity.this){
                 @Override
                 protected void onPostExecute(Void aVoid) {
                     super.onPostExecute(aVoid);
                     sessionM.SET_IMPORT_LOCATION(true);
-                    Toast.makeText(LandingPage.this, "Location data successfully inserted", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Main2Activity.this, "Location data successfully inserted", Toast.LENGTH_LONG).show();
                 }
             };populateLocation.execute();
         }
@@ -135,7 +149,8 @@ public class LandingPage extends AppCompatActivity {
     }
 
     public void executeDriverSyncFunctions(){
-        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedTransporters unsyncedDriversApi = new DatabaseApiCalls.getAllUnsyncedTransporters(LandingPage.this){
+        pdSync.show();
+        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedTransporters unsyncedDriversApi = new DatabaseApiCalls.getAllUnsyncedTransporters(Main2Activity.this){
             @Override
             protected void onPostExecute(List<Drivers> drivers) {
                 Gson gson = new Gson();
@@ -156,7 +171,7 @@ public class LandingPage extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<DriverResponse>> call, Throwable t) {
-                        Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
@@ -164,7 +179,7 @@ public class LandingPage extends AppCompatActivity {
     }
 
     public void executeOtherSyncFunctions(){
-        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedVehicles unsyncedVehicles = new DatabaseApiCalls.getAllUnsyncedVehicles(LandingPage.this){
+        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedVehicles unsyncedVehicles = new DatabaseApiCalls.getAllUnsyncedVehicles(Main2Activity.this){
             @Override
             protected void onPostExecute(List<Vehicles> vehicles) {
                 Gson gson = new Gson();
@@ -185,13 +200,13 @@ public class LandingPage extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<VehicleResponse>> call, Throwable t) {
-                        Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
         };unsyncedVehicles.execute();
 
-        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedAreas unsyncedAreas = new DatabaseApiCalls.getAllUnsyncedAreas(LandingPage.this){
+        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedAreas unsyncedAreas = new DatabaseApiCalls.getAllUnsyncedAreas(Main2Activity.this){
             @Override
             protected void onPostExecute(List<OperatingAreas> operatingAreas) {
                 Gson gson = new Gson();
@@ -210,7 +225,7 @@ public class LandingPage extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<OperatingAreaResponse>> call, Throwable t) {
-                        Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
@@ -219,11 +234,11 @@ public class LandingPage extends AppCompatActivity {
         syncDownDrivers();
         syncDownVehicles();
         syncDownAreas();
-
+        pdSync.dismiss();
     }
 
     public void updateDriverSyncStatus(List<DriverResponse> response){
-        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.updateTransporterSyncStatus updateStatus = new DatabaseApiCalls.updateTransporterSyncStatus(LandingPage.this){
+        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.updateTransporterSyncStatus updateStatus = new DatabaseApiCalls.updateTransporterSyncStatus(Main2Activity.this){
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
@@ -234,7 +249,7 @@ public class LandingPage extends AppCompatActivity {
     }
 
     public void updateVehicleSyncStatus(List<VehicleResponse> response){
-        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.updateVehicleSyncStatus updateVehStatus = new DatabaseApiCalls.updateVehicleSyncStatus(LandingPage.this){
+        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.updateVehicleSyncStatus updateVehStatus = new DatabaseApiCalls.updateVehicleSyncStatus(Main2Activity.this){
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
@@ -243,7 +258,7 @@ public class LandingPage extends AppCompatActivity {
     }
 
     public void updateOpAreaSyncStatus(List<OperatingAreaResponse> response){
-        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.updateOpAreaSyncStatus updateAreaStatus = new DatabaseApiCalls.updateOpAreaSyncStatus(LandingPage.this){
+        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.updateOpAreaSyncStatus updateAreaStatus = new DatabaseApiCalls.updateOpAreaSyncStatus(Main2Activity.this){
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
@@ -280,7 +295,7 @@ public class LandingPage extends AppCompatActivity {
                         sessionM.SET_LAST_SYNC_DOWN_DRIVER(z.getLast_sync_time());
                     }
 
-                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoDriverTable insert = new DatabaseApiCalls.insertIntoDriverTable(LandingPage.this){
+                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoDriverTable insert = new DatabaseApiCalls.insertIntoDriverTable(Main2Activity.this){
                         @Override
                         protected void onPostExecute(Void aVoid) {
                             super.onPostExecute(aVoid);
@@ -292,7 +307,7 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<DriverSync>> call, Throwable t) {
-                Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -324,7 +339,7 @@ public class LandingPage extends AppCompatActivity {
                         sessionM.SET_LAST_SYNC_DOWN_VEHICLE(SessionManager.KEY_LAST_SYNC_DOWN_VEHICLE);
                     }
 
-                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoVehicleTable insert = new DatabaseApiCalls.insertIntoVehicleTable(LandingPage.this){
+                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoVehicleTable insert = new DatabaseApiCalls.insertIntoVehicleTable(Main2Activity.this){
                         @Override
                         protected void onPostExecute(Void aVoid) {
                             super.onPostExecute(aVoid);
@@ -335,7 +350,7 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<VehicleSync>> call, Throwable t) {
-                Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -361,7 +376,7 @@ public class LandingPage extends AppCompatActivity {
                         sessionM.SET_LAST_SYNC_DOWN_AREA(x.getLast_sync_time());
                     }
 
-                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoAreaTable insert = new DatabaseApiCalls.insertIntoAreaTable(LandingPage.this){
+                    @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoAreaTable insert = new DatabaseApiCalls.insertIntoAreaTable(Main2Activity.this){
                         @Override
                         protected void onPostExecute(Void aVoid) {
                             super.onPostExecute(aVoid);
@@ -372,17 +387,17 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<OperatingAreaSync>> call, Throwable t) {
-                Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
 
     public void initDriverRecycler(){
-        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllTransporters getDrivers = new DatabaseApiCalls.getAllTransporters(LandingPage.this){
+        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllTransporters getDrivers = new DatabaseApiCalls.getAllTransporters(Main2Activity.this){
             @Override
             protected void onPostExecute(List<Drivers> drivers) {
                 super.onPostExecute(drivers);
-                adapter = new ViewTransporterAdapter(LandingPage.this, drivers, new ViewTransporterAdapter.OnItemClickListener() {
+                adapter = new ViewTransporterAdapter(Main2Activity.this, drivers, new ViewTransporterAdapter.OnItemClickListener() {
                     @Override
                     public void onClick(Drivers drivers) {
 

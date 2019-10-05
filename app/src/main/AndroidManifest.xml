@@ -17,7 +17,8 @@
         <activity android:name=".InputPages.AddOperatingAreas" />
         <activity android:name=".InputPages.AddVehicle" />
         <activity android:name=".InputPages.AddTransporter" />
-        <activity android:name=".LandingPage" />
+        <activity android:name=".Main2Activity"
+            android:exported="true"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

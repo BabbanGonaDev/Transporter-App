@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
 import com.bgenterprise.transporterapp.Database.TransporterDatabase;
-import com.bgenterprise.transporterapp.LandingPage;
+import com.bgenterprise.transporterapp.Main2Activity;
 import com.bgenterprise.transporterapp.R;
 import com.bgenterprise.transporterapp.SessionManager;
 import com.google.android.material.button.MaterialButton;
@@ -144,7 +144,7 @@ public class AddVehicle extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         sessionM.CLEAR_REGISTRATION_SESSION();
-                        startActivity(new Intent(AddVehicle.this, LandingPage.class)
+                        startActivity(new Intent(AddVehicle.this, Main2Activity.class)
                                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                     }
                 })

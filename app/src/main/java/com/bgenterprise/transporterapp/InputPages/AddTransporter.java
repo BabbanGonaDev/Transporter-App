@@ -71,7 +71,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
     HashMap<String, String> transport_details;
     List<Drivers> drivers;
     SessionManager sessionM;
-    String driver_id, driver_template, manager_id;
+    String driver_id, driver_template, manager_id, staff_id;
     TransporterDatabase transportdb;
 
     @Override
@@ -83,8 +83,9 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
         manager_layout.setVisibility(View.GONE);
         transportdb = TransporterDatabase.getInstance(AddTransporter.this);
         sessionM = new SessionManager(AddTransporter.this);
-        driver_id = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(new Date());
         transport_details = sessionM.getTransporterDetails();
+        staff_id = transport_details.get(SessionManager.KEY_STAFF_ID);
+        driver_id = staff_id + "_" +new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(new Date());
         driver_template = transport_details.get(SessionManager.KEY_REG_TEMPLATE);
         initStateAdapter();
 

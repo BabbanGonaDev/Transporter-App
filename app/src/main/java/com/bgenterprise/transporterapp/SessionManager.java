@@ -14,6 +14,7 @@ public class SessionManager {
     private static final String PREF_NAME = "Transporter Preferences";
 
     public static final String KEY_IMPORT_LOCATION = "import_location";
+    public static final String KEY_STAFF_ID = "staff_id";
     public static final String KEY_DRIVER_DETAILS = "driver_details";
     public static final String KEY_VEHICLE_DETAILS = "vehicle_details";
     public static final String KEY_OPERATING_AREA_DETAILS = "operating_area_details";
@@ -30,6 +31,11 @@ public class SessionManager {
         this.mCtx = context;
         prefs = mCtx.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = prefs.edit();
+    }
+
+    public void SET_STAFF_ID(String value){
+        editor.putString(KEY_STAFF_ID, value);
+        editor.commit();
     }
 
     public void SET_DRIVER_DETAILS(String value){
@@ -99,6 +105,7 @@ public class SessionManager {
     public HashMap<String, String> getTransporterDetails(){
         HashMap<String, String> transport = new HashMap<>();
 
+        transport.put(KEY_STAFF_ID, prefs.getString(KEY_STAFF_ID, "T-1XXXXXXXXXXXXXXX"));
         transport.put(KEY_DRIVER_DETAILS, prefs.getString(KEY_DRIVER_DETAILS, ""));
         transport.put(KEY_VEHICLE_DETAILS, prefs.getString(KEY_VEHICLE_DETAILS, ""));
         transport.put(KEY_OPERATING_AREA_DETAILS, prefs.getString(KEY_OPERATING_AREA_DETAILS, ""));

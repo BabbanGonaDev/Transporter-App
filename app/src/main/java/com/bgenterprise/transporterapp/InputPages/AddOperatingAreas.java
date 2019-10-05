@@ -22,7 +22,7 @@ import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
 import com.bgenterprise.transporterapp.Database.TransporterDatabase;
-import com.bgenterprise.transporterapp.LandingPage;
+import com.bgenterprise.transporterapp.Main2Activity;
 import com.bgenterprise.transporterapp.R;
 import com.bgenterprise.transporterapp.SessionManager;
 import com.google.android.material.button.MaterialButton;
@@ -115,7 +115,7 @@ public class AddOperatingAreas extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         sessionM.CLEAR_REGISTRATION_SESSION();
-                        startActivity(new Intent(AddOperatingAreas.this, LandingPage.class)
+                        startActivity(new Intent(AddOperatingAreas.this, Main2Activity.class)
                                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                     }
                 })
@@ -482,7 +482,7 @@ public class AddOperatingAreas extends AppCompatActivity {
                 .setPositiveButton("Thank You", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(AddOperatingAreas.this, LandingPage.class));
+                        startActivity(new Intent(AddOperatingAreas.this, Main2Activity.class));
                     }
                 }).show();
     }
