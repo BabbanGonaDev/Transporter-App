@@ -37,7 +37,9 @@ import com.bgenterprise.transporterapp.Network.RetrofitApiCalls;
 import com.bgenterprise.transporterapp.Network.RetrofitClient;
 import com.bgenterprise.transporterapp.RecyclerAdapters.ViewTransporterAdapter;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
+import com.opencsv.bean.CsvBindByName;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,6 +60,9 @@ public class LandingPage extends AppCompatActivity {
     @BindView(R.id.rv_view_transporters)
     RecyclerView rv_view_transporters;
 
+    @BindView(R.id.mtv_copyright)
+    MaterialTextView mtv_copyright;
+
     SessionManager sessionM;
     HashMap<String, String> transport_details;
     ViewTransporterAdapter adapter;
@@ -72,6 +77,7 @@ public class LandingPage extends AppCompatActivity {
         sessionM.CLEAR_REGISTRATION_SESSION();
         transport_details = sessionM.getTransporterDetails();
         initDriverRecycler();
+        mtv_copyright.setText("(C) Enterprise Systems 2019. Version: " + BuildConfig.VERSION_NAME);
 
         //TODO --> Check Phone date if it's earlier than date of app development.
     }
@@ -213,6 +219,7 @@ public class LandingPage extends AppCompatActivity {
         syncDownDrivers();
         syncDownVehicles();
         syncDownAreas();
+
     }
 
     public void updateDriverSyncStatus(List<DriverResponse> response){
@@ -277,6 +284,7 @@ public class LandingPage extends AppCompatActivity {
                         @Override
                         protected void onPostExecute(Void aVoid) {
                             super.onPostExecute(aVoid);
+                            initDriverRecycler();
                         }
                     }; insert.execute(driveResponse);
                 }

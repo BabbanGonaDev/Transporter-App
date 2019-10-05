@@ -79,6 +79,14 @@
             app:icon="@drawable/ic_add_transporter"
             app:iconGravity="textStart" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtv_copyright"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2" />
+
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

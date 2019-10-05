@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 
-@Entity (tableName = "operating_areas_table", primaryKeys = {"owner_id", "village_id", "ward_id", "lga_id"})
+@Entity (tableName = "operating_areas_table", primaryKeys = {"owner_id", "state_id", "ward_id", "lga_id"})
 public class OperatingAreas {
 
     @NonNull
     private String owner_id;
-    private String state_id;
     @NonNull
+    private String state_id;
     private String village_id;
     @NonNull
     private String ward_id;
@@ -23,7 +23,7 @@ public class OperatingAreas {
     public OperatingAreas() {
     }
 
-    public OperatingAreas(@NonNull String owner_id, String state_id, @NonNull String lga_id, @NonNull String ward_id, @NonNull String village_id, String sync_status) {
+    public OperatingAreas(@NonNull String owner_id, @NonNull String state_id, @NonNull String lga_id, @NonNull String ward_id, String village_id, String sync_status) {
         this.owner_id = owner_id;
         this.state_id = state_id;
         this.lga_id = lga_id;
@@ -37,6 +37,7 @@ public class OperatingAreas {
         return owner_id;
     }
 
+    @NonNull
     public String getState_id() {
         return state_id;
     }
@@ -51,7 +52,6 @@ public class OperatingAreas {
         return ward_id;
     }
 
-    @NonNull
     public String getVillage_id() {
         return village_id;
     }
@@ -64,11 +64,11 @@ public class OperatingAreas {
         this.owner_id = owner_id;
     }
 
-    public void setState_id(String state_id) {
+    public void setState_id(@NonNull String state_id) {
         this.state_id = state_id;
     }
 
-    public void setVillage_id(@NonNull String village_id) {
+    public void setVillage_id(String village_id) {
         this.village_id = village_id;
     }
 
