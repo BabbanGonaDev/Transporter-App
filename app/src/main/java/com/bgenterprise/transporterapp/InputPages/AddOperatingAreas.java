@@ -139,22 +139,26 @@ public class AddOperatingAreas extends AppCompatActivity {
 
     @OnClick(R.id.btn_finish_reg)
     public void finishRegistration(){
-        new MaterialAlertDialogBuilder(AddOperatingAreas.this)
-                .setTitle("Submit All Entered Details ?")
-                .setMessage("Do you want to submit registration details of this transporter ?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        beginLuxandActivity();
-                    }
-                })
-                .setNegativeButton("No, Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                }).show();
 
+        if(transport_details.get(SessionManager.KEY_OPERATING_AREA_DETAILS).isEmpty()){
+            Toast.makeText(AddOperatingAreas.this, "Kindly add an Operating Area", Toast.LENGTH_LONG).show();
+        }else {
+            new MaterialAlertDialogBuilder(AddOperatingAreas.this)
+                    .setTitle("Submit All Entered Details ?")
+                    .setMessage("Do you want to submit registration details of this transporter ?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            beginLuxandActivity();
+                        }
+                    })
+                    .setNegativeButton("No, Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    }).show();
+        }
     }
 
     @OnClick(R.id.chkbox_entire_state)

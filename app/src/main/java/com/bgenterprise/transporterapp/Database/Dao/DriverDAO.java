@@ -31,4 +31,10 @@ public interface DriverDAO {
 
     @Query("UPDATE drivers_table SET driver_id = :new_driver_id, sync_status = :sync_status WHERE driver_id = :old_driver_id")
     int updateSyncStatus(String new_driver_id, String old_driver_id, String sync_status);
+
+    @Query("UPDATE drivers_table SET manager_id = :new_driver_id WHERE manager_id = :old_driver_id")
+    void updateManagerID(String new_driver_id, String old_driver_id);
+
+    @Query("SELECT * FROM drivers_table ORDER BY reg_date DESC")
+    List<Drivers> getAllDrivers();
 }

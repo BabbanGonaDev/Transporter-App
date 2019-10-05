@@ -4,6 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.ContentLoadingProgressBar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.babbangona.bg_face.LuxandActivity;
@@ -30,6 +35,7 @@ import com.bgenterprise.transporterapp.Network.Responses.VehicleResponse;
 import com.bgenterprise.transporterapp.Network.Responses.VehicleSync;
 import com.bgenterprise.transporterapp.Network.RetrofitApiCalls;
 import com.bgenterprise.transporterapp.Network.RetrofitClient;
+import com.bgenterprise.transporterapp.RecyclerAdapters.ViewTransporterAdapter;
 import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
@@ -49,11 +55,12 @@ public class LandingPage extends AppCompatActivity {
     @BindView(R.id.btn_add_transporter)
     MaterialButton btnAddTransporter;
 
-    @BindView(R.id.sync_progress_bar)
-    ContentLoadingProgressBar sync_progress_bar;
+    @BindView(R.id.rv_view_transporters)
+    RecyclerView rv_view_transporters;
 
     SessionManager sessionM;
     HashMap<String, String> transport_details;
+    ViewTransporterAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +69,9 @@ public class LandingPage extends AppCompatActivity {
         ButterKnife.bind(this);
         sessionM = new SessionManager(LandingPage.this);
         importLocations();
-        sync_progress_bar.setVisibility(View.GONE);
         sessionM.CLEAR_REGISTRATION_SESSION();
         transport_details = sessionM.getTransporterDetails();
+        initDriverRecycler();
 
         //TODO --> Check Phone date if it's earlier than date of app development.
     }
@@ -122,7 +129,6 @@ public class LandingPage extends AppCompatActivity {
     }
 
     public void executeDriverSyncFunctions(){
-        sync_progress_bar.setVisibility(View.VISIBLE);
         @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllUnsyncedTransporters unsyncedDriversApi = new DatabaseApiCalls.getAllUnsyncedTransporters(LandingPage.this){
             @Override
             protected void onPostExecute(List<Drivers> drivers) {
@@ -173,7 +179,7 @@ public class LandingPage extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<VehicleResponse>> call, Throwable t) {
-
+                        Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
@@ -191,16 +197,14 @@ public class LandingPage extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<List<OperatingAreaResponse>> call, Response<List<OperatingAreaResponse>> response) {
                         if(response.isSuccessful()){
-
                             List<OperatingAreaResponse> opAreaRes = response.body();
                             updateOpAreaSyncStatus(opAreaRes);
-                            sync_progress_bar.setVisibility(View.GONE);
                         }
                     }
 
                     @Override
                     public void onFailure(Call<List<OperatingAreaResponse>> call, Throwable t) {
-
+                        Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
@@ -280,7 +284,7 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<DriverSync>> call, Throwable t) {
-
+                Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -323,7 +327,7 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<VehicleSync>> call, Throwable t) {
-
+                Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -360,9 +364,31 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<OperatingAreaSync>> call, Throwable t) {
-
+                Toast.makeText(LandingPage.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void initDriverRecycler(){
+        @SuppressLint("StaticFieldLeak") DatabaseApiCalls.getAllTransporters getDrivers = new DatabaseApiCalls.getAllTransporters(LandingPage.this){
+            @Override
+            protected void onPostExecute(List<Drivers> drivers) {
+                super.onPostExecute(drivers);
+                adapter = new ViewTransporterAdapter(LandingPage.this, drivers, new ViewTransporterAdapter.OnItemClickListener() {
+                    @Override
+                    public void onClick(Drivers drivers) {
+
+                    }
+                });
+
+                RecyclerView.LayoutManager vLayoutManager = new LinearLayoutManager(getApplicationContext());
+                rv_view_transporters.setLayoutManager(vLayoutManager);
+                rv_view_transporters.setItemAnimator(new DefaultItemAnimator());
+                rv_view_transporters.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL));
+                rv_view_transporters.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+        };getDrivers.execute();
     }
 
 

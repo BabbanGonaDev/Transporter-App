@@ -101,14 +101,11 @@ public class DatabaseApiCalls {
                 for(DriverResponse res: syncRes){
                     //Changed this, so to iterate through list and update sync statuses. Also did the same round all.
                     transportdb.getDriverDao().updateSyncStatus(res.getNew_driver_id(), res.getOld_driver_id(), res.getSync_status());
+                    transportdb.getDriverDao().updateManagerID(res.getNew_driver_id(), res.getOld_driver_id());
                     transportdb.getVehicleDao().UpdateNewOwnerid(res.getNew_driver_id(), res.getOld_driver_id());
                     transportdb.getOperatingAreaDao().UpdateAreaDriverId(res.getNew_driver_id(), res.getOld_driver_id());
 
                 }
-                    /*//Changed this, so to iterate through list and update sync statuses. Also did the same round all.
-                    transportdb.getDriverDao().updateSyncStatus(syncRes.get(0).getNew_driver_id(), syncRes.get(0).getOld_driver_id(), syncRes.get(0).getSync_status());
-                    transportdb.getVehicleDao().UpdateNewOwnerid(syncRes.get(0).getNew_driver_id(), syncRes.get(0).getOld_driver_id());
-                    transportdb.getOperatingAreaDao().UpdateAreaDriverId(syncRes.get(0).getNew_driver_id(), syncRes.get(0).getOld_driver_id());*/
 
             }catch(Exception e){
                 e.printStackTrace();
@@ -239,6 +236,27 @@ public class DatabaseApiCalls {
                     transporterdb.getDriverDao().InsertDrivers(drive);
                 }
 
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    public static class getAllTransporters extends AsyncTask<Void, Void, List<Drivers>>{
+        Context mCtx;
+        TransporterDatabase transporterdb;
+
+        public getAllTransporters(Context mCtx) {
+            this.mCtx = mCtx;
+        }
+
+        @Override
+        protected List<Drivers> doInBackground(Void... voids) {
+            try{
+                transporterdb = TransporterDatabase.getInstance(mCtx);
+
+                return transporterdb.getDriverDao().getAllDrivers();
             }catch (Exception e){
                 e.printStackTrace();
             }
