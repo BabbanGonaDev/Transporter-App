@@ -11,7 +11,7 @@ id,state,lga,edited-ward
 10,Abia,Aba north,Umuogor
 11,Abia,Aba north,Umuola
 12,Abia,Aba north,Uratta
-13,Abia,Aba south,Aba RIVer
+13,Abia,Aba south,Aba river
 14,Abia,Aba south,Aba Town Hall
 15,Abia,Aba south,Asa
 16,Abia,Aba south,Ekeoha
@@ -120,7 +120,7 @@ id,state,lga,edited-ward
 119,Abia,Osisioma,Umunneise
 120,Abia,Osisioma,Urtta
 121,Abia,Ugwunagbo,Ward Eight
-122,Abia,Ugwunagbo,Ward FIVe
+122,Abia,Ugwunagbo,Ward Five
 123,Abia,Ugwunagbo,Ward Four
 124,Abia,Ugwunagbo,Ward Nine
 125,Abia,Ugwunagbo,Ward One
@@ -214,16 +214,16 @@ id,state,lga,edited-ward
 213,Adamawa,Ganye,Sugu
 214,Adamawa,Ganye,Timdore
 215,Adamawa,Ganye,Yebbi
-216,Adamawa,Gire 1,Dakri
-217,Adamawa,Gire 1,Damare
-218,Adamawa,Gire 1,Gerei I
-219,Adamawa,Gire 1,Gereng
-220,Adamawa,Gire 1,Girei  II
-221,Adamawa,Gire 1,Jera Bakari
-222,Adamawa,Gire 1,Jera Bonyo
-223,Adamawa,Gire 1,Modire/ Vinikilang
-224,Adamawa,Gire 1,Tambo
-225,Adamawa,Gire 1,Wuro Dole
+216,Adamawa,Gire I,Dakri
+217,Adamawa,Gire I,Damare
+218,Adamawa,Gire I,Gerei I
+219,Adamawa,Gire I,Gereng
+220,Adamawa,Gire I,Girei  II
+221,Adamawa,Gire I,Jera Bakari
+222,Adamawa,Gire I,Jera Bonyo
+223,Adamawa,Gire I,Modire/ Vinikilang
+224,Adamawa,Gire I,Tambo
+225,Adamawa,Gire I,Wuro Dole
 226,Adamawa,Gombi,Boga/ Dingai
 227,Adamawa,Gombi,Duwa
 228,Adamawa,Gombi,GaAnda
@@ -409,38 +409,38 @@ id,state,lga,edited-ward
 408,Adamawa,Yola south,Ngurore
 409,Adamawa,Yola south,Toungo
 410,Adamawa,Yola south,Yolde Kohi
-411,Akwa ibom,Abak,Abak Urban 1
-412,Akwa ibom,Abak,Abak Urban 11
-413,Akwa ibom,Abak,Abak Urban 111
-414,Akwa ibom,Abak,Abak Urban 1V
-415,Akwa ibom,Abak,Afaha Obong 1
-416,Akwa ibom,Abak,Afaha Obong 11
-417,Akwa ibom,Abak,Midim 1
-418,Akwa ibom,Abak,Midim 11
-419,Akwa ibom,Abak,Otoro 1
-420,Akwa ibom,Abak,Otoro 11
-421,Akwa ibom,Abak,Otoro 111
-422,Akwa ibom,Eastern obolo,Eastern Obolo 1
-423,Akwa ibom,Eastern obolo,Eastern Obolo 11
-424,Akwa ibom,Eastern obolo,Eastern Obolo 111
-425,Akwa ibom,Eastern obolo,Eastern Obolo 1V
-426,Akwa ibom,Eastern obolo,Eastern Obolo Ix
+411,Akwa ibom,Abak,Abak Urban I
+412,Akwa ibom,Abak,Abak Urban II
+413,Akwa ibom,Abak,Abak Urban III
+414,Akwa ibom,Abak,Abak Urban IV
+415,Akwa ibom,Abak,Afaha Obong I
+416,Akwa ibom,Abak,Afaha Obong II
+417,Akwa ibom,Abak,Midim I
+418,Akwa ibom,Abak,Midim II
+419,Akwa ibom,Abak,Otoro I
+420,Akwa ibom,Abak,Otoro II
+421,Akwa ibom,Abak,Otoro III
+422,Akwa ibom,Eastern obolo,Eastern Obolo I
+423,Akwa ibom,Eastern obolo,Eastern Obolo II
+424,Akwa ibom,Eastern obolo,Eastern Obolo III
+425,Akwa ibom,Eastern obolo,Eastern Obolo IV
+426,Akwa ibom,Eastern obolo,Eastern Obolo IX
 427,Akwa ibom,Eastern obolo,Eastern Obolo V
-428,Akwa ibom,Eastern obolo,Eastern Obolo V1
-429,Akwa ibom,Eastern obolo,Eastern Obolo V11
-430,Akwa ibom,Eastern obolo,Eastern Obolo V111
+428,Akwa ibom,Eastern obolo,Eastern Obolo VI
+429,Akwa ibom,Eastern obolo,Eastern Obolo VII
+430,Akwa ibom,Eastern obolo,Eastern Obolo VIII
 431,Akwa ibom,Eastern obolo,Eastern Obolo X
-432,Akwa ibom,Eket,Central 1
-433,Akwa ibom,Eket,Central 11
-434,Akwa ibom,Eket,Central 111
-435,Akwa ibom,Eket,Central 1V
+432,Akwa ibom,Eket,Central I
+433,Akwa ibom,Eket,Central II
+434,Akwa ibom,Eket,Central III
+435,Akwa ibom,Eket,Central IV
 436,Akwa ibom,Eket,Central V
-437,Akwa ibom,Eket,Okon 1
-438,Akwa ibom,Eket,Okon 11
-439,Akwa ibom,Eket,Urban 1
-440,Akwa ibom,Eket,Urban 11
-441,Akwa ibom,Eket,Urban 111
-442,Akwa ibom,Eket,Urban 1V
+437,Akwa ibom,Eket,Okon II
+438,Akwa ibom,Eket,Okon II
+439,Akwa ibom,Eket,Urban I
+440,Akwa ibom,Eket,Urban II
+441,Akwa ibom,Eket,Urban III
+442,Akwa ibom,Eket,Urban IV
 443,Akwa ibom,Esit eket (uquo),Akpautong
 444,Akwa ibom,Esit eket (uquo),Ebe Ekpi
 445,Akwa ibom,Esit eket (uquo),Ebighi Okpono
@@ -453,291 +453,291 @@ id,state,lga,edited-ward
 452,Akwa ibom,Esit eket (uquo),Uquo
 453,Akwa ibom,Essien udim,Adiasim
 454,Akwa ibom,Essien udim,Afaha
-455,Akwa ibom,Essien udim,Ekpeyong 1
-456,Akwa ibom,Essien udim,Ekpeyong 11
+455,Akwa ibom,Essien udim,Ekpeyong I
+456,Akwa ibom,Essien udim,Ekpeyong II
 457,Akwa ibom,Essien udim,Ikpe Annang
-458,Akwa ibom,Essien udim,Odoro Ikot 1
-459,Akwa ibom,Essien udim,Odoro Ikot 11
+458,Akwa ibom,Essien udim,Odoro Ikot I
+459,Akwa ibom,Essien udim,Odoro Ikot II
 460,Akwa ibom,Essien udim,Okon
 461,Akwa ibom,Essien udim,Ukana East
-462,Akwa ibom,Essien udim,Ukana West 1
-463,Akwa ibom,Essien udim,Ukana West 11
-464,Akwa ibom,Etim ekpo,Etim Ekpo 1
-465,Akwa ibom,Etim ekpo,Etim Ekpo 11
-466,Akwa ibom,Etim ekpo,Etim Ekpo 111
-467,Akwa ibom,Etim ekpo,Etim Ekpo 1V
-468,Akwa ibom,Etim ekpo,Etim Ekpo Ix
+462,Akwa ibom,Essien udim,Ukana West I
+463,Akwa ibom,Essien udim,Ukana West II
+464,Akwa ibom,Etim ekpo,Etim Ekpo I
+465,Akwa ibom,Etim ekpo,Etim Ekpo II
+466,Akwa ibom,Etim ekpo,Etim Ekpo III
+467,Akwa ibom,Etim ekpo,Etim Ekpo IV
+468,Akwa ibom,Etim ekpo,Etim Ekpo IX
 469,Akwa ibom,Etim ekpo,Etim Ekpo V
-470,Akwa ibom,Etim ekpo,Etim Ekpo V1
-471,Akwa ibom,Etim ekpo,Etim Ekpo V11
-472,Akwa ibom,Etim ekpo,Etim Ekpo V111
+470,Akwa ibom,Etim ekpo,Etim Ekpo VI
+471,Akwa ibom,Etim ekpo,Etim Ekpo VII
+472,Akwa ibom,Etim ekpo,Etim Ekpo VIII
 473,Akwa ibom,Etim ekpo,Etim Ekpo X
-474,Akwa ibom,Etinan,Etinan Urban 1
-475,Akwa ibom,Etinan,Etinan Urban 11
-476,Akwa ibom,Etinan,Etinan Urban 111
-477,Akwa ibom,Etinan,Etinan Urban 1V
+474,Akwa ibom,Etinan,Etinan Urban I
+475,Akwa ibom,Etinan,Etinan Urban II
+476,Akwa ibom,Etinan,Etinan Urban III
+477,Akwa ibom,Etinan,Etinan Urban IV
 478,Akwa ibom,Etinan,Etinan Urban V
-479,Akwa ibom,Etinan,Northern Iman 1
-480,Akwa ibom,Etinan,Northern Iman 11
-481,Akwa ibom,Etinan,Southern Iman 1
-482,Akwa ibom,Etinan,Southern Iman 11
-483,Akwa ibom,Etinan,Southern Iman 111
-484,Akwa ibom,Etinan,Southern Iman 1V
-485,Akwa ibom,Ibeno,Ibeno 1
-486,Akwa ibom,Ibeno,Ibeno 11
-487,Akwa ibom,Ibeno,Ibeno 111
-488,Akwa ibom,Ibeno,Ibeno 1V
-489,Akwa ibom,Ibeno,Ibeno Ix
+479,Akwa ibom,Etinan,Northern Iman I
+480,Akwa ibom,Etinan,Northern Iman II
+481,Akwa ibom,Etinan,Southern Iman I
+482,Akwa ibom,Etinan,Southern Iman II
+483,Akwa ibom,Etinan,Southern Iman III
+484,Akwa ibom,Etinan,Southern Iman IV
+485,Akwa ibom,Ibeno,Ibeno I
+486,Akwa ibom,Ibeno,Ibeno II
+487,Akwa ibom,Ibeno,Ibeno III
+488,Akwa ibom,Ibeno,Ibeno IV
+489,Akwa ibom,Ibeno,Ibeno IX
 490,Akwa ibom,Ibeno,Ibeno V
-491,Akwa ibom,Ibeno,Ibeno V11
-492,Akwa ibom,Ibeno,Ibeno V111
-493,Akwa ibom,Ibeno,Ibeno Vi
+491,Akwa ibom,Ibeno,Ibeno VII
+492,Akwa ibom,Ibeno,Ibeno VIII
+493,Akwa ibom,Ibeno,Ibeno VI
 494,Akwa ibom,Ibeno,Ibeno X
-495,Akwa ibom,Ibesikpo asutan,Asutan 1
-496,Akwa ibom,Ibesikpo asutan,Asutan 11
-497,Akwa ibom,Ibesikpo asutan,Asutan 111
-498,Akwa ibom,Ibesikpo asutan,Asutan 1V
+495,Akwa ibom,Ibesikpo asutan,Asutan I
+496,Akwa ibom,Ibesikpo asutan,Asutan II
+497,Akwa ibom,Ibesikpo asutan,Asutan III
+498,Akwa ibom,Ibesikpo asutan,Asutan IV
 499,Akwa ibom,Ibesikpo asutan,Asutan V
-500,Akwa ibom,Ibesikpo asutan,Ibesikpo 1
-501,Akwa ibom,Ibesikpo asutan,Ibesikpo 11
-502,Akwa ibom,Ibesikpo asutan,Ibesikpo 111
-503,Akwa ibom,Ibesikpo asutan,Ibesikpo 1V
+500,Akwa ibom,Ibesikpo asutan,Ibesikpo I
+501,Akwa ibom,Ibesikpo asutan,Ibesikpo II
+502,Akwa ibom,Ibesikpo asutan,Ibesikpo III
+503,Akwa ibom,Ibesikpo asutan,Ibesikpo IV
 504,Akwa ibom,Ibesikpo asutan,Ibesikpo V
-505,Akwa ibom,Ibiono ibom,Ibiono Central 1
-506,Akwa ibom,Ibiono ibom,Ibiono Central 11
-507,Akwa ibom,Ibiono ibom,Ibiono Eastern 1
-508,Akwa ibom,Ibiono ibom,Ibiono Eastern 11
-509,Akwa ibom,Ibiono ibom,Ibiono Northern 1
-510,Akwa ibom,Ibiono ibom,Ibiono Northern 11
-511,Akwa ibom,Ibiono ibom,Ibiono Southern 1
-512,Akwa ibom,Ibiono ibom,Ibiono Southern 11
-513,Akwa ibom,Ibiono ibom,Ibiono Western 1
-514,Akwa ibom,Ibiono ibom,Ibiono Western 11
+505,Akwa ibom,Ibiono ibom,Ibiono Central I
+506,Akwa ibom,Ibiono ibom,Ibiono Central II
+507,Akwa ibom,Ibiono ibom,Ibiono Eastern I
+508,Akwa ibom,Ibiono ibom,Ibiono Eastern II
+509,Akwa ibom,Ibiono ibom,Ibiono Northern I
+510,Akwa ibom,Ibiono ibom,Ibiono Northern II
+511,Akwa ibom,Ibiono ibom,Ibiono Southern I
+512,Akwa ibom,Ibiono ibom,Ibiono Southern II
+513,Akwa ibom,Ibiono ibom,Ibiono Western I
+514,Akwa ibom,Ibiono ibom,Ibiono Western II
 515,Akwa ibom,Ibiono ibom,Ikpanya
-516,Akwa ibom,Ika,Achan  11
-517,Akwa ibom,Ika,Achan  111
+516,Akwa ibom,Ika,Achan  II
+517,Akwa ibom,Ika,Achan  III
 518,Akwa ibom,Ika,Achan Ika
-519,Akwa ibom,Ika,Ito 1
-520,Akwa ibom,Ika,Ito 11
-521,Akwa ibom,Ika,Ito 111
-522,Akwa ibom,Ika,Odoro 1
-523,Akwa ibom,Ika,Odoro 11
-524,Akwa ibom,Ika,Urban 1
-525,Akwa ibom,Ika,Urban 11
-526,Akwa ibom,Ikono,1Tak
-527,Akwa ibom,Ikono,Ediene 1
-528,Akwa ibom,Ikono,Ediene 11
-529,Akwa ibom,Ikono,Ikono Middle 1
-530,Akwa ibom,Ikono,Ikono Middle 11
-531,Akwa ibom,Ikono,Ikono Middle 111
-532,Akwa ibom,Ikono,Ikono Middle 1V
+519,Akwa ibom,Ika,Ito I
+520,Akwa ibom,Ika,Ito II
+521,Akwa ibom,Ika,Ito III
+522,Akwa ibom,Ika,Odoro I
+523,Akwa ibom,Ika,Odoro II
+524,Akwa ibom,Ika,Urban I
+525,Akwa ibom,Ika,Urban II
+526,Akwa ibom,Ikono,ITak
+527,Akwa ibom,Ikono,Ediene I
+528,Akwa ibom,Ikono,Ediene II
+529,Akwa ibom,Ikono,Ikono Middle I
+530,Akwa ibom,Ikono,Ikono Middle II
+531,Akwa ibom,Ikono,Ikono Middle III
+532,Akwa ibom,Ikono,Ikono Middle IV
 533,Akwa ibom,Ikono,Ikono South
 534,Akwa ibom,Ikono,Ndiya/Ikot Idana
-535,Akwa ibom,Ikono,Nkwot 1
-536,Akwa ibom,Ikono,Nkwot 11
-537,Akwa ibom,Ikot abasi,Edemaya 1
-538,Akwa ibom,Ikot abasi,Edemaya 11
-539,Akwa ibom,Ikot abasi,Edemaya 111
-540,Akwa ibom,Ikot abasi,Ikpa Ibekwe 1
-541,Akwa ibom,Ikot abasi,Ikpa Ibekwe 11
-542,Akwa ibom,Ikot abasi,Ikpa Nung Asang 1
-543,Akwa ibom,Ikot abasi,Ikpa Nung Asang 11
-544,Akwa ibom,Ikot abasi,Ukpum Ete 1
-545,Akwa ibom,Ikot abasi,Ukpum Ete 11
+535,Akwa ibom,Ikono,Nkwot I
+536,Akwa ibom,Ikono,Nkwot II
+537,Akwa ibom,Ikot abasi,Edemaya I
+538,Akwa ibom,Ikot abasi,Edemaya II
+539,Akwa ibom,Ikot abasi,Edemaya III
+540,Akwa ibom,Ikot abasi,Ikpa Ibekwe I
+541,Akwa ibom,Ikot abasi,Ikpa Ibekwe II
+542,Akwa ibom,Ikot abasi,Ikpa Nung Asang I
+543,Akwa ibom,Ikot abasi,Ikpa Nung Asang II
+544,Akwa ibom,Ikot abasi,Ukpum Ete I
+545,Akwa ibom,Ikot abasi,Ukpum Ete II
 546,Akwa ibom,Ikot abasi,Ukpum Okon
-547,Akwa ibom,Ikot ekpene,Ikot Ekpene 1
-548,Akwa ibom,Ikot ekpene,Ikot Ekpene 11
-549,Akwa ibom,Ikot ekpene,Ikot Ekpene 111
-550,Akwa ibom,Ikot ekpene,Ikot Ekpene 1V
-551,Akwa ibom,Ikot ekpene,Ikot Ekpene Ix
+547,Akwa ibom,Ikot ekpene,Ikot Ekpene I
+548,Akwa ibom,Ikot ekpene,Ikot Ekpene II
+549,Akwa ibom,Ikot ekpene,Ikot Ekpene III
+550,Akwa ibom,Ikot ekpene,Ikot Ekpene IV
+551,Akwa ibom,Ikot ekpene,Ikot Ekpene IX
 552,Akwa ibom,Ikot ekpene,Ikot Ekpene V
-553,Akwa ibom,Ikot ekpene,Ikot Ekpene V1
-554,Akwa ibom,Ikot ekpene,Ikot Ekpene V11
-555,Akwa ibom,Ikot ekpene,Ikot Ekpene V111
+553,Akwa ibom,Ikot ekpene,Ikot Ekpene VI
+554,Akwa ibom,Ikot ekpene,Ikot Ekpene VII
+555,Akwa ibom,Ikot ekpene,Ikot Ekpene VIII
 556,Akwa ibom,Ikot ekpene,Ikot Ekpene X
-557,Akwa ibom,Ikot ekpene,Ikot Ekpene X1
-558,Akwa ibom,Ini,Ikono North 1
-559,Akwa ibom,Ini,Ikono North 11
-560,Akwa ibom,Ini,Ikono North 111
-561,Akwa ibom,Ini,Ikpe 1
-562,Akwa ibom,Ini,Ikpe 11
+557,Akwa ibom,Ikot ekpene,Ikot Ekpene XI
+558,Akwa ibom,Ini,Ikono North I
+559,Akwa ibom,Ini,Ikono North II
+560,Akwa ibom,Ini,Ikono North III
+561,Akwa ibom,Ini,Ikpe I
+562,Akwa ibom,Ini,Ikpe II
 563,Akwa ibom,Ini,Itu Mbonuso
 564,Akwa ibom,Ini,Iwerre
 565,Akwa ibom,Ini,Nkari
 566,Akwa ibom,Ini,Odoro Ukwok
 567,Akwa ibom,Ini,Usuk  Ukwok
-568,Akwa ibom,Itu,East Itam 1
-569,Akwa ibom,Itu,East Itam 11
-570,Akwa ibom,Itu,East Itam 111
-571,Akwa ibom,Itu,East Itam 1V
+568,Akwa ibom,Itu,East Itam I
+569,Akwa ibom,Itu,East Itam II
+570,Akwa ibom,Itu,East Itam III
+571,Akwa ibom,Itu,East Itam IV
 572,Akwa ibom,Itu,East Itam V
 573,Akwa ibom,Itu,Mbiase/Ayadehe
 574,Akwa ibom,Itu,Oku Iboku
-575,Akwa ibom,Itu,West Itam 1
-576,Akwa ibom,Itu,West Itam 11
-577,Akwa ibom,Itu,West Itam 111
-578,Akwa ibom,Mbo,Ebughu 1
-579,Akwa ibom,Mbo,Ebughu 11
-580,Akwa ibom,Mbo,Efiat 1
-581,Akwa ibom,Mbo,Efiat 11
-582,Akwa ibom,Mbo,Enwang 1
-583,Akwa ibom,Mbo,Enwang 11
+575,Akwa ibom,Itu,West Itam I
+576,Akwa ibom,Itu,West Itam II
+577,Akwa ibom,Itu,West Itam III
+578,Akwa ibom,Mbo,Ebughu I
+579,Akwa ibom,Mbo,Ebughu II
+580,Akwa ibom,Mbo,Efiat I
+581,Akwa ibom,Mbo,Efiat II
+582,Akwa ibom,Mbo,Enwang I
+583,Akwa ibom,Mbo,Enwang II
 584,Akwa ibom,Mbo,Ibaka
-585,Akwa ibom,Mbo,Uda 1
-586,Akwa ibom,Mbo,Uda 11
+585,Akwa ibom,Mbo,Uda I
+586,Akwa ibom,Mbo,Uda II
 587,Akwa ibom,Mbo,Udesi
-588,Akwa ibom,Mkpat enin,Ibiaku 1
-589,Akwa ibom,Mkpat enin,Ibiaku 11
-590,Akwa ibom,Mkpat enin,Ibiaku 111
-591,Akwa ibom,Mkpat enin,Ikpa Ibom 1
-592,Akwa ibom,Mkpat enin,Ikpa Ibom 11
-593,Akwa ibom,Mkpat enin,Ikpa Ibom 111
-594,Akwa ibom,Mkpat enin,Ikpa Ibom 1V
-595,Akwa ibom,Mkpat enin,Ikpa Ikono 1
-596,Akwa ibom,Mkpat enin,Ikpa Ikono 11
-597,Akwa ibom,Mkpat enin,Ikpa Ikono 111
-598,Akwa ibom,Mkpat enin,Ukpum Minya 1
-599,Akwa ibom,Mkpat enin,Ukpum Minya 11
-600,Akwa ibom,Mkpat enin,Ukpum Minya 111
-601,Akwa ibom,Mkpat enin,Ukpum Minya 1V
-602,Akwa ibom,Nsit atai,Eastern Nsit 1
-603,Akwa ibom,Nsit atai,Eastern Nsit 11
-604,Akwa ibom,Nsit atai,Eastern Nsit 111
-605,Akwa ibom,Nsit atai,Eastern Nsit 1V
-606,Akwa ibom,Nsit atai,Eastern Nsit Ix
+588,Akwa ibom,Mkpat enin,Ibiaku I
+589,Akwa ibom,Mkpat enin,Ibiaku II
+590,Akwa ibom,Mkpat enin,Ibiaku III
+591,Akwa ibom,Mkpat enin,Ikpa Ibom I
+592,Akwa ibom,Mkpat enin,Ikpa Ibom II
+593,Akwa ibom,Mkpat enin,Ikpa Ibom III
+594,Akwa ibom,Mkpat enin,Ikpa Ibom IV
+595,Akwa ibom,Mkpat enin,Ikpa Ikono I
+596,Akwa ibom,Mkpat enin,Ikpa Ikono II
+597,Akwa ibom,Mkpat enin,Ikpa Ikono III
+598,Akwa ibom,Mkpat enin,Ukpum Minya I
+599,Akwa ibom,Mkpat enin,Ukpum Minya II
+600,Akwa ibom,Mkpat enin,Ukpum Minya III
+601,Akwa ibom,Mkpat enin,Ukpum Minya IV
+602,Akwa ibom,Nsit atai,Eastern Nsit I
+603,Akwa ibom,Nsit atai,Eastern Nsit II
+604,Akwa ibom,Nsit atai,Eastern Nsit III
+605,Akwa ibom,Nsit atai,Eastern Nsit IV
+606,Akwa ibom,Nsit atai,Eastern Nsit IX
 607,Akwa ibom,Nsit atai,Eastern Nsit V
-608,Akwa ibom,Nsit atai,Eastern Nsit V1
-609,Akwa ibom,Nsit atai,Eastern Nsit V11
-610,Akwa ibom,Nsit atai,Eastern Nsit V111
+608,Akwa ibom,Nsit atai,Eastern Nsit VI
+609,Akwa ibom,Nsit atai,Eastern Nsit VII
+610,Akwa ibom,Nsit atai,Eastern Nsit VIII
 611,Akwa ibom,Nsit atai,Eastern Nsit X
-612,Akwa ibom,Nsit ibom,Asang 1
-613,Akwa ibom,Nsit ibom,Asang 11
-614,Akwa ibom,Nsit ibom,Asang 111
-615,Akwa ibom,Nsit ibom,Asang 1V
+612,Akwa ibom,Nsit ibom,Asang I
+613,Akwa ibom,Nsit ibom,Asang II
+614,Akwa ibom,Nsit ibom,Asang III
+615,Akwa ibom,Nsit ibom,Asang IV
 616,Akwa ibom,Nsit ibom,Asang V
-617,Akwa ibom,Nsit ibom,Mbaiso 1
-618,Akwa ibom,Nsit ibom,Mbaiso 11
-619,Akwa ibom,Nsit ibom,Mbaiso 111
-620,Akwa ibom,Nsit ibom,Mbaiso 1V
+617,Akwa ibom,Nsit ibom,Mbaiso I
+618,Akwa ibom,Nsit ibom,Mbaiso II
+619,Akwa ibom,Nsit ibom,Mbaiso III
+620,Akwa ibom,Nsit ibom,Mbaiso IV
 621,Akwa ibom,Nsit ibom,Mbaiso V
-622,Akwa ibom,Nsit ubium,Ibiakpan Obotim 1
-623,Akwa ibom,Nsit ubium,Ibiakpan/Obotim 11
+622,Akwa ibom,Nsit ubium,Ibiakpan Obotim I
+623,Akwa ibom,Nsit ubium,Ibiakpan/Obotim II
 624,Akwa ibom,Nsit ubium,Itreto
 625,Akwa ibom,Nsit ubium,Ndiya
-626,Akwa ibom,Nsit ubium,Ubium North 1
-627,Akwa ibom,Nsit ubium,Ubium North 11
-628,Akwa ibom,Nsit ubium,Ubium North 111
-629,Akwa ibom,Nsit ubium,Ubium South 1
-630,Akwa ibom,Nsit ubium,Ubium South 11
-631,Akwa ibom,Nsit ubium,Ubium South 111
-632,Akwa ibom,Obot akara,Ikot Abia 1
-633,Akwa ibom,Obot akara,Ikot Abia 11
-634,Akwa ibom,Obot akara,Ikot Abia 111
-635,Akwa ibom,Obot akara,Nto Edino 1
-636,Akwa ibom,Obot akara,Nto Edino 11
-637,Akwa ibom,Obot akara,Nto Edino 111
-638,Akwa ibom,Obot akara,Nto Edino 1V
-639,Akwa ibom,Obot akara,Obot Akara 1
-640,Akwa ibom,Obot akara,Obot Akara 11
-641,Akwa ibom,Obot akara,Obot Akara 111
+626,Akwa ibom,Nsit ubium,Ubium North I
+627,Akwa ibom,Nsit ubium,Ubium North II
+628,Akwa ibom,Nsit ubium,Ubium North III
+629,Akwa ibom,Nsit ubium,Ubium South I
+630,Akwa ibom,Nsit ubium,Ubium South II
+631,Akwa ibom,Nsit ubium,Ubium South III
+632,Akwa ibom,Obot akara,Ikot Abia I
+633,Akwa ibom,Obot akara,Ikot Abia II
+634,Akwa ibom,Obot akara,Ikot Abia III
+635,Akwa ibom,Obot akara,Nto Edino I
+636,Akwa ibom,Obot akara,Nto Edino II
+637,Akwa ibom,Obot akara,Nto Edino III
+638,Akwa ibom,Obot akara,Nto Edino IV
+639,Akwa ibom,Obot akara,Obot Akara I
+640,Akwa ibom,Obot akara,Obot Akara II
+641,Akwa ibom,Obot akara,Obot Akara III
 642,Akwa ibom,Okobo,Akai/Mbukpo/Udung
 643,Akwa ibom,Okobo,Ekeya
-644,Akwa ibom,Okobo,Eweme 1
-645,Akwa ibom,Okobo,Eweme 11
-646,Akwa ibom,Okobo,Nung Atai/Ube 1
-647,Akwa ibom,Okobo,Nung Atai/Ube 11
-648,Akwa ibom,Okobo,Offi 1
-649,Akwa ibom,Okobo,Offi 11
-650,Akwa ibom,Okobo,Okopedi 1
-651,Akwa ibom,Okobo,Okopedi 11
-652,Akwa ibom,Onna,Awa 1
-653,Akwa ibom,Onna,Awa 11
-654,Akwa ibom,Onna,Awa 111
-655,Akwa ibom,Onna,Awa 1V
-656,Akwa ibom,Onna,Nung Idem 1
-657,Akwa ibom,Onna,Nung Idem 11
-658,Akwa ibom,Onna,Oniong East 1
-659,Akwa ibom,Onna,Oniong East 11
-660,Akwa ibom,Onna,Oniong East 111
-661,Akwa ibom,Onna,Oniong West 1
-662,Akwa ibom,Onna,Oniong West 11
-663,Akwa ibom,Onna,Oniong West 111
-664,Akwa ibom,Oron,Oron Urban  Ix
+644,Akwa ibom,Okobo,Eweme I
+645,Akwa ibom,Okobo,Eweme II
+646,Akwa ibom,Okobo,Nung Atai/Ube I
+647,Akwa ibom,Okobo,Nung Atai/Ube II
+648,Akwa ibom,Okobo,Offi I
+649,Akwa ibom,Okobo,Offi II
+650,Akwa ibom,Okobo,Okopedi I
+651,Akwa ibom,Okobo,Okopedi II
+652,Akwa ibom,Onna,Awa I
+653,Akwa ibom,Onna,Awa II
+654,Akwa ibom,Onna,Awa III
+655,Akwa ibom,Onna,Awa IV
+656,Akwa ibom,Onna,Nung Idem I
+657,Akwa ibom,Onna,Nung Idem II
+658,Akwa ibom,Onna,Oniong East I
+659,Akwa ibom,Onna,Oniong East II
+660,Akwa ibom,Onna,Oniong East III
+661,Akwa ibom,Onna,Oniong West I
+662,Akwa ibom,Onna,Oniong West II
+663,Akwa ibom,Onna,Oniong West III
+664,Akwa ibom,Oron,Oron Urban  IX
 665,Akwa ibom,Oron,Oron Urban  X
-666,Akwa ibom,Oron,Oron Urban 1
-667,Akwa ibom,Oron,Oron Urban 11
-668,Akwa ibom,Oron,Oron Urban 111
-669,Akwa ibom,Oron,Oron Urban 1V
+666,Akwa ibom,Oron,Oron Urban I
+667,Akwa ibom,Oron,Oron Urban II
+668,Akwa ibom,Oron,Oron Urban III
+669,Akwa ibom,Oron,Oron Urban IV
 670,Akwa ibom,Oron,Oron Urban V
-671,Akwa ibom,Oron,Oron Urban V1
-672,Akwa ibom,Oron,Oron Urban V11
-673,Akwa ibom,Oron,Oron Urban V111
-674,Akwa ibom,Oruk anam,Abak Midim 1
-675,Akwa ibom,Oruk anam,Abak Midim 11
-676,Akwa ibom,Oruk anam,Abak Midim 111
-677,Akwa ibom,Oruk anam,Abak Midim 1V
+671,Akwa ibom,Oron,Oron Urban VI
+672,Akwa ibom,Oron,Oron Urban VII
+673,Akwa ibom,Oron,Oron Urban VIII
+674,Akwa ibom,Oruk anam,Abak Midim I
+675,Akwa ibom,Oruk anam,Abak Midim II
+676,Akwa ibom,Oruk anam,Abak Midim III
+677,Akwa ibom,Oruk anam,Abak Midim IV
 678,Akwa ibom,Oruk anam,Ekparakwa
-679,Akwa ibom,Oruk anam,Ibesit/Nung Ikot 1
-680,Akwa ibom,Oruk anam,Ibesit/Nung Ikot 11
-681,Akwa ibom,Oruk anam,Ikot Ibritam 1
-682,Akwa ibom,Oruk anam,Ikot Ibritam 11
-683,Akwa ibom,Oruk anam,Ndot/Ikot Okoro 1
-684,Akwa ibom,Oruk anam,Ndot/Ikot Okoro 11
-685,Akwa ibom,Oruk anam,Ndot/Ikot Okoro 111
-686,Akwa ibom,Oruk anam,Ndot/Ikot Okoro V1
-687,Akwa ibom,Udung uko,Udung Uko 1
-688,Akwa ibom,Udung uko,Udung Uko 11
-689,Akwa ibom,Udung uko,Udung Uko 111
-690,Akwa ibom,Udung uko,Udung Uko 1V
-691,Akwa ibom,Udung uko,Udung Uko Ix
+679,Akwa ibom,Oruk anam,Ibesit/Nung Ikot I
+680,Akwa ibom,Oruk anam,Ibesit/Nung Ikot II
+681,Akwa ibom,Oruk anam,Ikot Ibritam I
+682,Akwa ibom,Oruk anam,Ikot Ibritam II
+683,Akwa ibom,Oruk anam,Ndot/Ikot Okoro I
+684,Akwa ibom,Oruk anam,Ndot/Ikot Okoro II
+685,Akwa ibom,Oruk anam,Ndot/Ikot Okoro III
+686,Akwa ibom,Oruk anam,Ndot/Ikot Okoro VI
+687,Akwa ibom,Udung uko,Udung Uko I
+688,Akwa ibom,Udung uko,Udung Uko II
+689,Akwa ibom,Udung uko,Udung Uko III
+690,Akwa ibom,Udung uko,Udung Uko IV
+691,Akwa ibom,Udung uko,Udung Uko IX
 692,Akwa ibom,Udung uko,Udung Uko V
-693,Akwa ibom,Udung uko,Udung Uko V1
-694,Akwa ibom,Udung uko,Udung Uko V11
-695,Akwa ibom,Udung uko,Udung Uko V111
+693,Akwa ibom,Udung uko,Udung Uko VI
+694,Akwa ibom,Udung uko,Udung Uko VII
+695,Akwa ibom,Udung uko,Udung Uko VIII
 696,Akwa ibom,Udung uko,Udung Uko X
-697,Akwa ibom,Ukanafun,Northern Afaha 1
-698,Akwa ibom,Ukanafun,Northern Afaha 11
-699,Akwa ibom,Ukanafun,Northern Ukanafun 1
-700,Akwa ibom,Ukanafun,Northern Ukanafun 11
-701,Akwa ibom,Ukanafun,"Southern Afaha, Adat Ifang 1"
-702,Akwa ibom,Ukanafun,"Southern Afaha, Adat Ifang 11"
-703,Akwa ibom,Ukanafun,"Southern Afaha, Adat Ifang 111"
-704,Akwa ibom,Ukanafun,"Southern Afaha, Adat Ifang 1V"
-705,Akwa ibom,Ukanafun,Southern Ukanafun 1
-706,Akwa ibom,Ukanafun,Southern Ukanafun 11
+697,Akwa ibom,Ukanafun,Northern Afaha I
+698,Akwa ibom,Ukanafun,Northern Afaha II
+699,Akwa ibom,Ukanafun,Northern Ukanafun I
+700,Akwa ibom,Ukanafun,Northern Ukanafun II
+701,Akwa ibom,Ukanafun,"Southern Afaha, Adat Ifang I"
+702,Akwa ibom,Ukanafun,"Southern Afaha, Adat Ifang II"
+703,Akwa ibom,Ukanafun,"Southern Afaha, Adat Ifang III"
+704,Akwa ibom,Ukanafun,"Southern Afaha, Adat Ifang IV"
+705,Akwa ibom,Ukanafun,Southern Ukanafun I
+706,Akwa ibom,Ukanafun,Southern Ukanafun II
 707,Akwa ibom,Ukanafun,Ukanafun Urban
-708,Akwa ibom,Uruan,Central Uruan 11
-709,Akwa ibom,Uruan,Centyral Uruan 1
-710,Akwa ibom,Uruan,Centyral Uruan 111
-711,Akwa ibom,Uruan,Northern Uruan 1
-712,Akwa ibom,Uruan,Northern Uruan 11
-713,Akwa ibom,Uruan,Southern Uruan 1
-714,Akwa ibom,Uruan,Southern Uruan 11
-715,Akwa ibom,Uruan,Southern Uruan 111
+708,Akwa ibom,Uruan,Central Uruan II
+709,Akwa ibom,Uruan,Centyral Uruan I
+710,Akwa ibom,Uruan,Centyral Uruan III
+711,Akwa ibom,Uruan,Northern Uruan I
+712,Akwa ibom,Uruan,Northern Uruan II
+713,Akwa ibom,Uruan,Southern Uruan I
+714,Akwa ibom,Uruan,Southern Uruan II
+715,Akwa ibom,Uruan,Southern Uruan III
 716,Akwa ibom,Uruan,Southern Uruan IV
 717,Akwa ibom,Uruan,Southern Uruan V
-718,Akwa ibom,Uruan,Southern Uruan V1
-719,Akwa ibom,Urue offong oruko,Oruko 1
-720,Akwa ibom,Urue offong oruko,Oruko 11
-721,Akwa ibom,Urue offong oruko,Oruko 111
-722,Akwa ibom,Urue offong oruko,Oruko 1V
+718,Akwa ibom,Uruan,Southern Uruan VI
+719,Akwa ibom,Urue offong oruko,Oruko I
+720,Akwa ibom,Urue offong oruko,Oruko II
+721,Akwa ibom,Urue offong oruko,Oruko III
+722,Akwa ibom,Urue offong oruko,Oruko IV
 723,Akwa ibom,Urue offong oruko,Oruko V
-724,Akwa ibom,Urue offong oruko,Urue Offong 1
-725,Akwa ibom,Urue offong oruko,Urue Offong 11
-726,Akwa ibom,Urue offong oruko,Urue Offong 111
-727,Akwa ibom,Urue offong oruko,Urue Offong 1V
+724,Akwa ibom,Urue offong oruko,Urue Offong I
+725,Akwa ibom,Urue offong oruko,Urue Offong II
+726,Akwa ibom,Urue offong oruko,Urue Offong III
+727,Akwa ibom,Urue offong oruko,Urue Offong IV
 728,Akwa ibom,Urue offong oruko,Urue Offong V
-729,Akwa ibom,Uyo,Etoi 1
-730,Akwa ibom,Uyo,Etoi 11
-731,Akwa ibom,Uyo,Ikono 1
-732,Akwa ibom,Uyo,Ikono 11
-733,Akwa ibom,Uyo,Offot 1
-734,Akwa ibom,Uyo,Offot 11
-735,Akwa ibom,Uyo,Oku 1
-736,Akwa ibom,Uyo,Oku 11
-737,Akwa ibom,Uyo,Uyo Urban 1
-738,Akwa ibom,Uyo,Uyo Urban 11
-739,Akwa ibom,Uyo,Uyo Urban 111
+729,Akwa ibom,Uyo,Etoi I
+730,Akwa ibom,Uyo,Etoi II
+731,Akwa ibom,Uyo,Ikono I
+732,Akwa ibom,Uyo,Ikono II
+733,Akwa ibom,Uyo,Offot I
+734,Akwa ibom,Uyo,Offot II
+735,Akwa ibom,Uyo,Oku I
+736,Akwa ibom,Uyo,Oku II
+737,Akwa ibom,Uyo,Uyo Urban I
+738,Akwa ibom,Uyo,Uyo Urban II
+739,Akwa ibom,Uyo,Uyo Urban III
 740,Anambra,Aguata,Achina   I
 741,Anambra,Aguata,Achina  II
 742,Anambra,Aguata,Agulueze Chukwu
@@ -803,8 +803,8 @@ id,state,lga,edited-ward
 802,Anambra,Anaocha,Nri  II
 803,Anambra,Anaocha,Obeledu
 804,Anambra,Awka north,Achalla  I
-805,Anambra,Awka north,Achalla  I1
-806,Anambra,Awka north,Achalla  I1I
+805,Anambra,Awka north,Achalla  II
+806,Anambra,Awka north,Achalla  III
 807,Anambra,Awka north,Amansea
 808,Anambra,Awka north,Amanuke
 809,Anambra,Awka north,Awba-Ofemmili
@@ -985,8 +985,8 @@ id,state,lga,edited-ward
 984,Anambra,Onitsha -south,Bridge Head I
 985,Anambra,Onitsha -south,Bridge Head II
 986,Anambra,Onitsha -south,Bridge Head III
-987,Anambra,Onitsha -south,Fegge 1
-988,Anambra,Onitsha -south,Fegge 1V
+987,Anambra,Onitsha -south,Fegge I
+988,Anambra,Onitsha -south,Fegge IV
 989,Anambra,Onitsha -south,Fegge II
 990,Anambra,Onitsha -south,Fegge III
 991,Anambra,Onitsha -south,Fegge V
@@ -1011,7 +1011,7 @@ id,state,lga,edited-ward
 1010,Anambra,Onitsha-north,Inland Town VIII`
 1011,Anambra,Onitsha-north,Ogbe Umuonicha
 1012,Anambra,Onitsha-north,Trans Nkisi
-1013,Anambra,Onitsha-north,Water-Side Central  1
+1013,Anambra,Onitsha-north,Water-Side Central  I
 1014,Anambra,Onitsha-north,Water-Side Central  II
 1015,Anambra,Onitsha-north,Woluwo Layout
 1016,Anambra,Orumba  south,Agbudu
@@ -1277,7 +1277,7 @@ id,state,lga,edited-ward
 1276,Bauchi,Zaki,Murmur North
 1277,Bauchi,Zaki,Sakwa
 1278,Bauchi,Zaki,Tashena / Gadai
-1279,Bayelsa,Brass,Brass 1
+1279,Bayelsa,Brass,Brass I
 1280,Bayelsa,Brass,Brass Ward II
 1281,Bayelsa,Brass,Cape Farmosa
 1282,Bayelsa,Brass,Ewoama/Fantuo
@@ -1309,19 +1309,19 @@ id,state,lga,edited-ward
 1308,Bayelsa,Kolokuma/opokuma,Opokuma North
 1309,Bayelsa,Kolokuma/opokuma,Opokumasouth
 1310,Bayelsa,Kolokuma/opokuma,Sampou/Kalama
-1311,Bayelsa,Kolokuma/opokuma,Seibokorogha (Sabagreia) 1
-1312,Bayelsa,Nembe,Bassambiri 1
-1313,Bayelsa,Nembe,Bassambiri 11
-1314,Bayelsa,Nembe,Bassambiri 111
-1315,Bayelsa,Nembe,Bassambiri 1V
+1311,Bayelsa,Kolokuma/opokuma,Seibokorogha (Sabagreia) I
+1312,Bayelsa,Nembe,Bassambiri I
+1313,Bayelsa,Nembe,Bassambiri II
+1314,Bayelsa,Nembe,Bassambiri III
+1315,Bayelsa,Nembe,Bassambiri IV
 1316,Bayelsa,Nembe,Igbeta-Ewoama/Fantuo
 1317,Bayelsa,Nembe,Ikensi
 1318,Bayelsa,Nembe,Mini
-1319,Bayelsa,Nembe,Ogbolomabiri 1
-1320,Bayelsa,Nembe,Ogbolomabiri 11
-1321,Bayelsa,Nembe,Ogbolomabiri 111
-1322,Bayelsa,Nembe,Okoroma 1
-1323,Bayelsa,Nembe,Okoroma 11
+1319,Bayelsa,Nembe,Ogbolomabiri I
+1320,Bayelsa,Nembe,Ogbolomabiri II
+1321,Bayelsa,Nembe,Ogbolomabiri III
+1322,Bayelsa,Nembe,Okoroma I
+1323,Bayelsa,Nembe,Okoroma II
 1324,Bayelsa,Nembe,Oluasiri
 1325,Bayelsa,Ogbia,Anyama
 1326,Bayelsa,Ogbia,Emeyal
@@ -1363,18 +1363,18 @@ id,state,lga,edited-ward
 1362,Bayelsa,Southern ijaw,Olodiama  I
 1363,Bayelsa,Southern ijaw,Olodiama  II
 1364,Bayelsa,Southern ijaw,Oporoma   II
-1365,Bayelsa,Southern ijaw,Oporoma 1
+1365,Bayelsa,Southern ijaw,Oporoma I
 1366,Bayelsa,Southern ijaw,Otuan
 1367,Bayelsa,Southern ijaw,Ukubie
 1368,Bayelsa,Southern ijaw,West Boma
 1369,Bayelsa,Yenagoa,Attissa I
 1370,Bayelsa,Yenagoa,Attissa II
 1371,Bayelsa,Yenagoa,Attissa III
-1372,Bayelsa,Yenagoa,Biseni 1
-1373,Bayelsa,Yenagoa,Biseni 11
-1374,Bayelsa,Yenagoa,Ekpetiama 11
+1372,Bayelsa,Yenagoa,Biseni I
+1373,Bayelsa,Yenagoa,Biseni II
+1374,Bayelsa,Yenagoa,Ekpetiama II
 1375,Bayelsa,Yenagoa,Ekpetiama I
-1376,Bayelsa,Yenagoa,Epie 11
+1376,Bayelsa,Yenagoa,Epie II
 1377,Bayelsa,Yenagoa,Epie I
 1378,Bayelsa,Yenagoa,Epie III
 1379,Bayelsa,Yenagoa,Gbarain I
@@ -1970,199 +1970,199 @@ id,state,lga,edited-ward
 1969,Borno,Shani,Kwaba
 1970,Borno,Shani,Shani
 1971,Borno,Shani,Walama
-1972,Cross rIVer,Abi,Adadama
-1973,Cross rIVer,Abi,Afafanyi/Igonigoni
-1974,Cross rIVer,Abi,Ebom
-1975,Cross rIVer,Abi,Ediba
-1976,Cross rIVer,Abi,Ekureku I
-1977,Cross rIVer,Abi,Ekureku II
-1978,Cross rIVer,Abi,Imabana I
-1979,Cross rIVer,Abi,Imabana II
-1980,Cross rIVer,Abi,Itigidi
-1981,Cross rIVer,Abi,Usumutong
-1982,Cross rIVer,Akamkpa,Akamkpa Urban
-1983,Cross rIVer,Akamkpa,Awi
-1984,Cross rIVer,Akamkpa,Eku
-1985,Cross rIVer,Akamkpa,Iko
-1986,Cross rIVer,Akamkpa,Ikpai
-1987,Cross rIVer,Akamkpa,Mbarakom
-1988,Cross rIVer,Akamkpa,Oban
-1989,Cross rIVer,Akamkpa,Ojuk North
-1990,Cross rIVer,Akamkpa,Ojuk South
-1991,Cross rIVer,Akamkpa,Uyanga
-1992,Cross rIVer,Akpabuyo,Atimbo East
-1993,Cross rIVer,Akpabuyo,Atimbo West
-1994,Cross rIVer,Akpabuyo,Eneyo
-1995,Cross rIVer,Akpabuyo,Idundu/Anyanganse
-1996,Cross rIVer,Akpabuyo,Ikang Central
-1997,Cross rIVer,Akpabuyo,Ikang North
-1998,Cross rIVer,Akpabuyo,Ikang South
-1999,Cross rIVer,Akpabuyo,Ikot Edem Odo
-2000,Cross rIVer,Akpabuyo,Ikot Eyo
-2001,Cross rIVer,Akpabuyo,Ikot Nakanda
-2002,Cross rIVer,Bakassi,Abana
-2003,Cross rIVer,Bakassi,Akpankanya
-2004,Cross rIVer,Bakassi,Akwa
-2005,Cross rIVer,Bakassi,Ambai Ekpa
-2006,Cross rIVer,Bakassi,Amoto
-2007,Cross rIVer,Bakassi,Archibong
-2008,Cross rIVer,Bakassi,Atai Ema
-2009,Cross rIVer,Bakassi,Efut Inwang
-2010,Cross rIVer,Bakassi,Ekpot Abia
-2011,Cross rIVer,Bakassi,Odiong
-2012,Cross rIVer,Bekwarra,Abuochiche
-2013,Cross rIVer,Bekwarra,Afrike Ochagbe
-2014,Cross rIVer,Bekwarra,Afrike Okpeche
-2015,Cross rIVer,Bekwarra,Beten
-2016,Cross rIVer,Bekwarra,Gakem
-2017,Cross rIVer,Bekwarra,Ibiaragidi
-2018,Cross rIVer,Bekwarra,Nyanya
-2019,Cross rIVer,Bekwarra,Otukpuru
-2020,Cross rIVer,Bekwarra,Ugboro
-2021,Cross rIVer,Bekwarra,Ukpah
-2022,Cross rIVer,Biase,Abayong
-2023,Cross rIVer,Biase,Adim
-2024,Cross rIVer,Biase,Agwagune/Okurike
-2025,Cross rIVer,Biase,Akpet/Abini
-2026,Cross rIVer,Biase,Biakpan
-2027,Cross rIVer,Biase,Ehom
-2028,Cross rIVer,Biase,Erei North
-2029,Cross rIVer,Biase,Erei South
-2030,Cross rIVer,Biase,Ikun/Etono
-2031,Cross rIVer,Biase,Umon North
-2032,Cross rIVer,Biase,Umon South
-2033,Cross rIVer,Boki,Abo
-2034,Cross rIVer,Boki,Alankwe
-2035,Cross rIVer,Boki,Beebo/Bumaji
-2036,Cross rIVer,Boki,Boje
-2037,Cross rIVer,Boki,Buda
-2038,Cross rIVer,Boki,Buentsebe
-2039,Cross rIVer,Boki,Bunyia/Okubuchi
-2040,Cross rIVer,Boki,Ekpashi
-2041,Cross rIVer,Boki,Kakwagom/Bawop
-2042,Cross rIVer,Boki,Ogep/Osokom
-2043,Cross rIVer,Boki,Oku/Borum/Njua
-2044,Cross rIVer,Calabar municipality,I
-2045,Cross rIVer,Calabar municipality,II
-2046,Cross rIVer,Calabar municipality,III
-2047,Cross rIVer,Calabar municipality,IV
-2048,Cross rIVer,Calabar municipality,Ix
-2049,Cross rIVer,Calabar municipality,V
-2050,Cross rIVer,Calabar municipality,Vi
-2051,Cross rIVer,Calabar municipality,VII
-2052,Cross rIVer,Calabar municipality,VIII
-2053,Cross rIVer,Calabar municipality,X
-2054,Cross rIVer,Calabar south,Eight (8)
-2055,Cross rIVer,Calabar south,Eleven (11)
-2056,Cross rIVer,Calabar south,FIVe (5)
-2057,Cross rIVer,Calabar south,Four (4)
-2058,Cross rIVer,Calabar south,Nine (9)
-2059,Cross rIVer,Calabar south,One (1)
-2060,Cross rIVer,Calabar south,Seven (7)
-2061,Cross rIVer,Calabar south,Six (6)
-2062,Cross rIVer,Calabar south,Ten (10)
-2063,Cross rIVer,Calabar south,Three (3)
-2064,Cross rIVer,Calabar south,Twelve (12)
-2065,Cross rIVer,Calabar south,Two (2)
-2066,Cross rIVer,Etung,Abia
-2067,Cross rIVer,Etung,Abijang
-2068,Cross rIVer,Etung,Agbokim
-2069,Cross rIVer,Etung,Ajassor
-2070,Cross rIVer,Etung,Bendeghe Ekiem
-2071,Cross rIVer,Etung,Effraya
-2072,Cross rIVer,Etung,Etomi
-2073,Cross rIVer,Etung,Itaka
-2074,Cross rIVer,Etung,Mkpot/Ayuk Aba
-2075,Cross rIVer,Etung,Nsofang
-2076,Cross rIVer,Ikom,Abanyum
-2077,Cross rIVer,Ikom,Akparabong
-2078,Cross rIVer,Ikom,Ikom Urban I
-2079,Cross rIVer,Ikom,Ikom Urban II
-2080,Cross rIVer,Ikom,Nde
-2081,Cross rIVer,Ikom,Nnam
-2082,Cross rIVer,Ikom,Nta/Nselle
-2083,Cross rIVer,Ikom,Ofutop I
-2084,Cross rIVer,Ikom,Ofutop II
-2085,Cross rIVer,Ikom,Olulumo
-2086,Cross rIVer,Ikom,Yala/Nkum
-2087,Cross rIVer,Obanliku,Basang
-2088,Cross rIVer,Obanliku,Bebi
-2089,Cross rIVer,Obanliku,Becheve
-2090,Cross rIVer,Obanliku,Bendi I
-2091,Cross rIVer,Obanliku,Bendi II
-2092,Cross rIVer,Obanliku,Bishiri North
-2093,Cross rIVer,Obanliku,Bishiri South
-2094,Cross rIVer,Obanliku,Bisu
-2095,Cross rIVer,Obanliku,Busi
-2096,Cross rIVer,Obanliku,Utanga
-2097,Cross rIVer,Obubra,Ababene
-2098,Cross rIVer,Obubra,Apiapum
-2099,Cross rIVer,Obubra,Iyamoyong
-2100,Cross rIVer,Obubra,Obubra Urban
-2101,Cross rIVer,Obubra,Ochon
-2102,Cross rIVer,Obubra,Ofat
-2103,Cross rIVer,Obubra,Ofodua
-2104,Cross rIVer,Obubra,Ofumbongha/Yala
-2105,Cross rIVer,Obubra,Osopong I
-2106,Cross rIVer,Obubra,Osopong II
-2107,Cross rIVer,Obubra,Ovonum
-2108,Cross rIVer,Obudu,Alege/Ubang
-2109,Cross rIVer,Obudu,Angiaba / Begiaka
-2110,Cross rIVer,Obudu,Begiading
-2111,Cross rIVer,Obudu,Ipong
-2112,Cross rIVer,Obudu,Obudu Urban I
-2113,Cross rIVer,Obudu,Obudu Urban II
-2114,Cross rIVer,Obudu,Ukpe
-2115,Cross rIVer,Obudu,Utugwang Central
-2116,Cross rIVer,Obudu,Utugwang North
-2117,Cross rIVer,Obudu,Utugwang South
-2118,Cross rIVer,Odukpani,Adiabo/Efut
-2119,Cross rIVer,Odukpani,Akamkpa
-2120,Cross rIVer,Odukpani,Creek Town I
-2121,Cross rIVer,Odukpani,Creek Town II
-2122,Cross rIVer,Odukpani,Eki
-2123,Cross rIVer,Odukpani,Ekori/Anaku
-2124,Cross rIVer,Odukpani,Eniong
-2125,Cross rIVer,Odukpani,Ikoneto
-2126,Cross rIVer,Odukpani,Ito/Idere/Ukwa
-2127,Cross rIVer,Odukpani,Obomitiat/Mbiabo/Ediong
-2128,Cross rIVer,Odukpani,Odot
-2129,Cross rIVer,Odukpani,Odukpani Central
-2130,Cross rIVer,Odukpani,Oniman-Kiong
-2131,Cross rIVer,Ogoja,Ekajuk I
-2132,Cross rIVer,Ogoja,Ekajuk II
-2133,Cross rIVer,Ogoja,Mbube East I
-2134,Cross rIVer,Ogoja,Mbube East II
-2135,Cross rIVer,Ogoja,Mbube West I
-2136,Cross rIVer,Ogoja,Mbube West II
-2137,Cross rIVer,Ogoja,Nkum Iborr
-2138,Cross rIVer,Ogoja,Nkum Irede
-2139,Cross rIVer,Ogoja,Ogoja Urban I
-2140,Cross rIVer,Ogoja,Ogoja Urban II
-2141,Cross rIVer,Yakurr,Abanakpai
-2142,Cross rIVer,Yakurr,Afrekpe/Ekpenti
-2143,Cross rIVer,Yakurr,Ajere
-2144,Cross rIVer,Yakurr,Assiga
-2145,Cross rIVer,Yakurr,Biko Biko
-2146,Cross rIVer,Yakurr,Idomi
-2147,Cross rIVer,Yakurr,Ijiman
-2148,Cross rIVer,Yakurr,Ijom
-2149,Cross rIVer,Yakurr,Ikpakapit
-2150,Cross rIVer,Yakurr,Inyima
-2151,Cross rIVer,Yakurr,Mkpani/Agoi
-2152,Cross rIVer,Yakurr,Nkpolo/Ukpawen
-2153,Cross rIVer,Yakurr,Ntan
-2154,Cross rIVer,Yala,Echumofana
-2155,Cross rIVer,Yala,Gabu
-2156,Cross rIVer,Yala,Ijiraga
-2157,Cross rIVer,Yala,Njrigom/Mfuma
-2158,Cross rIVer,Yala,Okpoma
-2159,Cross rIVer,Yala,Okuku
-2160,Cross rIVer,Yala,Wanakom
-2161,Cross rIVer,Yala,Wanihem
-2162,Cross rIVer,Yala,Wanikade
-2163,Cross rIVer,Yala,Yache
-2164,Cross rIVer,Yala,Yahe
+1972,Cross river,Abi,Adadama
+1973,Cross river,Abi,Afafanyi/Igonigoni
+1974,Cross river,Abi,Ebom
+1975,Cross river,Abi,Ediba
+1976,Cross river,Abi,Ekureku I
+1977,Cross river,Abi,Ekureku II
+1978,Cross river,Abi,Imabana I
+1979,Cross river,Abi,Imabana II
+1980,Cross river,Abi,Itigidi
+1981,Cross river,Abi,Usumutong
+1982,Cross river,Akamkpa,Akamkpa Urban
+1983,Cross river,Akamkpa,Awi
+1984,Cross river,Akamkpa,Eku
+1985,Cross river,Akamkpa,Iko
+1986,Cross river,Akamkpa,Ikpai
+1987,Cross river,Akamkpa,Mbarakom
+1988,Cross river,Akamkpa,Oban
+1989,Cross river,Akamkpa,Ojuk North
+1990,Cross river,Akamkpa,Ojuk South
+1991,Cross river,Akamkpa,Uyanga
+1992,Cross river,Akpabuyo,Atimbo East
+1993,Cross river,Akpabuyo,Atimbo West
+1994,Cross river,Akpabuyo,Eneyo
+1995,Cross river,Akpabuyo,Idundu/Anyanganse
+1996,Cross river,Akpabuyo,Ikang Central
+1997,Cross river,Akpabuyo,Ikang North
+1998,Cross river,Akpabuyo,Ikang South
+1999,Cross river,Akpabuyo,Ikot Edem Odo
+2000,Cross river,Akpabuyo,Ikot Eyo
+2001,Cross river,Akpabuyo,Ikot Nakanda
+2002,Cross river,Bakassi,Abana
+2003,Cross river,Bakassi,Akpankanya
+2004,Cross river,Bakassi,Akwa
+2005,Cross river,Bakassi,Ambai Ekpa
+2006,Cross river,Bakassi,Amoto
+2007,Cross river,Bakassi,Archibong
+2008,Cross river,Bakassi,Atai Ema
+2009,Cross river,Bakassi,Efut Inwang
+2010,Cross river,Bakassi,Ekpot Abia
+2011,Cross river,Bakassi,Odiong
+2012,Cross river,Bekwarra,Abuochiche
+2013,Cross river,Bekwarra,Afrike Ochagbe
+2014,Cross river,Bekwarra,Afrike Okpeche
+2015,Cross river,Bekwarra,Beten
+2016,Cross river,Bekwarra,Gakem
+2017,Cross river,Bekwarra,Ibiaragidi
+2018,Cross river,Bekwarra,Nyanya
+2019,Cross river,Bekwarra,Otukpuru
+2020,Cross river,Bekwarra,Ugboro
+2021,Cross river,Bekwarra,Ukpah
+2022,Cross river,Biase,Abayong
+2023,Cross river,Biase,Adim
+2024,Cross river,Biase,Agwagune/Okurike
+2025,Cross river,Biase,Akpet/Abini
+2026,Cross river,Biase,Biakpan
+2027,Cross river,Biase,Ehom
+2028,Cross river,Biase,Erei North
+2029,Cross river,Biase,Erei South
+2030,Cross river,Biase,Ikun/Etono
+2031,Cross river,Biase,Umon North
+2032,Cross river,Biase,Umon South
+2033,Cross river,Boki,Abo
+2034,Cross river,Boki,Alankwe
+2035,Cross river,Boki,Beebo/Bumaji
+2036,Cross river,Boki,Boje
+2037,Cross river,Boki,Buda
+2038,Cross river,Boki,Buentsebe
+2039,Cross river,Boki,Bunyia/Okubuchi
+2040,Cross river,Boki,Ekpashi
+2041,Cross river,Boki,Kakwagom/Bawop
+2042,Cross river,Boki,Ogep/Osokom
+2043,Cross river,Boki,Oku/Borum/Njua
+2044,Cross river,Calabar municipality,I
+2045,Cross river,Calabar municipality,II
+2046,Cross river,Calabar municipality,III
+2047,Cross river,Calabar municipality,IV
+2048,Cross river,Calabar municipality,IX
+2049,Cross river,Calabar municipality,V
+2050,Cross river,Calabar municipality,Vi
+2051,Cross river,Calabar municipality,VII
+2052,Cross river,Calabar municipality,VIII
+2053,Cross river,Calabar municipality,X
+2054,Cross river,Calabar south,Eight (8)
+2055,Cross river,Calabar south,Eleven (II)
+2056,Cross river,Calabar south,FIVe (5)
+2057,Cross river,Calabar south,Four (4)
+2058,Cross river,Calabar south,Nine (9)
+2059,Cross river,Calabar south,One (I)
+2060,Cross river,Calabar south,Seven (7)
+2061,Cross river,Calabar south,Six (6)
+2062,Cross river,Calabar south,Ten (I0)
+2063,Cross river,Calabar south,Three (3)
+2064,Cross river,Calabar south,Twelve (I2)
+2065,Cross river,Calabar south,Two (2)
+2066,Cross river,Etung,Abia
+2067,Cross river,Etung,Abijang
+2068,Cross river,Etung,Agbokim
+2069,Cross river,Etung,Ajassor
+2070,Cross river,Etung,Bendeghe Ekiem
+2071,Cross river,Etung,Effraya
+2072,Cross river,Etung,Etomi
+2073,Cross river,Etung,Itaka
+2074,Cross river,Etung,Mkpot/Ayuk Aba
+2075,Cross river,Etung,Nsofang
+2076,Cross river,Ikom,Abanyum
+2077,Cross river,Ikom,Akparabong
+2078,Cross river,Ikom,Ikom Urban I
+2079,Cross river,Ikom,Ikom Urban II
+2080,Cross river,Ikom,Nde
+2081,Cross river,Ikom,Nnam
+2082,Cross river,Ikom,Nta/Nselle
+2083,Cross river,Ikom,Ofutop I
+2084,Cross river,Ikom,Ofutop II
+2085,Cross river,Ikom,Olulumo
+2086,Cross river,Ikom,Yala/Nkum
+2087,Cross river,Obanliku,Basang
+2088,Cross river,Obanliku,Bebi
+2089,Cross river,Obanliku,Becheve
+2090,Cross river,Obanliku,Bendi I
+2091,Cross river,Obanliku,Bendi II
+2092,Cross river,Obanliku,Bishiri North
+2093,Cross river,Obanliku,Bishiri South
+2094,Cross river,Obanliku,Bisu
+2095,Cross river,Obanliku,Busi
+2096,Cross river,Obanliku,Utanga
+2097,Cross river,Obubra,Ababene
+2098,Cross river,Obubra,Apiapum
+2099,Cross river,Obubra,Iyamoyong
+2100,Cross river,Obubra,Obubra Urban
+2101,Cross river,Obubra,Ochon
+2102,Cross river,Obubra,Ofat
+2103,Cross river,Obubra,Ofodua
+2104,Cross river,Obubra,Ofumbongha/Yala
+2105,Cross river,Obubra,Osopong I
+2106,Cross river,Obubra,Osopong II
+2107,Cross river,Obubra,Ovonum
+2108,Cross river,Obudu,Alege/Ubang
+2109,Cross river,Obudu,Angiaba / Begiaka
+2110,Cross river,Obudu,Begiading
+2111,Cross river,Obudu,Ipong
+2112,Cross river,Obudu,Obudu Urban I
+2113,Cross river,Obudu,Obudu Urban II
+2114,Cross river,Obudu,Ukpe
+2115,Cross river,Obudu,Utugwang Central
+2116,Cross river,Obudu,Utugwang North
+2117,Cross river,Obudu,Utugwang South
+2118,Cross river,Odukpani,Adiabo/Efut
+2119,Cross river,Odukpani,Akamkpa
+2120,Cross river,Odukpani,Creek Town I
+2121,Cross river,Odukpani,Creek Town II
+2122,Cross river,Odukpani,Eki
+2123,Cross river,Odukpani,Ekori/Anaku
+2124,Cross river,Odukpani,Eniong
+2125,Cross river,Odukpani,Ikoneto
+2126,Cross river,Odukpani,Ito/Idere/Ukwa
+2127,Cross river,Odukpani,Obomitiat/Mbiabo/Ediong
+2128,Cross river,Odukpani,Odot
+2129,Cross river,Odukpani,Odukpani Central
+2130,Cross river,Odukpani,Oniman-Kiong
+2131,Cross river,Ogoja,Ekajuk I
+2132,Cross river,Ogoja,Ekajuk II
+2133,Cross river,Ogoja,Mbube East I
+2134,Cross river,Ogoja,Mbube East II
+2135,Cross river,Ogoja,Mbube West I
+2136,Cross river,Ogoja,Mbube West II
+2137,Cross river,Ogoja,Nkum Iborr
+2138,Cross river,Ogoja,Nkum Irede
+2139,Cross river,Ogoja,Ogoja Urban I
+2140,Cross river,Ogoja,Ogoja Urban II
+2141,Cross river,Yakurr,Abanakpai
+2142,Cross river,Yakurr,Afrekpe/Ekpenti
+2143,Cross river,Yakurr,Ajere
+2144,Cross river,Yakurr,Assiga
+2145,Cross river,Yakurr,Biko Biko
+2146,Cross river,Yakurr,Idomi
+2147,Cross river,Yakurr,Ijiman
+2148,Cross river,Yakurr,Ijom
+2149,Cross river,Yakurr,Ikpakapit
+2150,Cross river,Yakurr,Inyima
+2151,Cross river,Yakurr,Mkpani/Agoi
+2152,Cross river,Yakurr,Nkpolo/Ukpawen
+2153,Cross river,Yakurr,Ntan
+2154,Cross river,Yala,Echumofana
+2155,Cross river,Yala,Gabu
+2156,Cross river,Yala,Ijiraga
+2157,Cross river,Yala,Njrigom/Mfuma
+2158,Cross river,Yala,Okpoma
+2159,Cross river,Yala,Okuku
+2160,Cross river,Yala,Wanakom
+2161,Cross river,Yala,Wanihem
+2162,Cross river,Yala,Wanikade
+2163,Cross river,Yala,Yache
+2164,Cross river,Yala,Yahe
 2165,Delta,Aniocha - south,Aba - Unor
 2166,Delta,Aniocha - south,Ejeme
 2167,Delta,Aniocha - south,Isheagu-Ewulu
@@ -2468,7 +2468,7 @@ id,state,lga,edited-ward
 2467,Ebonyi,Afikpo north,Ohaisu Afikpo B
 2468,Ebonyi,Afikpo north,Poperi Amasiri
 2469,Ebonyi,Afikpo north,Ugwuegu Afikpo
-2470,Ebonyi,Afikpo north,Uwana Afikpo 1
+2470,Ebonyi,Afikpo north,Uwana Afikpo I
 2471,Ebonyi,Afikpo north,Uwana Afikpo II
 2472,Ebonyi,Ebonyi,(Abakpa)
 2473,Ebonyi,Ebonyi,Abofia
@@ -2541,17 +2541,17 @@ id,state,lga,edited-ward
 2540,Ebonyi,Ishielu,Ohofia
 2541,Ebonyi,Ishielu,Okpoto
 2542,Ebonyi,Ishielu,Umuhuali
-2543,Ebonyi,IVo,Akaeze Ishiagu
-2544,Ebonyi,IVo,Akaeze Ukwu
-2545,Ebonyi,IVo,Amagu
-2546,Ebonyi,IVo,Amonye
-2547,Ebonyi,IVo,Ihenta Ogidi
-2548,Ebonyi,IVo,Iyioji Akaeze
-2549,Ebonyi,IVo,Ndiokoro Ukwu
-2550,Ebonyi,IVo,Ngwogwo
-2551,Ebonyi,IVo,Obinagu
-2552,Ebonyi,IVo,Okue
-2553,Ebonyi,IVo,Umobo
+2543,Ebonyi,Ivo,Akaeze Ishiagu
+2544,Ebonyi,Ivo,Akaeze Ukwu
+2545,Ebonyi,Ivo,Amagu
+2546,Ebonyi,Ivo,Amonye
+2547,Ebonyi,Ivo,Ihenta Ogidi
+2548,Ebonyi,Ivo,Iyioji Akaeze
+2549,Ebonyi,Ivo,Ndiokoro Ukwu
+2550,Ebonyi,Ivo,Ngwogwo
+2551,Ebonyi,Ivo,Obinagu
+2552,Ebonyi,Ivo,Okue
+2553,Ebonyi,Ivo,Umobo
 2554,Ebonyi,Izzi,Agbaja Anyanwuigwe
 2555,Ebonyi,Izzi,Agbaja Offia Onwe
 2556,Ebonyi,Izzi,Agbaja(Mgbo)
@@ -2564,7 +2564,7 @@ id,state,lga,edited-ward
 2563,Ebonyi,Izzi,Igbeagu Nduogbu
 2564,Ebonyi,Izzi,Mgbalaku Inyimagu I
 2565,Ebonyi,Izzi,Mgbalaku Inyimagu II
-2566,Ebonyi,Izzi,Ndieze Inyimagu 11 Ndiabor Ishiagu
+2566,Ebonyi,Izzi,Ndieze Inyimagu II Ndiabor Ishiagu
 2567,Ebonyi,Izzi,Ndieze Inyimagu Mgbabeluzor
 2568,Ebonyi,Ohaozara,Amaechi Okposi
 2569,Ebonyi,Ohaozara,Enena Ezeraku
@@ -2770,8 +2770,8 @@ id,state,lga,edited-ward
 2769,Edo,Owan east,Igue/Ikao
 2770,Edo,Owan east,Ihievbe  I
 2771,Edo,Owan east,Ihievbe  II
-2772,Edo,Owan east,IVbiadaobi
-2773,Edo,Owan east,IVbianion
+2772,Edo,Owan east,Ivbiadaobi
+2773,Edo,Owan east,Ivbianion
 2774,Edo,Owan east,Otuo  I
 2775,Edo,Owan east,Otuo  II
 2776,Edo,Owan east,Uokha/Ake
@@ -2819,7 +2819,7 @@ id,state,lga,edited-ward
 2818,Ekiti,Efon,Efon   VIII
 2819,Ekiti,Efon,Efon   X
 2820,Ekiti,Efon,Efon  IV
-2821,Ekiti,Efon,Efon Ix
+2821,Ekiti,Efon,Efon IX
 2822,Ekiti,Ekiti east,Araromi
 2823,Ekiti,Ekiti east,Ilasa I
 2824,Ekiti,Ekiti east,Ilasa II / Ikun / Araromi / Eda Ile
@@ -3890,8 +3890,8 @@ id,state,lga,edited-ward
 3889,Katsina,Katsina,Wakilin Gabas II
 3890,Katsina,Katsina,Wakilin Kudu I
 3891,Katsina,Katsina,Wakilin Kudu II
-3892,Katsina,Katsina,Wakilin Yamma 1
-3893,Katsina,Katsina,Wakilin Yamma 1I
+3892,Katsina,Katsina,Wakilin Yamma I
+3893,Katsina,Katsina,Wakilin Yamma II
 3894,Katsina,Kurfi,Barkiyya
 3895,Katsina,Kurfi,Birchi
 3896,Katsina,Kurfi,Kurfi A
@@ -4397,9 +4397,9 @@ id,state,lga,edited-ward
 4396,Kogi,Mopa moro,Agbafogun
 4397,Kogi,Mopa moro,Aiyedayo/Aiyedaro
 4398,Kogi,Mopa moro,Aiyede/Okagi
-4399,Kogi,Mopa moro,Ileteju - 1
+4399,Kogi,Mopa moro,Ileteju - I
 4400,Kogi,Mopa moro,Illeteju  - 2
-4401,Kogi,Mopa moro,Odole - 1
+4401,Kogi,Mopa moro,Odole - I
 4402,Kogi,Mopa moro,Odole - 2
 4403,Kogi,Mopa moro,Okeagi/Ilai
 4404,Kogi,Mopa moro,Orokere
@@ -4507,7 +4507,7 @@ id,state,lga,edited-ward
 4506,Kwara,Asa,Okesho
 4507,Kwara,Asa,Onire/Odegiwa/Alapa
 4508,Kwara,Asa,Owode/Gbogun
-4509,Kwara,Asa,Yowere 11/Okeweru
+4509,Kwara,Asa,Yowere II/Okeweru
 4510,Kwara,Asa,Yowere/Sosoki
 4511,Kwara,Baruten,Boriya/Shiya
 4512,Kwara,Baruten,Gure/Gwasoro
@@ -4520,66 +4520,66 @@ id,state,lga,edited-ward
 4519,Kwara,Baruten,Okuta
 4520,Kwara,Baruten,Shinawu/Tunbuyan
 4521,Kwara,Baruten,Yashikira
-4522,Kwara,Edu,Lafiagi 1
-4523,Kwara,Edu,Lafiagi 11
-4524,Kwara,Edu,Lafiagi 111
-4525,Kwara,Edu,Lafiagi 1V
-4526,Kwara,Edu,Tsaragi 1
-4527,Kwara,Edu,Tsaragi 11
-4528,Kwara,Edu,Tsaragi 111
-4529,Kwara,Edu,Tsonga 1
-4530,Kwara,Edu,Tsonga 11
-4531,Kwara,Edu,Tsonga 111
+4522,Kwara,Edu,Lafiagi I
+4523,Kwara,Edu,Lafiagi II
+4524,Kwara,Edu,Lafiagi III
+4525,Kwara,Edu,Lafiagi IV
+4526,Kwara,Edu,Tsaragi I
+4527,Kwara,Edu,Tsaragi II
+4528,Kwara,Edu,Tsaragi III
+4529,Kwara,Edu,Tsonga I
+4530,Kwara,Edu,Tsonga II
+4531,Kwara,Edu,Tsonga III
 4532,Kwara,Ekiti,Eruku
 4533,Kwara,Ekiti,Isapa
 4534,Kwara,Ekiti,Koro
-4535,Kwara,Ekiti,Obbo-Aiyeggunle 1
-4536,Kwara,Ekiti,Obbo-Aiyeggunle 11
+4535,Kwara,Ekiti,Obbo-Aiyeggunle I
+4536,Kwara,Ekiti,Obbo-Aiyeggunle II
 4537,Kwara,Ekiti,Obbo-Ile
 4538,Kwara,Ekiti,Oke-Opin/Etan
 4539,Kwara,Ekiti,Opin
-4540,Kwara,Ekiti,Osi 1
-4541,Kwara,Ekiti,Osi 11
+4540,Kwara,Ekiti,Osi I
+4541,Kwara,Ekiti,Osi II
 4542,Kwara,Ifelodun,Agunjin
-4543,Kwara,Ifelodun,Idofian 1
-4544,Kwara,Ifelodun,Idofian 11
-4545,Kwara,Ifelodun,Igbaja 1
-4546,Kwara,Ifelodun,Igbaja 11
-4547,Kwara,Ifelodun,Igbaja 111
+4543,Kwara,Ifelodun,Idofian I
+4544,Kwara,Ifelodun,Idofian II
+4545,Kwara,Ifelodun,Igbaja I
+4546,Kwara,Ifelodun,Igbaja II
+4547,Kwara,Ifelodun,Igbaja III
 4548,Kwara,Ifelodun,Ile-Ire
-4549,Kwara,Ifelodun,Oke-Ode 1
-4550,Kwara,Ifelodun,Oke-Ode 11
-4551,Kwara,Ifelodun,Oke-Ode 111
+4549,Kwara,Ifelodun,Oke-Ode I
+4550,Kwara,Ifelodun,Oke-Ode II
+4551,Kwara,Ifelodun,Oke-Ode III
 4552,Kwara,Ifelodun,Omupo
 4553,Kwara,Ifelodun,Ora
 4554,Kwara,Ifelodun,Oro-Ago
-4555,Kwara,Ifelodun,Share 1
-4556,Kwara,Ifelodun,Share 11
-4557,Kwara,Ifelodun,Share 111
-4558,Kwara,Ifelodun,Share 1V
+4555,Kwara,Ifelodun,Share I
+4556,Kwara,Ifelodun,Share II
+4557,Kwara,Ifelodun,Share III
+4558,Kwara,Ifelodun,Share IV
 4559,Kwara,Ifelodun,Share V
 4560,Kwara,Ilorin east,Agbeyangi/Gbadamu/Osin
 4561,Kwara,Ilorin east,Apado
-4562,Kwara,Ilorin east,Bologun Gambari 11
-4563,Kwara,Ilorin east,Gambari 1
+4562,Kwara,Ilorin east,Bologun Gambari II
+4563,Kwara,Ilorin east,Gambari I
 4564,Kwara,Ilorin east,Ibagun
 4565,Kwara,Ilorin east,Iponrin
-4566,Kwara,Ilorin east,Magaji Are 1
-4567,Kwara,Ilorin east,Magaji Are 11
+4566,Kwara,Ilorin east,Magaji Are I
+4567,Kwara,Ilorin east,Magaji Are II
 4568,Kwara,Ilorin east,Marafa/Pepele
 4569,Kwara,Ilorin east,Maya/Ile-Apa
 4570,Kwara,Ilorin east,Oke Oyi/Oke Ose/Alalubosa
 4571,Kwara,Ilorin east,Zango
-4572,Kwara,Ilorin-south,Akanbi -1
-4573,Kwara,Ilorin-south,Akanbi -11
-4574,Kwara,Ilorin-south,Akanbi -111
-4575,Kwara,Ilorin-south,Akanbi -1V
+4572,Kwara,Ilorin-south,Akanbi -I
+4573,Kwara,Ilorin-south,Akanbi -II
+4574,Kwara,Ilorin-south,Akanbi -III
+4575,Kwara,Ilorin-south,Akanbi -IV
 4576,Kwara,Ilorin-south,Akanbi -V
-4577,Kwara,Ilorin-south,Balogun-Fulani 11
-4578,Kwara,Ilorin-south,Balogun-Fulani 111
+4577,Kwara,Ilorin-south,Balogun-Fulani II
+4578,Kwara,Ilorin-south,Balogun-Fulani III
 4579,Kwara,Ilorin-south,Balogun-Fulani I
-4580,Kwara,Ilorin-south,Okaka 1
-4581,Kwara,Ilorin-south,Okaka 11
+4580,Kwara,Ilorin-south,Okaka I
+4581,Kwara,Ilorin-south,Okaka II
 4582,Kwara,Ilorin-south,Oke-Ogun
 4583,Kwara,Ilorin-west,Adewole
 4584,Kwara,Ilorin-west,Ajikobi
@@ -4593,22 +4593,22 @@ id,state,lga,edited-ward
 4592,Kwara,Ilorin-west,Oloje
 4593,Kwara,Ilorin-west,Ubandawaki
 4594,Kwara,Ilorin-west,Warrah/Egbe Jila/Oshin
-4595,Kwara,Irepodun,Ajase Ipo 1
-4596,Kwara,Irepodun,Ajase Ipo 11
+4595,Kwara,Irepodun,Ajase Ipo I
+4596,Kwara,Irepodun,Ajase Ipo II
 4597,Kwara,Irepodun,Arandun
 4598,Kwara,Irepodun,Esie/Ijan
 4599,Kwara,Irepodun,Ipetu/Rore/Aran-Orin
 4600,Kwara,Irepodun,Oko
-4601,Kwara,Irepodun,Omu-Aran 1 (Aran)
-4602,Kwara,Irepodun,Omu-Aran 11 (Ihaye)
-4603,Kwara,Irepodun,Omu-Aran 111 (Ifaja)
-4604,Kwara,Irepodun,Oro 1
-4605,Kwara,Irepodun,Oro 11
+4601,Kwara,Irepodun,Omu-Aran I (Aran)
+4602,Kwara,Irepodun,Omu-Aran II (Ihaye)
+4603,Kwara,Irepodun,Omu-Aran III (Ifaja)
+4604,Kwara,Irepodun,Oro I
+4605,Kwara,Irepodun,Oro II
 4606,Kwara,Isin,Alla
 4607,Kwara,Isin,Edidi
 4608,Kwara,Isin,Ijara Isin
-4609,Kwara,Isin,Isanlu 1
-4610,Kwara,Isin,Isanlu 11
+4609,Kwara,Isin,Isanlu I
+4610,Kwara,Isin,Isanlu II
 4611,Kwara,Isin,Iwo
 4612,Kwara,Isin,Oke Aba
 4613,Kwara,Isin,Oke Onigbin
@@ -4617,12 +4617,12 @@ id,state,lga,edited-ward
 4616,Kwara,Isin,Sabaja/Pamo
 4617,Kwara,Kaiama,Adena
 4618,Kwara,Kaiama,Bani
-4619,Kwara,Kaiama,Gwanabe 1
-4620,Kwara,Kaiama,Gwanabe 11
+4619,Kwara,Kaiama,Gwanabe I
+4620,Kwara,Kaiama,Gwanabe II
 4621,Kwara,Kaiama,Gwari A (Gwaria)
-4622,Kwara,Kaiama,Kaiama 1
-4623,Kwara,Kaiama,Kaiama 11
-4624,Kwara,Kaiama,Kaiama 111
+4622,Kwara,Kaiama,Kaiama I
+4623,Kwara,Kaiama,Kaiama II
+4624,Kwara,Kaiama,Kaiama III
 4625,Kwara,Kaiama,Kemanji
 4626,Kwara,Kaiama,Wajibe
 4627,Kwara,Moro,Abati/Alara
@@ -4647,8 +4647,8 @@ id,state,lga,edited-ward
 4646,Kwara,Offa,Essa - B
 4647,Kwara,Offa,Essa - C
 4648,Kwara,Offa,Igboidun
-4649,Kwara,Offa,Ojomu  Central 1
-4650,Kwara,Offa,Ojomu  Central 11
+4649,Kwara,Offa,Ojomu  Central I
+4650,Kwara,Offa,Ojomu  Central II
 4651,Kwara,Offa,Ojomu  South East
 4652,Kwara,Offa,Ojomu North/North West
 4653,Kwara,Offa,Shawo Central
@@ -4657,13 +4657,13 @@ id,state,lga,edited-ward
 4656,Kwara,Oke - ero,Aiyedun
 4657,Kwara,Oke - ero,Ekan
 4658,Kwara,Oke - ero,Idofin /Odo-Ashe
-4659,Kwara,Oke - ero,Idofin Igbana 1
-4660,Kwara,Oke - ero,Idofin Igbana 11
+4659,Kwara,Oke - ero,Idofin Igbana I
+4660,Kwara,Oke - ero,Idofin Igbana II
 4661,Kwara,Oke - ero,Iloffa
 4662,Kwara,Oke - ero,Imode/Egosi
 4663,Kwara,Oke - ero,Imoji/Ilale/Erinmope
-4664,Kwara,Oke - ero,Odo-Owa 1
-4665,Kwara,Oke - ero,Odo-Owa 11
+4664,Kwara,Oke - ero,Odo-Owa I
+4665,Kwara,Oke - ero,Odo-Owa II
 4666,Kwara,Oyun,Erin-Ile North
 4667,Kwara,Oyun,Erin-Ile South
 4668,Kwara,Oyun,Igbona
@@ -4675,16 +4675,16 @@ id,state,lga,edited-ward
 4674,Kwara,Oyun,Ipee
 4675,Kwara,Oyun,Irra
 4676,Kwara,Oyun,Ojoku
-4677,Kwara,Patigi,Kpada 1
-4678,Kwara,Patigi,Kpada 11
-4679,Kwara,Patigi,Kpada 111
-4680,Kwara,Patigi,Lade 1
-4681,Kwara,Patigi,Lade 11
-4682,Kwara,Patigi,Lade 111
-4683,Kwara,Patigi,Patigi 1
-4684,Kwara,Patigi,Patigi 11
-4685,Kwara,Patigi,Patigi 111
-4686,Kwara,Patigi,Patigi 1V
+4677,Kwara,Patigi,Kpada I
+4678,Kwara,Patigi,Kpada II
+4679,Kwara,Patigi,Kpada III
+4680,Kwara,Patigi,Lade I
+4681,Kwara,Patigi,Lade II
+4682,Kwara,Patigi,Lade III
+4683,Kwara,Patigi,Patigi I
+4684,Kwara,Patigi,Patigi II
+4685,Kwara,Patigi,Patigi III
+4686,Kwara,Patigi,Patigi IV
 4687,Lagos,Agege,Agbotikuyo/Dopemu
 4688,Lagos,Agege,Darocha
 4689,Lagos,Agege,Iloro/Onipetesi
@@ -4720,7 +4720,7 @@ id,state,lga,edited-ward
 4719,Lagos,Alimosho,Shasha/Akowonjo
 4720,Lagos,Amuwo-odofin,Amuwo
 4721,Lagos,Amuwo-odofin,"Amuwo-Odofin Housing Estate, Mile 2"
-4722,Lagos,Amuwo-odofin,Festac 1
+4722,Lagos,Amuwo-odofin,Festac I
 4723,Lagos,Amuwo-odofin,Festac II
 4724,Lagos,Amuwo-odofin,Festac III
 4725,Lagos,Amuwo-odofin,Ibeshe
@@ -4731,7 +4731,7 @@ id,state,lga,edited-ward
 4730,Lagos,Amuwo-odofin,Satellite
 4731,Lagos,Apapa,Afolabi Alasia Str. And Environs
 4732,Lagos,Apapa,Apapa I (Marine Rd. & Environs)
-4733,Lagos,Apapa,Apapa II (LIVerpool Rd. And Environs)
+4733,Lagos,Apapa,Apapa II (Liverpool Rd. And Environs)
 4734,Lagos,Apapa,Apapa III (Creek Rd. Tincan/Snake Island
 4735,Lagos,Apapa,Apapa IV (Pelewura Crescent And Environs)
 4736,Lagos,Apapa,Gaskiya & Environs
@@ -4786,9 +4786,9 @@ id,state,lga,edited-ward
 4785,Lagos,Ibeju/lekki,Lekki II
 4786,Lagos,Ibeju/lekki,"N2, (Ibeju II)"
 4787,Lagos,Ibeju/lekki,Orimedu I
-4788,Lagos,Ibeju/lekki,"P1, (Iwerekun I)"
+4788,Lagos,Ibeju/lekki,"PI, (Iwerekun I)"
 4789,Lagos,Ibeju/lekki,"S,2A (Siriwon/Igbekodo II)"
-4790,Lagos,Ibeju/lekki,"S1, (Lekki I)"
+4790,Lagos,Ibeju/lekki,"SI, (Lekki I)"
 4791,Lagos,Ibeju/lekki,"S2, (Siriwon/Igbekodo I)"
 4792,Lagos,Ifako-ijaye,Ajegunle/Akinde/Animashaun
 4793,Lagos,Ifako-ijaye,Alakuko/Kollington
@@ -4821,7 +4821,7 @@ id,state,lga,edited-ward
 4820,Lagos,Ikorodu,Igbogbo II
 4821,Lagos,Ikorodu,Ijede II
 4822,Lagos,Ikorodu,Ijede J
-4823,Lagos,Ikorodu,Imota 1
+4823,Lagos,Ikorodu,Imota I
 4824,Lagos,Ikorodu,Imota II
 4825,Lagos,Ikorodu,Ipakodo
 4826,Lagos,Ikorodu,Isele I
@@ -4834,7 +4834,7 @@ id,state,lga,edited-ward
 4833,Lagos,Kosofe,Agboyi II
 4834,Lagos,Kosofe,Anthony/Ajao Estate/Mende/Maryland
 4835,Lagos,Kosofe,Ifako/Soluyi
-4836,Lagos,Kosofe,Ikosi Ketu/Mile 12/Agiliti/Maidan
+4836,Lagos,Kosofe,Ikosi Ketu/Mile I2/Agiliti/Maidan
 4837,Lagos,Kosofe,Isheri-Olowo-Ira/Shangisha/Magodo Phase I & II
 4838,Lagos,Kosofe,Ketu/Alapere/Agidi/Orisigun/Kosofe/Ajelogo/Akanimodo
 4839,Lagos,Kosofe,Ojota/Ogudu
@@ -4928,7 +4928,7 @@ id,state,lga,edited-ward
 4927,Lagos,Surulere,Iponri Housing Estate/Eric Moore
 4928,Lagos,Surulere,Itire
 4929,Lagos,Surulere,Orile
-4930,Lagos,Surulere,Shitta/Ogunlana DrIVe
+4930,Lagos,Surulere,Shitta/Ogunlana Drive
 4931,Lagos,Surulere,Yaba/Ojuelegba
 4932,Nasarawa,Akwanga,Agyaga
 4933,Nasarawa,Akwanga,Akwanga East
@@ -5119,7 +5119,7 @@ id,state,lga,edited-ward
 5118,Niger,Borgu,Konkoso
 5119,Niger,Borgu,Malale
 5120,Niger,Borgu,New Bussa
-5121,Niger,Borgu,RIVerine
+5121,Niger,Borgu,Riverine
 5122,Niger,Borgu,Shagunu
 5123,Niger,Borgu,Wawa
 5124,Niger,Bosso,Beji
@@ -5583,7 +5583,7 @@ id,state,lga,edited-ward
 5582,Ogun,Sagamu,Ogijo/ Likosi
 5583,Ogun,Sagamu,Oko/Epe/Itula  I
 5584,Ogun,Sagamu,Oko/Epe/Itula  II
-5585,Ogun,Sagamu,Sabo 1
+5585,Ogun,Sagamu,Sabo I
 5586,Ogun,Sagamu,Sabo II
 5587,Ogun,Sagamu,Simawa / Iwelepe
 5588,Ogun,Sagamu,Surulere
@@ -5682,42 +5682,42 @@ id,state,lga,edited-ward
 5681,Ondo,Ifedore,Ero/Ibuji/Mariwo
 5682,Ondo,Ifedore,Igbaka-Oke I
 5683,Ondo,Ifedore,Igbaka-Oke II
-5684,Ondo,Ifedore,Ijare 1
-5685,Ondo,Ifedore,Ijare 11
-5686,Ondo,Ifedore,Ilara 1
-5687,Ondo,Ifedore,Ilara 11
+5684,Ondo,Ifedore,Ijare I
+5685,Ondo,Ifedore,Ijare II
+5686,Ondo,Ifedore,Ilara I
+5687,Ondo,Ifedore,Ilara II
 5688,Ondo,Ifedore,Ipogun/Ibule
 5689,Ondo,Ifedore,Isarun/ Erigi
 5690,Ondo,Ifedore,Obo/Ikota/Olo-Gbo
 5691,Ondo,Ilaje,Aheri
 5692,Ondo,Ilaje,Etikan
-5693,Ondo,Ilaje,Mahin 1
-5694,Ondo,Ilaje,Mahin 11
-5695,Ondo,Ilaje,Mahin 111
-5696,Ondo,Ilaje,Mahin 1V
-5697,Ondo,Ilaje,Ugbo 1
-5698,Ondo,Ilaje,Ugbo 11
-5699,Ondo,Ilaje,Ugbo 111
-5700,Ondo,Ilaje,Ugbo 1V
+5693,Ondo,Ilaje,Mahin I
+5694,Ondo,Ilaje,Mahin II
+5695,Ondo,Ilaje,Mahin III
+5696,Ondo,Ilaje,Mahin IV
+5697,Ondo,Ilaje,Ugbo I
+5698,Ondo,Ilaje,Ugbo II
+5699,Ondo,Ilaje,Ugbo III
+5700,Ondo,Ilaje,Ugbo IV
 5701,Ondo,Ilaje,Ugbo V
-5702,Ondo,Ilaje,Ugbo V1
-5703,Ondo,Ileoluji/okeigbo,Ileoluji 1
-5704,Ondo,Ileoluji/okeigbo,Ileoluji 11
-5705,Ondo,Ileoluji/okeigbo,Ileoluji 1V
+5702,Ondo,Ilaje,Ugbo VI
+5703,Ondo,Ileoluji/okeigbo,Ileoluji I
+5704,Ondo,Ileoluji/okeigbo,Ileoluji II
+5705,Ondo,Ileoluji/okeigbo,Ileoluji IV
 5706,Ondo,Ileoluji/okeigbo,Ileoluji III
 5707,Ondo,Ileoluji/okeigbo,Ileoluji V
 5708,Ondo,Ileoluji/okeigbo,Ileoluji Vi
-5709,Ondo,Ileoluji/okeigbo,Oke-Igbo 1
-5710,Ondo,Ileoluji/okeigbo,Oke-Igbo 11
-5711,Ondo,Ileoluji/okeigbo,Oke-Igbo 111
-5712,Ondo,Ileoluji/okeigbo,Oke-Igbo 1V
-5713,Ondo,Irele,Ajagba 1
-5714,Ondo,Irele,Ajagba 11
-5715,Ondo,Irele,Akotogbo 1
-5716,Ondo,Irele,Akotogbo 11
-5717,Ondo,Irele,Irele 1
-5718,Ondo,Irele,Irele 11
-5719,Ondo,Irele,Irele 1V
+5709,Ondo,Ileoluji/okeigbo,Oke-Igbo I
+5710,Ondo,Ileoluji/okeigbo,Oke-Igbo II
+5711,Ondo,Ileoluji/okeigbo,Oke-Igbo III
+5712,Ondo,Ileoluji/okeigbo,Oke-Igbo IV
+5713,Ondo,Irele,Ajagba I
+5714,Ondo,Irele,Ajagba II
+5715,Ondo,Irele,Akotogbo I
+5716,Ondo,Irele,Akotogbo II
+5717,Ondo,Irele,Irele I
+5718,Ondo,Irele,Irele II
+5719,Ondo,Irele,Irele IV
 5720,Ondo,Irele,Irele III
 5721,Ondo,Irele,Irele V
 5722,Ondo,Irele,Iyansan/Omi
@@ -5730,24 +5730,24 @@ id,state,lga,edited-ward
 5729,Ondo,Odigbo,Koseru
 5730,Ondo,Odigbo,Odigbo
 5731,Ondo,Odigbo,Oniparaga
-5732,Ondo,Odigbo,Ore 1
-5733,Ondo,Odigbo,Ore 11
-5734,Ondo,Okitipupa,Aye 11
+5732,Ondo,Odigbo,Ore I
+5733,Ondo,Odigbo,Ore II
+5734,Ondo,Okitipupa,Aye II
 5735,Ondo,Okitipupa,Ayeka/Igbodigo
 5736,Ondo,Okitipupa,Erinje
-5737,Ondo,Okitipupa,Igbotako 1
-5738,Ondo,Okitipupa,Igbotako 11
+5737,Ondo,Okitipupa,Igbotako I
+5738,Ondo,Okitipupa,Igbotako II
 5739,Ondo,Okitipupa,Iju-Odo/Erekiti
 5740,Ondo,Okitipupa,Ikoya/Oloto
-5741,Ondo,Okitipupa,Ilutitun 1
-5742,Ondo,Okitipupa,Ilutitun 111
+5741,Ondo,Okitipupa,Ilutitun I
+5742,Ondo,Okitipupa,Ilutitun III
 5743,Ondo,Okitipupa,Ilutitun II
-5744,Ondo,Okitipupa,Ode Aye 1
-5745,Ondo,Okitipupa,Okitipupa 1
-5746,Ondo,Okitipupa,Okitipupa 11
+5744,Ondo,Okitipupa,Ode Aye I
+5745,Ondo,Okitipupa,Okitipupa I
+5746,Ondo,Okitipupa,Okitipupa II
 5747,Ondo,Ondo east,Asantan Oja
 5748,Ondo,Ondo east,Ateru/Otasan/Igba
-5749,Ondo,Ondo east,Bolorunduro 1
+5749,Ondo,Ondo east,Bolorunduro I
 5750,Ondo,Ondo east,Epe
 5751,Ondo,Ondo east,Fagbo
 5752,Ondo,Ondo east,Obada
@@ -5768,11 +5768,11 @@ id,state,lga,edited-ward
 5767,Ondo,Ondo west,Oke-Otunba/Oke-Diba/Sokoti
 5768,Ondo,Ondo west,Orisunmibare/Araromi
 5769,Ondo,Ose,Afo
-5770,Ondo,Ose,Idoani 1
-5771,Ondo,Ose,Idoani 11
+5770,Ondo,Ose,Idoani I
+5771,Ondo,Ose,Idoani II
 5772,Ondo,Ose,Idogun
-5773,Ondo,Ose,Ifon 1
-5774,Ondo,Ose,Ifon 11
+5773,Ondo,Ose,Ifon I
+5774,Ondo,Ose,Ifon II
 5775,Ondo,Ose,Ijagba
 5776,Ondo,Ose,Ikaro/Elegbeka
 5777,Ondo,Ose,Imeri
@@ -5780,10 +5780,10 @@ id,state,lga,edited-ward
 5779,Ondo,Ose,Okeluse
 5780,Ondo,Ose,Ute
 5781,Ondo,Owo,Ehinogbe
-5782,Ondo,Owo,Igboroko 1
-5783,Ondo,Owo,Igboroko 11
-5784,Ondo,Owo,Ijebu 1
-5785,Ondo,Owo,Ijebu 11
+5782,Ondo,Owo,Igboroko I
+5783,Ondo,Owo,Igboroko II
+5784,Ondo,Owo,Ijebu I
+5785,Ondo,Owo,Ijebu II
 5786,Ondo,Owo,Iloro
 5787,Ondo,Owo,Ipele
 5788,Ondo,Owo,Isaipen
@@ -5794,7 +5794,7 @@ id,state,lga,edited-ward
 5793,Osun,Atakumosa east,Ayegunle
 5794,Osun,Atakumosa east,Eti-Oni
 5795,Osun,Atakumosa east,Faforiji
-5796,Osun,Atakumosa east,Forest Reserve  1
+5796,Osun,Atakumosa east,Forest Reserve  I
 5797,Osun,Atakumosa east,Forest Reserve  II
 5798,Osun,Atakumosa east,Igangan
 5799,Osun,Atakumosa east,Iperindo
@@ -5829,9 +5829,9 @@ id,state,lga,edited-ward
 5828,Osun,Ayedire,Kuta  I
 5829,Osun,Ayedire,Kuta  II
 5830,Osun,Ayedire,Oke-Osun
-5831,Osun,Ayedire,Oluponna  1
-5832,Osun,Ayedire,Oluponna  1I
-5833,Osun,Ayedire,Oluponna  1II
+5831,Osun,Ayedire,Oluponna  I
+5832,Osun,Ayedire,Oluponna  II
+5833,Osun,Ayedire,Oluponna  III
 5834,Osun,Boluwaduro,Eripa
 5835,Osun,Boluwaduro,Gbeleru Obaala I
 5836,Osun,Boluwaduro,Gbeleru Obaala II
@@ -5896,8 +5896,8 @@ id,state,lga,edited-ward
 5895,Osun,Ejigbo,Inisa II/Afaake/Ayegunle
 5896,Osun,Ejigbo,Ola/Aye/Agurodo
 5897,Osun,Ife central,Akarabata
-5898,Osun,Ife central,Ilare 1
-5899,Osun,Ife central,Ilare 1I
+5898,Osun,Ife central,Ilare I
+5899,Osun,Ife central,Ilare II
 5900,Osun,Ife central,Ilare III
 5901,Osun,Ife central,Ilare IV
 5902,Osun,Ife central,Iremo II (Eleyele)
@@ -5942,7 +5942,7 @@ id,state,lga,edited-ward
 5941,Osun,Ifedayo,Aworo/Oke-Ila Rural
 5942,Osun,Ifedayo,Ayetoro
 5943,Osun,Ifedayo,Balogun
-5944,Osun,Ifedayo,Co-OperatIVe
+5944,Osun,Ifedayo,Co-Operative
 5945,Osun,Ifedayo,Isinmi
 5946,Osun,Ifedayo,Obaale
 5947,Osun,Ifedayo,Oyi
@@ -6152,7 +6152,7 @@ id,state,lga,edited-ward
 6151,Oyo,Atiba,Ashipa II
 6152,Oyo,Atiba,Ashipa III
 6153,Oyo,Atiba,Bashorun
-6154,Oyo,Atiba,Oke-Afin 1
+6154,Oyo,Atiba,Oke-Afin I
 6155,Oyo,Atiba,Oke-Afin II
 6156,Oyo,Atisbo,Ago Are I
 6157,Oyo,Atisbo,Ago Are II
@@ -6179,7 +6179,7 @@ id,state,lga,edited-ward
 6178,Oyo,Ibadan north,"Ward II, N3"
 6179,Oyo,Ibadan north,"Ward III, N4"
 6180,Oyo,Ibadan north,"Ward IV, N5A"
-6181,Oyo,Ibadan north,"Ward Ix, (N6B Part I)"
+6181,Oyo,Ibadan north,"Ward IX, (N6B Part I)"
 6182,Oyo,Ibadan north,"Ward V, N5B"
 6183,Oyo,Ibadan north,"Ward Vi, N6A Part I"
 6184,Oyo,Ibadan north,"Ward VII, N6A Part II"
@@ -6191,7 +6191,7 @@ id,state,lga,edited-ward
 6190,Oyo,Ibadan north east,Ward 2 Ni (Part II)
 6191,Oyo,Ibadan north east,Ward I. Ei
 6192,Oyo,Ibadan north east,Ward IV  E4
-6193,Oyo,Ibadan north east,Ward Ix E7II
+6193,Oyo,Ibadan north east,Ward IX E7II
 6194,Oyo,Ibadan north east,Ward V E5A
 6195,Oyo,Ibadan north east,Ward Vi E5B
 6196,Oyo,Ibadan north east,Ward VII E6
@@ -6199,10 +6199,10 @@ id,state,lga,edited-ward
 6198,Oyo,Ibadan north east,Ward X  E8
 6199,Oyo,Ibadan north east,Ward Xi  E9 I
 6200,Oyo,Ibadan north east,Ward XII  E9 II
-6201,Oyo,Ibadan north west,Ward 10 Nw7
-6202,Oyo,Ibadan north west,Ward 11 Nw7
+6201,Oyo,Ibadan north west,Ward I0 Nw7
+6202,Oyo,Ibadan north west,Ward II Nw7
 6203,Oyo,Ibadan north west,Ward 2 Ni (Part II)
-6204,Oyo,Ibadan north west,Ward 3 Nw1
+6204,Oyo,Ibadan north west,Ward 3 NwI
 6205,Oyo,Ibadan north west,Ward 4 Nw2
 6206,Oyo,Ibadan north west,Ward 5 Nw3 (Part I)
 6207,Oyo,Ibadan north west,Ward 6 Nw3 (Part I)
@@ -6211,20 +6211,20 @@ id,state,lga,edited-ward
 6210,Oyo,Ibadan north west,Ward 9 Nw6
 6211,Oyo,Ibadan north west,Ward I Ni (Part I)
 6212,Oyo,Ibadan south west,Ward 08 Sw7
-6213,Oyo,Ibadan south west,Ward 1 C2
-6214,Oyo,Ibadan south west,Ward 10 Sw8 II
-6215,Oyo,Ibadan south west,Ward 11 Sw9(1)
-6216,Oyo,Ibadan south west,Ward 12 Sw9 II
-6217,Oyo,Ibadan south west,Ward 2  Sw1
+6213,Oyo,Ibadan south west,Ward I C2
+6214,Oyo,Ibadan south west,Ward I0 Sw8 II
+6215,Oyo,Ibadan south west,Ward II Sw9(I)
+6216,Oyo,Ibadan south west,Ward I2 Sw9 II
+6217,Oyo,Ibadan south west,Ward 2  SwI
 6218,Oyo,Ibadan south west,Ward 3 Sw2
 6219,Oyo,Ibadan south west,Ward 4 Sw3A & 3B
 6220,Oyo,Ibadan south west,Ward 5 Sw4
 6221,Oyo,Ibadan south west,Ward 6  Sw5
 6222,Oyo,Ibadan south west,Ward 7  Sw6
-6223,Oyo,Ibadan south west,Ward 9 Sw8 (1)
-6224,Oyo,Ibadan south-east,C1
+6223,Oyo,Ibadan south west,Ward 9 Sw8 (I)
+6224,Oyo,Ibadan south-east,CI
 6225,Oyo,Ibadan south-east,S  S5
-6226,Oyo,Ibadan south-east,S 1
+6226,Oyo,Ibadan south-east,S I
 6227,Oyo,Ibadan south-east,S 2A
 6228,Oyo,Ibadan south-east,S 3
 6229,Oyo,Ibadan south-east,S 4A
@@ -6302,7 +6302,7 @@ id,state,lga,edited-ward
 6301,Oyo,Itesiwaju,Okaka I
 6302,Oyo,Itesiwaju,Okaka II
 6303,Oyo,Itesiwaju,Oke-Amu
-6304,Oyo,Itesiwaju,Otu 1
+6304,Oyo,Itesiwaju,Otu I
 6305,Oyo,Itesiwaju,Otu II
 6306,Oyo,Itesiwaju,Owode/Ipapo
 6307,Oyo,Iwajowa,Agbaakin I
@@ -6415,7 +6415,7 @@ id,state,lga,edited-ward
 6414,Oyo,Ori ire,Ori Ire II
 6415,Oyo,Ori ire,Ori Ire III
 6416,Oyo,Ori ire,Ori Ire IV
-6417,Oyo,Ori ire,Ori Ire Ix
+6417,Oyo,Ori ire,Ori Ire IX
 6418,Oyo,Ori ire,Ori Ire V
 6419,Oyo,Ori ire,Ori Ire Vi
 6420,Oyo,Ori ire,Ori Ire VII
@@ -6600,16 +6600,16 @@ id,state,lga,edited-ward
 6599,Plateau,Langtang south,Turaki
 6600,Plateau,Mangu,Ampang West
 6601,Plateau,Mangu,Chanso
-6602,Plateau,Mangu,Gindiri  1
-6603,Plateau,Mangu,Gindiri  11
+6602,Plateau,Mangu,Gindiri  I
+6603,Plateau,Mangu,Gindiri  II
 6604,Plateau,Mangu,Jannaret
 6605,Plateau,Mangu,Jipal/Chakfem
 6606,Plateau,Mangu,Kadunu
 6607,Plateau,Mangu,Kerang
 6608,Plateau,Mangu,Kombun
 6609,Plateau,Mangu,Langai
-6610,Plateau,Mangu,Mangu  1
-6611,Plateau,Mangu,Mangu  11
+6610,Plateau,Mangu,Mangu  I
+6611,Plateau,Mangu,Mangu  II
 6612,Plateau,Mangu,Mangu Halle
 6613,Plateau,Mangu,Mangun
 6614,Plateau,Mangu,Pan Yam
@@ -6680,325 +6680,325 @@ id,state,lga,edited-ward
 6679,Plateau,Wase,Saluwe
 6680,Plateau,Wase,Wase Tofa
 6681,Plateau,Wase,Yola Wakat
-6682,RIVers,Abua-odual,Abua  IV
-6683,RIVers,Abua-odual,Abua I
-6684,RIVers,Abua-odual,Abua II
-6685,RIVers,Abua-odual,Abua III
-6686,RIVers,Abua-odual,Agada
-6687,RIVers,Abua-odual,Akani
-6688,RIVers,Abua-odual,Anyu
-6689,RIVers,Abua-odual,Emago-Kugbo
-6690,RIVers,Abua-odual,Emelego
-6691,RIVers,Abua-odual,Emughan  I
-6692,RIVers,Abua-odual,Emughan  II
-6693,RIVers,Abua-odual,Okpeden
-6694,RIVers,Abua-odual,Otapha
-6695,RIVers,Ahoada east,Ahoada  IV
-6696,RIVers,Ahoada east,Ahoada I
-6697,RIVers,Ahoada east,Ahoada II
-6698,RIVers,Ahoada east,Ahoada III
-6699,RIVers,Ahoada east,Akoh  I
-6700,RIVers,Ahoada east,Akoh  II
-6701,RIVers,Ahoada east,Akoh  III
-6702,RIVers,Ahoada east,Uppata  III
-6703,RIVers,Ahoada east,Uppata  IV
-6704,RIVers,Ahoada east,Uppata  V
-6705,RIVers,Ahoada east,Uppata  Vi
-6706,RIVers,Ahoada east,Uppata I
-6707,RIVers,Ahoada east,Uppata II
-6708,RIVers,Ahoada west,Ediro I
-6709,RIVers,Ahoada west,Ediro II
-6710,RIVers,Ahoada west,Igbuduya I
-6711,RIVers,Ahoada west,Igbuduya II
-6712,RIVers,Ahoada west,Igbuduya III
-6713,RIVers,Ahoada west,Igbuduya IV
-6714,RIVers,Ahoada west,Joinkrama
-6715,RIVers,Ahoada west,Okarki
-6716,RIVers,Ahoada west,Ubie I
-6717,RIVers,Ahoada west,Ubie II
-6718,RIVers,Ahoada west,Ubie III
-6719,RIVers,Ahoada west,Ubie IV
-6720,RIVers,Akuku toru,Alise Group
-6721,RIVers,Akuku toru,Briggs I
-6722,RIVers,Akuku toru,Briggs II
-6723,RIVers,Akuku toru,Briggs III
-6724,RIVers,Akuku toru,Georgewill II
-6725,RIVers,Akuku toru,Georgewill III
-6726,RIVers,Akuku toru,Georgwill III
-6727,RIVers,Akuku toru,Jack I
-6728,RIVers,Akuku toru,Jack II
-6729,RIVers,Akuku toru,Jack III
-6730,RIVers,Akuku toru,Kula  I
-6731,RIVers,Akuku toru,Kula  II
-6732,RIVers,Akuku toru,Manuel  I
-6733,RIVers,Akuku toru,Manuel  II
-6734,RIVers,Akuku toru,Manuel  III
-6735,RIVers,Akuku toru,North/South Group
-6736,RIVers,Akuku toru,Obonoma
-6737,RIVers,Andoni,Agwut-Obolo
-6738,RIVers,Andoni,Asarama
-6739,RIVers,Andoni,Ataba  I
-6740,RIVers,Andoni,Ataba  II
-6741,RIVers,Andoni,Ekede
-6742,RIVers,Andoni,Ikuru  Town
-6743,RIVers,Andoni,Ngo  Town
-6744,RIVers,Andoni,Samanga
-6745,RIVers,Andoni,Unyeada I
-6746,RIVers,Andoni,Unyeada II
-6747,RIVers,Andoni,Unyen Gala
-6748,RIVers,Asari-toru,Buguma  East I
-6749,RIVers,Asari-toru,Buguma  East II
-6750,RIVers,Asari-toru,Buguma  North East
-6751,RIVers,Asari-toru,Buguma  South  West
-6752,RIVers,Asari-toru,Buguma East West
-6753,RIVers,Asari-toru,Buguma North  West II
-6754,RIVers,Asari-toru,Buguma North West I
-6755,RIVers,Asari-toru,Buguma South
-6756,RIVers,Asari-toru,Buguma South East
-6757,RIVers,Asari-toru,Buguma West
-6758,RIVers,Asari-toru,Isia Group I
-6759,RIVers,Asari-toru,Isia Group II
-6760,RIVers,Asari-toru,West Cental Group
-6761,RIVers,Bonny,Ward I Oro-Igwe
-6762,RIVers,Bonny,Ward II Court/ Ada Allison
-6763,RIVers,Bonny,Ward III Dan Jumbo/ Beresiri
-6764,RIVers,Bonny,Ward III Orosiriri
-6765,RIVers,Bonny,Ward IV New Layout
-6766,RIVers,Bonny,Ward Ix Nanabie
-6767,RIVers,Bonny,Ward V Finima
-6768,RIVers,Bonny,Ward Vi Abalamabie
-6769,RIVers,Bonny,Ward VII Dema Abbey
-6770,RIVers,Bonny,Ward X Oloma Ayaminima
-6771,RIVers,Bonny,Ward Xi Peterside
-6772,RIVers,Bonny,Ward XII Kalaibiama
-6773,RIVers,Degema,Bakana   Vi
-6774,RIVers,Degema,Bakana  I
-6775,RIVers,Degema,Bakana  II
-6776,RIVers,Degema,Bakana  III
-6777,RIVers,Degema,Bakana  IV
-6778,RIVers,Degema,Bakana V
-6779,RIVers,Degema,Bille
-6780,RIVers,Degema,Bukuma
-6781,RIVers,Degema,Degema  I
-6782,RIVers,Degema,Degema  II
-6783,RIVers,Degema,Degema  III
-6784,RIVers,Degema,Ke/Old Bakana
-6785,RIVers,Degema,Obuama
-6786,RIVers,Degema,Tomble  I
-6787,RIVers,Degema,Tomble  II
-6788,RIVers,Degema,Tomble  III
-6789,RIVers,Degema,Tomble IV
-6790,RIVers,Eleme,Agbonchia
-6791,RIVers,Eleme,Akpajo
-6792,RIVers,Eleme,Alesa
-6793,RIVers,Eleme,Aleto
-6794,RIVers,Eleme,Alode
-6795,RIVers,Eleme,Ebubu
-6796,RIVers,Eleme,Ekporo
-6797,RIVers,Eleme,Eteo
-6798,RIVers,Eleme,Ogale
-6799,RIVers,Eleme,Onne
-6800,RIVers,Emohua,Egbeda
-6801,RIVers,Emohua,Elele Alimini
-6802,RIVers,Emohua,Emohua  II
-6803,RIVers,Emohua,Emohua I
-6804,RIVers,Emohua,Ibaa
-6805,RIVers,Emohua,Obelle
-6806,RIVers,Emohua,Odegu  I
-6807,RIVers,Emohua,Odegu  II
-6808,RIVers,Emohua,Ogbakiri  I
-6809,RIVers,Emohua,Ogbakiri  II
-6810,RIVers,Emohua,Omudioga/ Akpadu
-6811,RIVers,Emohua,Rumuekpe
-6812,RIVers,Emohua,Rundele
-6813,RIVers,Emohua,Ubimini
-6814,RIVers,Etche,Afara
-6815,RIVers,Etche,Akpoku/Umuoye
-6816,RIVers,Etche,Akwa/Odogwa
-6817,RIVers,Etche,Egbu
-6818,RIVers,Etche,Egwi/Opiro
-6819,RIVers,Etche,Igbo I
-6820,RIVers,Etche,Igbo II
-6821,RIVers,Etche,Igbo III
-6822,RIVers,Etche,Igbodo
-6823,RIVers,Etche,Mba
-6824,RIVers,Etche,Ndashi
-6825,RIVers,Etche,Nihi
-6826,RIVers,Etche,Obibi/Akwukabi
-6827,RIVers,Etche,Obite
-6828,RIVers,Etche,Odufor
-6829,RIVers,Etche,Okehi
-6830,RIVers,Etche,Owu
-6831,RIVers,Etche,Ozuzu
-6832,RIVers,Etche,Ulakwo
-6833,RIVers,Gokana,B-Dere
-6834,RIVers,Gokana,Bera
-6835,RIVers,Gokana,Biara I
-6836,RIVers,Gokana,Biara II
-6837,RIVers,Gokana,Bodo I
-6838,RIVers,Gokana,Bodo II
-6839,RIVers,Gokana,Bodo III
-6840,RIVers,Gokana,Bomu I
-6841,RIVers,Gokana,Bomu II
-6842,RIVers,Gokana,Derken/Deeyor/Nweribiara
-6843,RIVers,Gokana,K-Dere I
-6844,RIVers,Gokana,K-Dere II
-6845,RIVers,Gokana,Kpor/Lewe/Gbe
-6846,RIVers,Gokana,Mogho
-6847,RIVers,Gokana,Nweol/Gioko/Barako
-6848,RIVers,Gokana,Yeghe I
-6849,RIVers,Gokana,Yeghe II
-6850,RIVers,Ikwerre,Aluu
-6851,RIVers,Ikwerre,Apani
-6852,RIVers,Ikwerre,Elele I
-6853,RIVers,Ikwerre,Elele II
-6854,RIVers,Ikwerre,Igwuruta
-6855,RIVers,Ikwerre,Isiokpo I
-6856,RIVers,Ikwerre,Isiokpo II
-6857,RIVers,Ikwerre,Omademe/Ipo
-6858,RIVers,Ikwerre,Omagwa
-6859,RIVers,Ikwerre,Omerelu
-6860,RIVers,Ikwerre,Ozuaha
-6861,RIVers,Ikwerre,Ubima
-6862,RIVers,Ikwerre,Umuanwa
-6863,RIVers,Khana,Baen/Kpean/Duburo
-6864,RIVers,Khana,Bane
-6865,RIVers,Khana,Bargha
-6866,RIVers,Khana,Beeri
-6867,RIVers,Khana,Bori
-6868,RIVers,Khana,Boue
-6869,RIVers,Khana,Gwara/Kaa/Eeken
-6870,RIVers,Khana,Kaani
-6871,RIVers,Khana,Kono/Kwawa
-6872,RIVers,Khana,Llueku/Nyokuru
-6873,RIVers,Khana,Lorre/Luebe/Kpaa
-6874,RIVers,Khana,Okwali
-6875,RIVers,Khana,Opuoko/Kalaoko
-6876,RIVers,Khana,SII/Betem/Kbaabbe
-6877,RIVers,Khana,Sogho
-6878,RIVers,Khana,Taabaa
-6879,RIVers,Khana,Uegwere
-6880,RIVers,Khana,WIIyaa Kara
-6881,RIVers,Khana,Zaakpori
-6882,RIVers,Obio/akpor,Choba
-6883,RIVers,Obio/akpor,Elelenwo (3B)
-6884,RIVers,Obio/akpor,Oro-Igwe
-6885,RIVers,Obio/akpor,Ozuoba/Ogbogoro
-6886,RIVers,Obio/akpor,Rukpoku
-6887,RIVers,Obio/akpor,Rumueme (7A)
-6888,RIVers,Obio/akpor,Rumueme (7B)
-6889,RIVers,Obio/akpor,Rumueme (7C)
-6890,RIVers,Obio/akpor,Rumuigbo (8A)
-6891,RIVers,Obio/akpor,Rumukwuta (8B)
-6892,RIVers,Obio/akpor,Rumuodara
-6893,RIVers,Obio/akpor,Rumuodomaya (3A)
-6894,RIVers,Obio/akpor,Rumuokoro
-6895,RIVers,Obio/akpor,Rumuokwu (2B)
-6896,RIVers,Obio/akpor,Rumuolumeni
-6897,RIVers,Obio/akpor,Rumuomasi
-6898,RIVers,Obio/akpor,Worji
-6899,RIVers,Ogba/egbema/ndoni,Egbema I
-6900,RIVers,Ogba/egbema/ndoni,Egbema II
-6901,RIVers,Ogba/egbema/ndoni,Egi  I
-6902,RIVers,Ogba/egbema/ndoni,Egi  II
-6903,RIVers,Ogba/egbema/ndoni,Egi  III
-6904,RIVers,Ogba/egbema/ndoni,Egi  IV
-6905,RIVers,Ogba/egbema/ndoni,Igburu
-6906,RIVers,Ogba/egbema/ndoni,Ndoni  I
-6907,RIVers,Ogba/egbema/ndoni,Ndoni  II
-6908,RIVers,Ogba/egbema/ndoni,Ndoni  III
-6909,RIVers,Ogba/egbema/ndoni,Omoku  Town I
-6910,RIVers,Ogba/egbema/ndoni,Omoku  Town II
-6911,RIVers,Ogba/egbema/ndoni,Omoku Town IV (Usomini)
-6912,RIVers,Ogba/egbema/ndoni,Omoku Town V
-6913,RIVers,Ogba/egbema/ndoni,Omuku Town  (Obieti)
-6914,RIVers,Ogba/egbema/ndoni,Usomini I (North)
-6915,RIVers,Ogba/egbema/ndoni,Usomini II (South)
-6916,RIVers,Ogu/bolo,Bolo  IV
-6917,RIVers,Ogu/bolo,Bolo I
-6918,RIVers,Ogu/bolo,Bolo II
-6919,RIVers,Ogu/bolo,Bolo III
-6920,RIVers,Ogu/bolo,Ele
-6921,RIVers,Ogu/bolo,Ogu  I
-6922,RIVers,Ogu/bolo,Ogu  II
-6923,RIVers,Ogu/bolo,Ogu  III
-6924,RIVers,Ogu/bolo,Ogu  IV
-6925,RIVers,Ogu/bolo,Ogu  V
-6926,RIVers,Ogu/bolo,Ogu  Vi
-6927,RIVers,Ogu/bolo,Wakama
-6928,RIVers,Okrika,Kalio
-6929,RIVers,Okrika,Ogan
-6930,RIVers,Okrika,Ogoloma I
-6931,RIVers,Okrika,Ogoloma II
-6932,RIVers,Okrika,Ogoloma III
-6933,RIVers,Okrika,Okrika  I
-6934,RIVers,Okrika,Okrika  II
-6935,RIVers,Okrika,Okrika  III
-6936,RIVers,Okrika,Okrika  IV
-6937,RIVers,Okrika,Okrika  V
-6938,RIVers,Okrika,Okrika Vi
-6939,RIVers,Okrika,Okrika VII
-6940,RIVers,Omuma,AriranIIri/Owu-Ahia Community
-6941,RIVers,Omuma,Eberi-Dikeomuuo Community
-6942,RIVers,Omuma,Obibi/Ajuloke Community
-6943,RIVers,Omuma,Obiohia Community
-6944,RIVers,Omuma,Ofeh Community
-6945,RIVers,Omuma,Ohimogho Community
-6946,RIVers,Omuma,Oyoro
-6947,RIVers,Omuma,Umuajuloke Community
-6948,RIVers,Omuma,Umuogba I Community
-6949,RIVers,Omuma,Umuogba II Community
-6950,RIVers,Opobo/nekoro,Dappaye Ama-Kiri I
-6951,RIVers,Opobo/nekoro,Dappaye Ama-Kiri II
-6952,RIVers,Opobo/nekoro,Diepiri
-6953,RIVers,Opobo/nekoro,Jaja
-6954,RIVers,Opobo/nekoro,Kalaibiama I
-6955,RIVers,Opobo/nekoro,Kalaibiama II
-6956,RIVers,Opobo/nekoro,Nkoro I
-6957,RIVers,Opobo/nekoro,Nkoro II
-6958,RIVers,Opobo/nekoro,Nkoro III
-6959,RIVers,Opobo/nekoro,Queens Town Kalama
-6960,RIVers,Opobo/nekoro,Ukonu
-6961,RIVers,Oyigbo,Asa
-6962,RIVers,Oyigbo,Azuogu
-6963,RIVers,Oyigbo,Komkom
-6964,RIVers,Oyigbo,Obeakpu
-6965,RIVers,Oyigbo,Obete
-6966,RIVers,Oyigbo,Ogberu
-6967,RIVers,Oyigbo,Okoloma
-6968,RIVers,Oyigbo,Oyigba West
-6969,RIVers,Oyigbo,Oyigbo Central
-6970,RIVers,Oyigbo,Umuagbai
-6971,RIVers,Port harcourt,Abuloma/Amadi-Ama
-6972,RIVers,Port harcourt,Diobu
-6973,RIVers,Port harcourt,Elekahia
-6974,RIVers,Port harcourt,Mgbundukwu (One)
-6975,RIVers,Port harcourt,Mgbundukwu (Two)
-6976,RIVers,Port harcourt,Nkpolu Oroworukwo
-6977,RIVers,Port harcourt,Nkpolu Oroworukwo Two
-6978,RIVers,Port harcourt,Ochiri/Rumukalagbor
-6979,RIVers,Port harcourt,Ogbunabali
-6980,RIVers,Port harcourt,Oroabali
-6981,RIVers,Port harcourt,Orogbum
-6982,RIVers,Port harcourt,Oromineke/Ezimgbu
-6983,RIVers,Port harcourt,Oroworukwo
-6984,RIVers,Port harcourt,Port Harcourt Township
-6985,RIVers,Port harcourt,Port Harcourt Township Vi
-6986,RIVers,Port harcourt,Port Harcourt VII
-6987,RIVers,Port harcourt,Rumuobiekwe Ward
-6988,RIVers,Port harcourt,Rumuwoji (One)
-6989,RIVers,Port harcourt,Rumuwoji (Three)
-6990,RIVers,Port harcourt,Rumuwoji (Two)
-6991,RIVers,Tai,Ward I (Botem/Gbeneo)
-6992,RIVers,Tai,Ward II (Kpite)
-6993,RIVers,Tai,Ward III (Korokoro)
-6994,RIVers,Tai,Ward IV Koroma/Horo
-6995,RIVers,Tai,Ward Ix Nanabie
-6996,RIVers,Tai,Ward V (Kira/Borobara)
-6997,RIVers,Tai,Ward Vi (Gio/Kporghor/Gbam)
-6998,RIVers,Tai,Ward VII (Nonwa)
-6999,RIVers,Tai,Ward VIII (Barryira/Bara-Ale/Sime)
-7000,RIVers,Tai,Ward X (Ban-Ogoi)
+6682,Rivers,Abua-odual,Abua  IV
+6683,Rivers,Abua-odual,Abua I
+6684,Rivers,Abua-odual,Abua II
+6685,Rivers,Abua-odual,Abua III
+6686,Rivers,Abua-odual,Agada
+6687,Rivers,Abua-odual,Akani
+6688,Rivers,Abua-odual,Anyu
+6689,Rivers,Abua-odual,Emago-Kugbo
+6690,Rivers,Abua-odual,Emelego
+6691,Rivers,Abua-odual,Emughan  I
+6692,Rivers,Abua-odual,Emughan  II
+6693,Rivers,Abua-odual,Okpeden
+6694,Rivers,Abua-odual,Otapha
+6695,Rivers,Ahoada east,Ahoada  IV
+6696,Rivers,Ahoada east,Ahoada I
+6697,Rivers,Ahoada east,Ahoada II
+6698,Rivers,Ahoada east,Ahoada III
+6699,Rivers,Ahoada east,Akoh  I
+6700,Rivers,Ahoada east,Akoh  II
+6701,Rivers,Ahoada east,Akoh  III
+6702,Rivers,Ahoada east,Uppata  III
+6703,Rivers,Ahoada east,Uppata  IV
+6704,Rivers,Ahoada east,Uppata  V
+6705,Rivers,Ahoada east,Uppata  Vi
+6706,Rivers,Ahoada east,Uppata I
+6707,Rivers,Ahoada east,Uppata II
+6708,Rivers,Ahoada west,Ediro I
+6709,Rivers,Ahoada west,Ediro II
+6710,Rivers,Ahoada west,Igbuduya I
+6711,Rivers,Ahoada west,Igbuduya II
+6712,Rivers,Ahoada west,Igbuduya III
+6713,Rivers,Ahoada west,Igbuduya IV
+6714,Rivers,Ahoada west,Joinkrama
+6715,Rivers,Ahoada west,Okarki
+6716,Rivers,Ahoada west,Ubie I
+6717,Rivers,Ahoada west,Ubie II
+6718,Rivers,Ahoada west,Ubie III
+6719,Rivers,Ahoada west,Ubie IV
+6720,Rivers,Akuku toru,Alise Group
+6721,Rivers,Akuku toru,Briggs I
+6722,Rivers,Akuku toru,Briggs II
+6723,Rivers,Akuku toru,Briggs III
+6724,Rivers,Akuku toru,Georgewill II
+6725,Rivers,Akuku toru,Georgewill III
+6726,Rivers,Akuku toru,Georgwill III
+6727,Rivers,Akuku toru,Jack I
+6728,Rivers,Akuku toru,Jack II
+6729,Rivers,Akuku toru,Jack III
+6730,Rivers,Akuku toru,Kula  I
+6731,Rivers,Akuku toru,Kula  II
+6732,Rivers,Akuku toru,Manuel  I
+6733,Rivers,Akuku toru,Manuel  II
+6734,Rivers,Akuku toru,Manuel  III
+6735,Rivers,Akuku toru,North/South Group
+6736,Rivers,Akuku toru,Obonoma
+6737,Rivers,Andoni,Agwut-Obolo
+6738,Rivers,Andoni,Asarama
+6739,Rivers,Andoni,Ataba  I
+6740,Rivers,Andoni,Ataba  II
+6741,Rivers,Andoni,Ekede
+6742,Rivers,Andoni,Ikuru  Town
+6743,Rivers,Andoni,Ngo  Town
+6744,Rivers,Andoni,Samanga
+6745,Rivers,Andoni,Unyeada I
+6746,Rivers,Andoni,Unyeada II
+6747,Rivers,Andoni,Unyen Gala
+6748,Rivers,Asari-toru,Buguma  East I
+6749,Rivers,Asari-toru,Buguma  East II
+6750,Rivers,Asari-toru,Buguma  North East
+6751,Rivers,Asari-toru,Buguma  South  West
+6752,Rivers,Asari-toru,Buguma East West
+6753,Rivers,Asari-toru,Buguma North  West II
+6754,Rivers,Asari-toru,Buguma North West I
+6755,Rivers,Asari-toru,Buguma South
+6756,Rivers,Asari-toru,Buguma South East
+6757,Rivers,Asari-toru,Buguma West
+6758,Rivers,Asari-toru,Isia Group I
+6759,Rivers,Asari-toru,Isia Group II
+6760,Rivers,Asari-toru,West Cental Group
+6761,Rivers,Bonny,Ward I Oro-Igwe
+6762,Rivers,Bonny,Ward II Court/ Ada Allison
+6763,Rivers,Bonny,Ward III Dan Jumbo/ Beresiri
+6764,Rivers,Bonny,Ward III Orosiriri
+6765,Rivers,Bonny,Ward IV New Layout
+6766,Rivers,Bonny,Ward IX Nanabie
+6767,Rivers,Bonny,Ward V Finima
+6768,Rivers,Bonny,Ward Vi Abalamabie
+6769,Rivers,Bonny,Ward VII Dema Abbey
+6770,Rivers,Bonny,Ward X Oloma Ayaminima
+6771,Rivers,Bonny,Ward Xi Peterside
+6772,Rivers,Bonny,Ward XII Kalaibiama
+6773,Rivers,Degema,Bakana   Vi
+6774,Rivers,Degema,Bakana  I
+6775,Rivers,Degema,Bakana  II
+6776,Rivers,Degema,Bakana  III
+6777,Rivers,Degema,Bakana  IV
+6778,Rivers,Degema,Bakana V
+6779,Rivers,Degema,Bille
+6780,Rivers,Degema,Bukuma
+6781,Rivers,Degema,Degema  I
+6782,Rivers,Degema,Degema  II
+6783,Rivers,Degema,Degema  III
+6784,Rivers,Degema,Ke/Old Bakana
+6785,Rivers,Degema,Obuama
+6786,Rivers,Degema,Tomble  I
+6787,Rivers,Degema,Tomble  II
+6788,Rivers,Degema,Tomble  III
+6789,Rivers,Degema,Tomble IV
+6790,Rivers,Eleme,Agbonchia
+6791,Rivers,Eleme,Akpajo
+6792,Rivers,Eleme,Alesa
+6793,Rivers,Eleme,Aleto
+6794,Rivers,Eleme,Alode
+6795,Rivers,Eleme,Ebubu
+6796,Rivers,Eleme,Ekporo
+6797,Rivers,Eleme,Eteo
+6798,Rivers,Eleme,Ogale
+6799,Rivers,Eleme,Onne
+6800,Rivers,Emohua,Egbeda
+6801,Rivers,Emohua,Elele Alimini
+6802,Rivers,Emohua,Emohua  II
+6803,Rivers,Emohua,Emohua I
+6804,Rivers,Emohua,Ibaa
+6805,Rivers,Emohua,Obelle
+6806,Rivers,Emohua,Odegu  I
+6807,Rivers,Emohua,Odegu  II
+6808,Rivers,Emohua,Ogbakiri  I
+6809,Rivers,Emohua,Ogbakiri  II
+6810,Rivers,Emohua,Omudioga/ Akpadu
+6811,Rivers,Emohua,Rumuekpe
+6812,Rivers,Emohua,Rundele
+6813,Rivers,Emohua,Ubimini
+6814,Rivers,Etche,Afara
+6815,Rivers,Etche,Akpoku/Umuoye
+6816,Rivers,Etche,Akwa/Odogwa
+6817,Rivers,Etche,Egbu
+6818,Rivers,Etche,Egwi/Opiro
+6819,Rivers,Etche,Igbo I
+6820,Rivers,Etche,Igbo II
+6821,Rivers,Etche,Igbo III
+6822,Rivers,Etche,Igbodo
+6823,Rivers,Etche,Mba
+6824,Rivers,Etche,Ndashi
+6825,Rivers,Etche,Nihi
+6826,Rivers,Etche,Obibi/Akwukabi
+6827,Rivers,Etche,Obite
+6828,Rivers,Etche,Odufor
+6829,Rivers,Etche,Okehi
+6830,Rivers,Etche,Owu
+6831,Rivers,Etche,Ozuzu
+6832,Rivers,Etche,Ulakwo
+6833,Rivers,Gokana,B-Dere
+6834,Rivers,Gokana,Bera
+6835,Rivers,Gokana,Biara I
+6836,Rivers,Gokana,Biara II
+6837,Rivers,Gokana,Bodo I
+6838,Rivers,Gokana,Bodo II
+6839,Rivers,Gokana,Bodo III
+6840,Rivers,Gokana,Bomu I
+6841,Rivers,Gokana,Bomu II
+6842,Rivers,Gokana,Derken/Deeyor/Nweribiara
+6843,Rivers,Gokana,K-Dere I
+6844,Rivers,Gokana,K-Dere II
+6845,Rivers,Gokana,Kpor/Lewe/Gbe
+6846,Rivers,Gokana,Mogho
+6847,Rivers,Gokana,Nweol/Gioko/Barako
+6848,Rivers,Gokana,Yeghe I
+6849,Rivers,Gokana,Yeghe II
+6850,Rivers,Ikwerre,Aluu
+6851,Rivers,Ikwerre,Apani
+6852,Rivers,Ikwerre,Elele I
+6853,Rivers,Ikwerre,Elele II
+6854,Rivers,Ikwerre,Igwuruta
+6855,Rivers,Ikwerre,Isiokpo I
+6856,Rivers,Ikwerre,Isiokpo II
+6857,Rivers,Ikwerre,Omademe/Ipo
+6858,Rivers,Ikwerre,Omagwa
+6859,Rivers,Ikwerre,Omerelu
+6860,Rivers,Ikwerre,Ozuaha
+6861,Rivers,Ikwerre,Ubima
+6862,Rivers,Ikwerre,Umuanwa
+6863,Rivers,Khana,Baen/Kpean/Duburo
+6864,Rivers,Khana,Bane
+6865,Rivers,Khana,Bargha
+6866,Rivers,Khana,Beeri
+6867,Rivers,Khana,Bori
+6868,Rivers,Khana,Boue
+6869,Rivers,Khana,Gwara/Kaa/Eeken
+6870,Rivers,Khana,Kaani
+6871,Rivers,Khana,Kono/Kwawa
+6872,Rivers,Khana,Llueku/Nyokuru
+6873,Rivers,Khana,Lorre/Luebe/Kpaa
+6874,Rivers,Khana,Okwali
+6875,Rivers,Khana,Opuoko/Kalaoko
+6876,Rivers,Khana,SII/Betem/Kbaabbe
+6877,Rivers,Khana,Sogho
+6878,Rivers,Khana,Taabaa
+6879,Rivers,Khana,Uegwere
+6880,Rivers,Khana,WIIyaa Kara
+6881,Rivers,Khana,Zaakpori
+6882,Rivers,Obio/akpor,Choba
+6883,Rivers,Obio/akpor,Elelenwo (3B)
+6884,Rivers,Obio/akpor,Oro-Igwe
+6885,Rivers,Obio/akpor,Ozuoba/Ogbogoro
+6886,Rivers,Obio/akpor,Rukpoku
+6887,Rivers,Obio/akpor,Rumueme (7A)
+6888,Rivers,Obio/akpor,Rumueme (7B)
+6889,Rivers,Obio/akpor,Rumueme (7C)
+6890,Rivers,Obio/akpor,Rumuigbo (8A)
+6891,Rivers,Obio/akpor,Rumukwuta (8B)
+6892,Rivers,Obio/akpor,Rumuodara
+6893,Rivers,Obio/akpor,Rumuodomaya (3A)
+6894,Rivers,Obio/akpor,Rumuokoro
+6895,Rivers,Obio/akpor,Rumuokwu (2B)
+6896,Rivers,Obio/akpor,Rumuolumeni
+6897,Rivers,Obio/akpor,Rumuomasi
+6898,Rivers,Obio/akpor,Worji
+6899,Rivers,Ogba/egbema/ndoni,Egbema I
+6900,Rivers,Ogba/egbema/ndoni,Egbema II
+6901,Rivers,Ogba/egbema/ndoni,Egi  I
+6902,Rivers,Ogba/egbema/ndoni,Egi  II
+6903,Rivers,Ogba/egbema/ndoni,Egi  III
+6904,Rivers,Ogba/egbema/ndoni,Egi  IV
+6905,Rivers,Ogba/egbema/ndoni,Igburu
+6906,Rivers,Ogba/egbema/ndoni,Ndoni  I
+6907,Rivers,Ogba/egbema/ndoni,Ndoni  II
+6908,Rivers,Ogba/egbema/ndoni,Ndoni  III
+6909,Rivers,Ogba/egbema/ndoni,Omoku  Town I
+6910,Rivers,Ogba/egbema/ndoni,Omoku  Town II
+6911,Rivers,Ogba/egbema/ndoni,Omoku Town IV (Usomini)
+6912,Rivers,Ogba/egbema/ndoni,Omoku Town V
+6913,Rivers,Ogba/egbema/ndoni,Omuku Town  (Obieti)
+6914,Rivers,Ogba/egbema/ndoni,Usomini I (North)
+6915,Rivers,Ogba/egbema/ndoni,Usomini II (South)
+6916,Rivers,Ogu/bolo,Bolo  IV
+6917,Rivers,Ogu/bolo,Bolo I
+6918,Rivers,Ogu/bolo,Bolo II
+6919,Rivers,Ogu/bolo,Bolo III
+6920,Rivers,Ogu/bolo,Ele
+6921,Rivers,Ogu/bolo,Ogu  I
+6922,Rivers,Ogu/bolo,Ogu  II
+6923,Rivers,Ogu/bolo,Ogu  III
+6924,Rivers,Ogu/bolo,Ogu  IV
+6925,Rivers,Ogu/bolo,Ogu  V
+6926,Rivers,Ogu/bolo,Ogu  Vi
+6927,Rivers,Ogu/bolo,Wakama
+6928,Rivers,Okrika,Kalio
+6929,Rivers,Okrika,Ogan
+6930,Rivers,Okrika,Ogoloma I
+6931,Rivers,Okrika,Ogoloma II
+6932,Rivers,Okrika,Ogoloma III
+6933,Rivers,Okrika,Okrika  I
+6934,Rivers,Okrika,Okrika  II
+6935,Rivers,Okrika,Okrika  III
+6936,Rivers,Okrika,Okrika  IV
+6937,Rivers,Okrika,Okrika  V
+6938,Rivers,Okrika,Okrika Vi
+6939,Rivers,Okrika,Okrika VII
+6940,Rivers,Omuma,AriranIIri/Owu-Ahia Community
+6941,Rivers,Omuma,Eberi-Dikeomuuo Community
+6942,Rivers,Omuma,Obibi/Ajuloke Community
+6943,Rivers,Omuma,Obiohia Community
+6944,Rivers,Omuma,Ofeh Community
+6945,Rivers,Omuma,Ohimogho Community
+6946,Rivers,Omuma,Oyoro
+6947,Rivers,Omuma,Umuajuloke Community
+6948,Rivers,Omuma,Umuogba I Community
+6949,Rivers,Omuma,Umuogba II Community
+6950,Rivers,Opobo/nekoro,Dappaye Ama-Kiri I
+6951,Rivers,Opobo/nekoro,Dappaye Ama-Kiri II
+6952,Rivers,Opobo/nekoro,Diepiri
+6953,Rivers,Opobo/nekoro,Jaja
+6954,Rivers,Opobo/nekoro,Kalaibiama I
+6955,Rivers,Opobo/nekoro,Kalaibiama II
+6956,Rivers,Opobo/nekoro,Nkoro I
+6957,Rivers,Opobo/nekoro,Nkoro II
+6958,Rivers,Opobo/nekoro,Nkoro III
+6959,Rivers,Opobo/nekoro,Queens Town Kalama
+6960,Rivers,Opobo/nekoro,Ukonu
+6961,Rivers,Oyigbo,Asa
+6962,Rivers,Oyigbo,Azuogu
+6963,Rivers,Oyigbo,Komkom
+6964,Rivers,Oyigbo,Obeakpu
+6965,Rivers,Oyigbo,Obete
+6966,Rivers,Oyigbo,Ogberu
+6967,Rivers,Oyigbo,Okoloma
+6968,Rivers,Oyigbo,Oyigba West
+6969,Rivers,Oyigbo,Oyigbo Central
+6970,Rivers,Oyigbo,Umuagbai
+6971,Rivers,Port harcourt,Abuloma/Amadi-Ama
+6972,Rivers,Port harcourt,Diobu
+6973,Rivers,Port harcourt,Elekahia
+6974,Rivers,Port harcourt,Mgbundukwu (One)
+6975,Rivers,Port harcourt,Mgbundukwu (Two)
+6976,Rivers,Port harcourt,Nkpolu Oroworukwo
+6977,Rivers,Port harcourt,Nkpolu Oroworukwo Two
+6978,Rivers,Port harcourt,Ochiri/Rumukalagbor
+6979,Rivers,Port harcourt,Ogbunabali
+6980,Rivers,Port harcourt,Oroabali
+6981,Rivers,Port harcourt,Orogbum
+6982,Rivers,Port harcourt,Oromineke/Ezimgbu
+6983,Rivers,Port harcourt,Oroworukwo
+6984,Rivers,Port harcourt,Port Harcourt Township
+6985,Rivers,Port harcourt,Port Harcourt Township Vi
+6986,Rivers,Port harcourt,Port Harcourt VII
+6987,Rivers,Port harcourt,Rumuobiekwe Ward
+6988,Rivers,Port harcourt,Rumuwoji (One)
+6989,Rivers,Port harcourt,Rumuwoji (Three)
+6990,Rivers,Port harcourt,Rumuwoji (Two)
+6991,Rivers,Tai,Ward I (Botem/Gbeneo)
+6992,Rivers,Tai,Ward II (Kpite)
+6993,Rivers,Tai,Ward III (Korokoro)
+6994,Rivers,Tai,Ward IV Koroma/Horo
+6995,Rivers,Tai,Ward IX Nanabie
+6996,Rivers,Tai,Ward V (Kira/Borobara)
+6997,Rivers,Tai,Ward Vi (Gio/Kporghor/Gbam)
+6998,Rivers,Tai,Ward VII (Nonwa)
+6999,Rivers,Tai,Ward VIII (Barryira/Bara-Ale/Sime)
+7000,Rivers,Tai,Ward X (Ban-Ogoi)
 7001,Sokoto,Binji,Binji
 7002,Sokoto,Binji,Bunkari
 7003,Sokoto,Binji,Gawazzai
