@@ -25,8 +25,6 @@ public abstract class TransporterDatabase extends RoomDatabase {
     public abstract OperatingAreaDAO getOperatingAreaDao();
     public abstract LocationDAO getLocationDao();
 
-
-
     //Initialization of database instance.
     public static TransporterDatabase getInstance(Context context){
         if(INSTANCE == null){

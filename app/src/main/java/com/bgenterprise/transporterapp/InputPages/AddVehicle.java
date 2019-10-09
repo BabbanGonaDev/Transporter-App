@@ -83,6 +83,7 @@ public class AddVehicle extends AppCompatActivity {
         transportdb = TransporterDatabase.getInstance(AddVehicle.this);
         customizeActionBar();
         getNumberOfVehicles();
+        //TODO ---> WHat's the format for vehicle id. ?
         vehicle_id = "XXSSRRRR" + new SimpleDateFormat("HHmmss", Locale.getDefault()).format(new Date());
         vehicle_owner_id = transport_details.get(SessionManager.KEY_DRIVER_ID);
         disableButton(btn_next);

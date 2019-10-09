@@ -1,8 +1,5 @@
 package com.bgenterprise.transporterapp.Network;
 
-import com.bgenterprise.transporterapp.Database.Tables.Drivers;
-import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
-import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
 import com.bgenterprise.transporterapp.Network.Responses.DriverResponse;
 import com.bgenterprise.transporterapp.Network.Responses.DriverSync;
 import com.bgenterprise.transporterapp.Network.Responses.OperatingAreaResponse;

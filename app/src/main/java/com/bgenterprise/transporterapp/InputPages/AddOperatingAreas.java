@@ -17,6 +17,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import com.babbangona.bg_face.LuxandActivity;
+import com.babbangona.bg_face.LuxandAuthActivity;
 import com.babbangona.bg_face.LuxandInfo;
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
@@ -366,7 +367,7 @@ public class AddOperatingAreas extends AppCompatActivity {
 
     public void beginLuxandActivity(){
         new LuxandInfo(this).putTemplate(transport_details.get(SessionManager.KEY_REG_TEMPLATE));
-        Intent LuxandIntent = new Intent(this, LuxandActivity.class);
+        Intent LuxandIntent = new Intent(this, LuxandAuthActivity.class);
         startActivityForResult(LuxandIntent, 419);
     }
 
