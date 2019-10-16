@@ -2,7 +2,6 @@ package com.bgenterprise.transporterapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +13,9 @@ import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
 import com.bgenterprise.transporterapp.Database.TransporterDatabase;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textview.MaterialTextView;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,14 +51,17 @@ public class ProfileActivity extends AppCompatActivity {
     @BindView(R.id.mtv_driver_ward)
     MaterialTextView mtv_driver_ward;
 
-    @BindView(R.id.tabs_layout)
-    TabLayout tabs_layout;
+    @BindView(R.id.mtv_vehicles)
+    MaterialTextView mtv_vehicles;
+
+    @BindView(R.id.mtv_areas)
+    MaterialTextView mtv_areas;
 
     String driver_id;
     TransporterDatabase transportdb;
     Drivers driver;
-    OperatingAreas driverAreas;
-    Vehicles driverVehicles;
+    List<OperatingAreas> driverAreas;
+    List<Vehicles> driverVehicles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +80,10 @@ public class ProfileActivity extends AppCompatActivity {
         collapsingToolbarTitle();
         setSupportActionBar(xToolbar);
         getDriverDetails(driver_id);
+        getVehiclesDetails(driver_id);
+        getAreaDetails(driver_id);
         initUIDisplay();
+
 
     }
 
@@ -112,6 +118,31 @@ public class ProfileActivity extends AppCompatActivity {
             mtv_driver_state.setText("State: " + driver.getDriver_state());
             mtv_driver_lga.setText("LGA: " + driver.getDriver_lga());
             mtv_driver_ward.setText("Ward: " + driver.getDriver_ward());
+            mtv_vehicles.setText("");
+            mtv_areas.setText("");
+
+            int i = 1;
+            for (Vehicles vehicles: driverVehicles) {
+                mtv_vehicles.append(i + ". Type: " + vehicles.getVehicle_type() + "\n" +
+                        "    Plate No: " + vehicles.getVehicle_plate_no() + "\n" +
+                        "    Capacity: " + vehicles.getVehicle_capacity() + "\n" + "\n");
+                i++;
+
+            }
+
+            int j = 1;
+            for (OperatingAreas opArea: driverAreas) {
+                if (opArea.getLga_id().equals("") && opArea.getWard_id().equals("") && opArea.getVillage_id().equals("")) {
+                    mtv_areas.append(j + ". " + opArea.getState_id() + "\n");
+                } else if (opArea.getWard_id().equals("") && opArea.getVillage_id().equals("")) {
+                    mtv_areas.append(j + ". " + opArea.getState_id() + ", " + opArea.getLga_id() + "\n");
+                } else if (opArea.getVillage_id().equals("")) {
+                    mtv_areas.append(j + ". " + opArea.getState_id() + ", " + opArea.getLga_id() + ", " + opArea.getWard_id() + "\n");
+                } else {
+                    mtv_areas.append(j + ". " + opArea.getState_id() + ", " + opArea.getLga_id() + ", " + opArea.getWard_id() + ", " + opArea.getVillage_id() + "\n");
+                }
+                j++;
+            }
 
 
         }catch (Exception e){
@@ -131,5 +162,30 @@ public class ProfileActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    public void getVehiclesDetails(String driverID){
+
+        AppExecutors.getInstance().diskIO().execute(() -> {
+            try{
+                driverVehicles = transportdb.getVehicleDao().getDriversVehicles(driverID);
+                runOnUiThread(() -> initUIDisplay());
+            }catch (Exception e){
+                runOnUiThread(() -> Toast.makeText(ProfileActivity.this, "Unable to get vehicle details", Toast.LENGTH_LONG).show());
+            }
+        });
+
+    }
+
+    public void getAreaDetails(String driverID){
+
+        AppExecutors.getInstance().diskIO().execute(() -> {
+            try{
+                driverAreas = transportdb.getOperatingAreaDao().getDriversAreas(driverID);
+                runOnUiThread(() -> initUIDisplay());
+            }catch (Exception e){
+                runOnUiThread(() -> Toast.makeText(ProfileActivity.this, "Unable to get operating areas details", Toast.LENGTH_LONG).show());
+            }
+        });
     }
 }

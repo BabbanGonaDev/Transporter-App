@@ -34,4 +34,7 @@ public interface VehicleDAO {
 
     @Query("UPDATE vehicles_table SET sync_status = :status WHERE owner_id = :owner_id")
     void updateSyncStatus(String owner_id, String status);
+
+    @Query("SELECT * FROM vehicles_table WHERE owner_id = :driver_id")
+    List<Vehicles> getDriversVehicles(String driver_id);
 }

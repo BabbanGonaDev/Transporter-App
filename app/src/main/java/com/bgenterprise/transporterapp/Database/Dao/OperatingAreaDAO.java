@@ -34,4 +34,7 @@ public interface OperatingAreaDAO {
 
     @Query("UPDATE operating_areas_table SET sync_status = :status WHERE owner_id = :owner_id")
     void updateSyncStatus(String owner_id, String status);
+
+    @Query("SELECT * FROM operating_areas_table WHERE owner_id = :driverID")
+    List<OperatingAreas> getDriversAreas(String driverID);
 }
