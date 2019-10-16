@@ -25,6 +25,7 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
                 android:orientation="vertical"
                 android:weightSum="5"
                 app:layout_collapseMode="parallax">
@@ -42,18 +43,24 @@
                     android:id="@+id/mtv_driver_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="TextView"
-                    android:textColor="@color/mdtp_white" />
+                    android:textColor="@color/mdtp_white"
+                    android:textSize="18sp" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/mtv_driver_id"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textSize="16sp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.Toolbar
@@ -70,10 +77,152 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/action_btn_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Button"
+                    android:visibility="invisible" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_call"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="2"
+                    android:text="Call"
+                    app:icon="@drawable/ic_call_bg_blue_24dp"
+                    app:iconGravity="textStart"
+                    app:strokeColor="@color/colorPrimary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_copy"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="2"
+                    android:text="Copy"
+                    app:icon="@drawable/ic_copy_bg_blue_24dp"
+                    app:iconGravity="textEnd"
+                    app:strokeColor="@color/colorPrimary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Button"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rounded_corners_blue"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mtv_driver_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableStart="@drawable/ic_phonebook"
+                    android:drawablePadding="10dp"
+                    android:text="@android:string/emptyPhoneNumber"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mtv_driver_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableStart="@drawable/ic_vehicle_truck"
+                    android:drawablePadding="10dp"
+                    android:text="(No driver vehicles)"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mtv_driver_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableStart="@drawable/ic_world_location"
+                    android:drawablePadding="10dp"
+                    android:text="(No driver state)"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mtv_driver_lga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableStart="@drawable/ic_world_location"
+                    android:drawablePadding="10dp"
+                    android:text="(No driver lga)"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mtv_driver_ward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableStart="@drawable/ic_world_location"
+                    android:drawablePadding="10dp"
+                    android:text="(No driver ward)"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:tabGravity="fill"
+                app:tabMode="scrollable">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/vehicle_tabItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicles" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/area_tabItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Operating Areas" />
+
+            </com.google.android.material.tabs.TabLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 

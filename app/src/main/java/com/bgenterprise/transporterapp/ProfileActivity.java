@@ -2,6 +2,7 @@ package com.bgenterprise.transporterapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
 import com.bgenterprise.transporterapp.Database.TransporterDatabase;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import butterknife.BindView;
@@ -33,6 +35,24 @@ public class ProfileActivity extends AppCompatActivity {
 
     @BindView(R.id.mtv_driver_id)
     MaterialTextView mtv_driver_id;
+
+    @BindView(R.id.mtv_driver_phone)
+    MaterialTextView mtv_driver_phone;
+
+    @BindView(R.id.mtv_driver_vehicle)
+    MaterialTextView mtv_driver_vehicles;
+
+    @BindView(R.id.mtv_driver_state)
+    MaterialTextView mtv_driver_state;
+
+    @BindView(R.id.mtv_driver_lga)
+    MaterialTextView mtv_driver_lga;
+
+    @BindView(R.id.mtv_driver_ward)
+    MaterialTextView mtv_driver_ward;
+
+    @BindView(R.id.tabs_layout)
+    TabLayout tabs_layout;
 
     String driver_id;
     TransporterDatabase transportdb;
@@ -86,7 +106,14 @@ public class ProfileActivity extends AppCompatActivity {
     public void initUIDisplay(){
         try{
             mtv_driver_id.setText("Driver ID: " + driver.getDriver_id());
-            mtv_driver_name.setText(driver.getFirst_name() + " " + driver.getLast_name());
+            mtv_driver_name.setText("Driver Name: " + driver.getFirst_name() + " " + driver.getLast_name());
+            mtv_driver_phone.setText(driver.getPhone_number());
+            mtv_driver_vehicles.setText(driver.getNo_of_vehicles() + " Vehicle(s)");
+            mtv_driver_state.setText("State: " + driver.getDriver_state());
+            mtv_driver_lga.setText("LGA: " + driver.getDriver_lga());
+            mtv_driver_ward.setText("Ward: " + driver.getDriver_ward());
+
+
         }catch (Exception e){
             e.printStackTrace();
         }

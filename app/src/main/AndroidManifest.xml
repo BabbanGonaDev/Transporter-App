@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:roundIcon,android:theme">
-        <activity android:name=".ProfileActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"></activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity android:name=".ConfirmPages.ConfirmTransporter" />
         <activity android:name=".InputPages.AddOperatingAreas" />
         <activity android:name=".InputPages.AddVehicle" />
