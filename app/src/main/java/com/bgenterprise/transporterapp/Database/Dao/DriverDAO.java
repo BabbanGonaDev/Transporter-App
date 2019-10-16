@@ -37,4 +37,7 @@ public interface DriverDAO {
 
     @Query("SELECT * FROM drivers_table ORDER BY reg_date DESC")
     List<Drivers> getAllDrivers();
+
+    @Query("SELECT * FROM drivers_table WHERE driver_id = :driver_id")
+    Drivers getDriverDetails(String driver_id);
 }

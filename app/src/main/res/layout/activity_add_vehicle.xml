@@ -17,14 +17,12 @@
             android:orientation="vertical" >
 
             <LinearLayout
-                android:id="@+id/vehicle_detail_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Vehicle Details"
@@ -110,14 +108,12 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/vehicle_location_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Vehicle Location"

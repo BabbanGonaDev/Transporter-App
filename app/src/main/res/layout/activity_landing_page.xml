@@ -6,87 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".Main2Activity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="10">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="15dp"
-            android:layout_weight="2"
-            android:text="@string/landing_text"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-            android:visibility="invisible" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="0dp"
-            app:cardMaxElevation="0dp">
-
-            <androidx.appcompat.widget.SearchView
-                style="@android:style/Widget.Material.SearchView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#D3D3D3"
-                app:iconifiedByDefault="false"
-                app:queryHint="Search Transporter Details"
-                app:showDividers="none" />
-        </com.google.android.material.card.MaterialCardView>
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/recycler_layout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="15dp"
-            android:layout_weight="5"
-            android:orientation="vertical">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/rounded_corners"
-                android:text="View All Transporters"
-                android:textAlignment="center"
-                android:textAppearance="@android:style/TextAppearance.Material.Title"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_view_transporters"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_add_transporter"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="15dp"
-            android:layout_weight="2"
-            android:text="@string/btn_add_transport"
-            app:icon="@drawable/ic_add_transporter"
-            app:iconGravity="textStart" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/mtv_copyright"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2" />
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/landing_text"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textSize="25sp"
+                android:visibility="visible" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:visibility="visible"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="0dp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/sv_transporters"
+                    style="@android:style/Widget.Material.SearchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#D3D3D3"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="Search Transporter Details"
+                    app:showDividers="none" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_view_transporters"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="#D3D3D3" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_corners"
+                    android:text="View All Transporters"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_transporter"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:text="@string/btn_add_transport"
+                app:icon="@drawable/ic_add_transporter"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtv_copyright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

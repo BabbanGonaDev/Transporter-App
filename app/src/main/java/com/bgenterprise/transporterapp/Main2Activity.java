@@ -3,6 +3,7 @@ package com.bgenterprise.transporterapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -44,6 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
+import butterknife.BindInt;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -51,7 +53,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     @BindView(R.id.btn_add_transporter)
     MaterialButton btnAddTransporter;
 
@@ -60,6 +62,9 @@ public class Main2Activity extends AppCompatActivity {
 
     @BindView(R.id.mtv_copyright)
     MaterialTextView mtv_copyright;
+
+    @BindView(R.id.sv_transporters)
+    SearchView sv_transporters;
 
     SessionManager sessionM;
     HashMap<String, String> transport_details;
@@ -91,7 +96,8 @@ public class Main2Activity extends AppCompatActivity {
         sessionM.CLEAR_REGISTRATION_SESSION();
         transport_details = sessionM.getTransporterDetails();
         initDriverRecycler();
-        mtv_copyright.setText("(C) Enterprise Systems 2019. Version: " + BuildConfig.VERSION_NAME);
+        mtv_copyright.setText("© Enterprise Systems 2019 v" + BuildConfig.VERSION_NAME);
+        sv_transporters.setOnQueryTextListener(this);
 
         //TODO --> Check Phone date if it's earlier than date of app development.
     }
@@ -400,7 +406,8 @@ public class Main2Activity extends AppCompatActivity {
                 adapter = new ViewTransporterAdapter(Main2Activity.this, drivers, new ViewTransporterAdapter.OnItemClickListener() {
                     @Override
                     public void onClick(Drivers drivers) {
-
+                        startActivity(new Intent(Main2Activity.this, ProfileActivity.class)
+                                            .putExtra("driver_id", drivers.getDriver_id()));
                     }
                 });
 
@@ -414,5 +421,19 @@ public class Main2Activity extends AppCompatActivity {
         };getDrivers.execute();
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
 
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        try{
+            adapter.getFilter().filter(newText.toLowerCase());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return false;
+    }
 }
