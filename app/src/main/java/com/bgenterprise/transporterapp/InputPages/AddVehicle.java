@@ -83,8 +83,8 @@ public class AddVehicle extends AppCompatActivity {
         transportdb = TransporterDatabase.getInstance(AddVehicle.this);
         customizeActionBar();
         getNumberOfVehicles();
-        //TODO ---> WHat's the format for vehicle id. ?
-        vehicle_id = "XXSSRRRR" + new SimpleDateFormat("HHmmss", Locale.getDefault()).format(new Date());
+        //TODO ---> WHat's the format for vehicle id. (using staffId_datetime newly added 17-10-19) ?
+        vehicle_id = transport_details.get(SessionManager.KEY_STAFF_ID) + "_" + new SimpleDateFormat("ddMMyyyyHHmmss", Locale.getDefault()).format(new Date());
         vehicle_owner_id = transport_details.get(SessionManager.KEY_DRIVER_ID);
         disableButton(btn_next);
         initVehicleType();
@@ -93,21 +93,15 @@ public class AddVehicle extends AppCompatActivity {
         initVehicleCondition();
         initStateAdapter();
 
-        atv_vehicle_state.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                atv_vehicle_lga.setText("");
-                atv_vehicle_ward.setText("");
-                initLGAdapter();
-            }
+        atv_vehicle_state.setOnItemClickListener((adapterView, view, i, l) -> {
+            atv_vehicle_lga.setText("");
+            atv_vehicle_ward.setText("");
+            initLGAdapter();
         });
 
-        atv_vehicle_lga.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                atv_vehicle_ward.setText("");
-                initWardsAdapter();
-            }
+        atv_vehicle_lga.setOnItemClickListener((adapterView, view, i, l) -> {
+            atv_vehicle_ward.setText("");
+            initWardsAdapter();
         });
 
     }
