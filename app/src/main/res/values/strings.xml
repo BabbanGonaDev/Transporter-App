@@ -4,6 +4,4 @@
     <string name="landing_text">Find the closest transporter to you</string>
     <string name="btn_add_transport">Add New Transporter</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,10 +1,9 @@
-package com.bgenterprise.transporterapp.Network.Responses;
-
+package com.bgenterprise.transporterapp.Network.ModelClasses;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class VehicleResponse {
+public class OperatingAreaResponse {
 
     @SerializedName("owner_id")
     @Expose
@@ -14,10 +13,10 @@ public class VehicleResponse {
     @Expose
     public String sync_status;
 
-    public VehicleResponse() {
+    public OperatingAreaResponse() {
     }
 
-    public VehicleResponse(String owner_id, String sync_status) {
+    public OperatingAreaResponse(String owner_id, String sync_status) {
         this.owner_id = owner_id;
         this.sync_status = sync_status;
     }
@@ -27,6 +26,7 @@ public class VehicleResponse {
     }
 
     public void setOwner_id(String owner_id) {
+
         this.owner_id = owner_id;
     }
 

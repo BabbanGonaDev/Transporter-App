@@ -4,15 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -24,28 +28,38 @@ import com.babbangona.bg_face.LuxandInfo;
 import com.bgenterprise.transporterapp.Database.DatabaseApiCalls;
 import com.bgenterprise.transporterapp.Database.PopulateLocation;
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
+import com.bgenterprise.transporterapp.Database.Tables.HSF;
 import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
+import com.bgenterprise.transporterapp.Database.Tables.Payments;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
+import com.bgenterprise.transporterapp.Database.TransporterDatabase;
 import com.bgenterprise.transporterapp.InputPages.AddTransporter;
-import com.bgenterprise.transporterapp.Network.Responses.DriverResponse;
-import com.bgenterprise.transporterapp.Network.Responses.DriverSync;
-import com.bgenterprise.transporterapp.Network.Responses.OperatingAreaResponse;
-import com.bgenterprise.transporterapp.Network.Responses.OperatingAreaSync;
-import com.bgenterprise.transporterapp.Network.Responses.VehicleResponse;
-import com.bgenterprise.transporterapp.Network.Responses.VehicleSync;
+import com.bgenterprise.transporterapp.Network.ModelClasses.DriverResponse;
+import com.bgenterprise.transporterapp.Network.ModelClasses.DriverSyncDown;
+import com.bgenterprise.transporterapp.Network.ModelClasses.HSFSyncDown;
+import com.bgenterprise.transporterapp.Network.ModelClasses.OperatingAreaResponse;
+import com.bgenterprise.transporterapp.Network.ModelClasses.OperatingAreaSyncDown;
+import com.bgenterprise.transporterapp.Network.ModelClasses.PaymentSyncDown;
+import com.bgenterprise.transporterapp.Network.ModelClasses.VehicleResponse;
+import com.bgenterprise.transporterapp.Network.ModelClasses.VehicleSyncDown;
 import com.bgenterprise.transporterapp.Network.RetrofitApiCalls;
 import com.bgenterprise.transporterapp.Network.RetrofitClient;
 import com.bgenterprise.transporterapp.RecyclerAdapters.ViewTransporterAdapter;
+import com.bgenterprise.transporterapp.TransporterDetails.ProfileActivity;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
-import butterknife.BindInt;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -66,17 +80,28 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
     @BindView(R.id.sv_transporters)
     SearchView sv_transporters;
 
+    String[] appPermissions = {
+            Manifest.permission.INTERNET,
+            Manifest.permission.CAMERA,
+            Manifest.permission.CALL_PHONE,
+            Manifest.permission.ACCESS_NETWORK_STATE
+    };
+
     SessionManager sessionM;
     HashMap<String, String> transport_details;
     ViewTransporterAdapter adapter;
     String staff_id;
     ProgressDialog pdSync;
+    TransporterDatabase transportdb;
+    private static final int PERMISSIONS_REQUEST_CODE = 1240;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
         ButterKnife.bind(this);
+        transportdb = TransporterDatabase.getInstance(Main2Activity.this);
         sessionM = new SessionManager(Main2Activity.this);
         pdSync = new ProgressDialog(Main2Activity.this);
         pdSync.setTitle("Loading");
@@ -93,13 +118,14 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
         }
 
         importLocations();
+        checkAndRequestPermissions();
         sessionM.CLEAR_REGISTRATION_SESSION();
         transport_details = sessionM.getTransporterDetails();
         initDriverRecycler();
         mtv_copyright.setText("© Enterprise Systems 2019 v" + BuildConfig.VERSION_NAME);
+        //confirmPhoneDate();
         sv_transporters.setOnQueryTextListener(this);
 
-        //TODO --> Check Phone date if it's earlier than date of app development.
     }
 
     @OnClick(R.id.btn_add_transporter)
@@ -240,6 +266,8 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
         syncDownDrivers();
         syncDownVehicles();
         syncDownAreas();
+        syncDownHSF();
+        syncDownPayments();
         pdSync.dismiss();
     }
 
@@ -275,15 +303,15 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
     public void syncDownDrivers(){
 
         RetrofitApiCalls service = RetrofitClient.getRetrofitInstance().create(RetrofitApiCalls.class);
-        Call<List<DriverSync>> call = service.syncDownDrivers(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_DRIVER));
-        call.enqueue(new Callback<List<DriverSync>>() {
+        Call<List<DriverSyncDown>> call = service.syncDownDrivers(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_DRIVER));
+        call.enqueue(new Callback<List<DriverSyncDown>>() {
             @Override
-            public void onResponse(Call<List<DriverSync>> call, Response<List<DriverSync>> response) {
+            public void onResponse(Call<List<DriverSyncDown>> call, Response<List<DriverSyncDown>> response) {
                 if(response.isSuccessful()){
-                    List<DriverSync> first = response.body();
+                    List<DriverSyncDown> first = response.body();
                     List<Drivers> driveResponse = new ArrayList<>();
 
-                    for(DriverSync z: first){
+                    for(DriverSyncDown z: first){
                         driveResponse.add(new Drivers(z.getDriver_id(),
                                 z.getFirst_name(),
                                 z.getLast_name(),
@@ -303,7 +331,14 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
 
                     @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoDriverTable insert = new DatabaseApiCalls.insertIntoDriverTable(Main2Activity.this){
                         @Override
+                        protected void onPreExecute() {
+                            //Initialize the shimmer
+                            super.onPreExecute();
+                        }
+
+                        @Override
                         protected void onPostExecute(Void aVoid) {
+                            //End the Shimmer
                             super.onPostExecute(aVoid);
                             initDriverRecycler();
                         }
@@ -312,7 +347,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
             }
 
             @Override
-            public void onFailure(Call<List<DriverSync>> call, Throwable t) {
+            public void onFailure(Call<List<DriverSyncDown>> call, Throwable t) {
                 Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
@@ -321,15 +356,15 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
     public void syncDownVehicles(){
 
         RetrofitApiCalls service = RetrofitClient.getRetrofitInstance().create(RetrofitApiCalls.class);
-        Call<List<VehicleSync>> call = service.syncDownVehicles(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_VEHICLE));
-        call.enqueue(new Callback<List<VehicleSync>>() {
+        Call<List<VehicleSyncDown>> call = service.syncDownVehicles(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_VEHICLE));
+        call.enqueue(new Callback<List<VehicleSyncDown>>() {
             @Override
-            public void onResponse(Call<List<VehicleSync>> call, Response<List<VehicleSync>> response) {
+            public void onResponse(Call<List<VehicleSyncDown>> call, Response<List<VehicleSyncDown>> response) {
                 if(response.isSuccessful()){
-                    List<VehicleSync> first = response.body();
+                    List<VehicleSyncDown> first = response.body();
                     List<Vehicles> vehicleResponse = new ArrayList<>();
 
-                    for(VehicleSync y: first){
+                    for(VehicleSyncDown y: first){
                         vehicleResponse.add(new Vehicles(y.getVehicle_id(),
                                 y.getVehicle_plate_no(),
                                 y.getVehicle_type(),
@@ -342,7 +377,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                                 y.getVehicle_village(),
                                 y.getOwner_id(),
                                 y.getSync_status()));
-                        sessionM.SET_LAST_SYNC_DOWN_VEHICLE(SessionManager.KEY_LAST_SYNC_DOWN_VEHICLE);
+                        sessionM.SET_LAST_SYNC_DOWN_VEHICLE(y.getLast_sync_time());
                     }
 
                     @SuppressLint("StaticFieldLeak") DatabaseApiCalls.insertIntoVehicleTable insert = new DatabaseApiCalls.insertIntoVehicleTable(Main2Activity.this){
@@ -355,7 +390,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
             }
 
             @Override
-            public void onFailure(Call<List<VehicleSync>> call, Throwable t) {
+            public void onFailure(Call<List<VehicleSyncDown>> call, Throwable t) {
                 Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
@@ -364,15 +399,15 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
     public void syncDownAreas(){
 
         RetrofitApiCalls service = RetrofitClient.getRetrofitInstance().create(RetrofitApiCalls.class);
-        Call<List<OperatingAreaSync>> call = service.syncDownOperatingAreas(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_AREA));
-        call.enqueue(new Callback<List<OperatingAreaSync>>() {
+        Call<List<OperatingAreaSyncDown>> call = service.syncDownOperatingAreas(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_AREA));
+        call.enqueue(new Callback<List<OperatingAreaSyncDown>>() {
             @Override
-            public void onResponse(Call<List<OperatingAreaSync>> call, Response<List<OperatingAreaSync>> response) {
+            public void onResponse(Call<List<OperatingAreaSyncDown>> call, Response<List<OperatingAreaSyncDown>> response) {
                 if(response.isSuccessful()){
-                    List<OperatingAreaSync> first = response.body();
+                    List<OperatingAreaSyncDown> first = response.body();
                     List<OperatingAreas> opAreasResponse = new ArrayList<>();
 
-                    for(OperatingAreaSync x: first){
+                    for(OperatingAreaSyncDown x: first){
                         opAreasResponse.add(new OperatingAreas(x.getOwner_id(),
                                 x.getState_id(),
                                 x.getVillage_id(),
@@ -392,7 +427,75 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
             }
 
             @Override
-            public void onFailure(Call<List<OperatingAreaSync>> call, Throwable t) {
+            public void onFailure(Call<List<OperatingAreaSyncDown>> call, Throwable t) {
+                Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void syncDownHSF(){
+        //TODO --> Remember to add php function to check that there are no alphabets or symbols in the payment amount columns.
+        RetrofitApiCalls service = RetrofitClient.getRetrofitInstance().create(RetrofitApiCalls.class);
+        Call<List<HSFSyncDown>> call = service.syncDownHSF(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_HSF));
+        call.enqueue(new Callback<List<HSFSyncDown>>() {
+            @Override
+            public void onResponse(Call<List<HSFSyncDown>> call, Response<List<HSFSyncDown>> response) {
+                if(response.isSuccessful()){
+                    List<HSFSyncDown> another = response.body();
+                    List<HSF> hsfResponse = new ArrayList<>();
+
+                    for(HSFSyncDown h: another){
+                        hsfResponse.add(new HSF(h.getHsf_id(),
+                                h.getField_id(),
+                                h.getBags_transported(),
+                                h.getPrice_per_bag(),
+                                h.getTransporter_id(),
+                                h.getCc_id(),
+                                h.getDate_processed()));
+                        sessionM.SET_LAST_SYNC_DOWN_HSF(h.getLast_sync_time());
+                    }
+
+                    AppExecutors.getInstance().diskIO().execute(() -> {
+                        transportdb.getHsfDao().InsertHSFList(hsfResponse);
+                    });
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<HSFSyncDown>> call, Throwable t) {
+                Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void syncDownPayments(){
+
+        RetrofitApiCalls service = RetrofitClient.getRetrofitInstance().create(RetrofitApiCalls.class);
+        Call<List<PaymentSyncDown>> call = service.syncDownPayments(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_PAYMENT));
+        call.enqueue(new Callback<List<PaymentSyncDown>>() {
+            @Override
+            public void onResponse(Call<List<PaymentSyncDown>> call, Response<List<PaymentSyncDown>> response) {
+                if(response.isSuccessful()){
+                    List<PaymentSyncDown> pay = response.body();
+                    List<Payments> payResponse = new ArrayList<>();
+
+                    for(PaymentSyncDown p: pay){
+                        payResponse.add(new Payments(p.getPayment_id(),
+                                p.getTransporter_id(),
+                                p.getAmount_paid(),
+                                p.getMode_of_payment(),
+                                p.getPayment_date()));
+                        sessionM.SET_LAST_SYNC_DOWN_PAYMENT(p.getLast_sync_time());
+                    }
+
+                    AppExecutors.getInstance().diskIO().execute(() -> {
+                        transportdb.getPaymentsDao().InsertPaymentsList(payResponse);
+                    });
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PaymentSyncDown>> call, Throwable t) {
                 Toast.makeText(Main2Activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
@@ -419,6 +522,51 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                 adapter.notifyDataSetChanged();
             }
         };getDrivers.execute();
+    }
+
+    public boolean checkAndRequestPermissions(){
+
+        //Check which permissions are granted
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        for(String perm : appPermissions){
+            if(ContextCompat.checkSelfPermission(Main2Activity.this, perm) != PackageManager.PERMISSION_GRANTED){
+                listPermissionsNeeded.add(perm);
+            }
+        }
+
+        //Ask for non-granted permissions
+        if(!listPermissionsNeeded.isEmpty()){
+            ActivityCompat.requestPermissions(this,
+                    listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]),
+                    PERMISSIONS_REQUEST_CODE);
+            return false;
+        }
+
+        //All permissions granted.
+        return true;
+    }
+
+    public void confirmPhoneDate(){
+        //TODO --> Check Phone date if it's earlier than date of app development.
+        Calendar today = Calendar.getInstance();
+        Calendar devDate = Calendar.getInstance();
+        devDate.set(2019, 10, 20);
+        if(!devDate.before(today)){
+            new MaterialAlertDialogBuilder(this)
+                    .setCancelable(false)
+                    .setTitle("Incorrect Phone Date")
+                    .setIcon(R.drawable.ic_exclamation_mark)
+                    .setMessage("Kindly adjust phone's date to use the Transporter App")
+                    .setPositiveButton("Okay", (dialogInterface, i) -> {
+                        startActivity(new Intent(android.provider.Settings.ACTION_DATE_SETTINGS));
+                    }).show();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //confirmPhoneDate();
     }
 
     @Override

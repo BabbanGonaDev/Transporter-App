@@ -1,9 +1,9 @@
-package com.bgenterprise.transporterapp.Network.Responses;
+package com.bgenterprise.transporterapp.Network.ModelClasses;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class OperatingAreaSync {
+public class OperatingAreaSyncDown {
 
     @SerializedName("owner_id")
     @Expose
@@ -33,9 +33,9 @@ public class OperatingAreaSync {
     @Expose
     private String last_sync_time;
 
-    public OperatingAreaSync() {}
+    public OperatingAreaSyncDown() {}
 
-    public OperatingAreaSync(String owner_id, String state_id, String village_id, String ward_id, String lga_id, String sync_status, String last_sync_time) {
+    public OperatingAreaSyncDown(String owner_id, String state_id, String village_id, String ward_id, String lga_id, String sync_status, String last_sync_time) {
         this.owner_id = owner_id;
         this.state_id = state_id;
         this.village_id = village_id;

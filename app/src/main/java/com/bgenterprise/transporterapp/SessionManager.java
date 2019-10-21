@@ -26,6 +26,8 @@ public class SessionManager {
     public static final String KEY_LAST_SYNC_DOWN_DRIVER = "last_sync_down_driver";
     public static final String KEY_LAST_SYNC_DOWN_VEHICLE = "last_sync_down_vehicle";
     public static final String KEY_LAST_SYNC_DOWN_AREA = "last_sync_down_area";
+    public static final String KEY_LAST_SYNC_DOWN_PAYMENT = "last_sync_down_payment";
+    public static final String KEY_LAST_SYNC_DOWN_HSF = "last_sync_down_hsf";
 
     public SessionManager(Context context) {
         this.mCtx = context;
@@ -98,6 +100,16 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void SET_LAST_SYNC_DOWN_HSF(String value){
+        editor.putString(KEY_LAST_SYNC_DOWN_HSF, value);
+        editor.commit();
+    }
+
+    public void SET_LAST_SYNC_DOWN_PAYMENT(String value){
+        editor.putString(KEY_LAST_SYNC_DOWN_PAYMENT, value);
+        editor.commit();
+    }
+
     public Boolean getImportStatus(){
         return prefs.getBoolean(KEY_IMPORT_LOCATION, false);
     }
@@ -117,6 +129,8 @@ public class SessionManager {
         transport.put(KEY_LAST_SYNC_DOWN_DRIVER, prefs.getString(KEY_LAST_SYNC_DOWN_DRIVER, "2019-10-04 18:00:00"));
         transport.put(KEY_LAST_SYNC_DOWN_AREA, prefs.getString(KEY_LAST_SYNC_DOWN_AREA, "2019-10-04 18:00:00"));
         transport.put(KEY_LAST_SYNC_DOWN_VEHICLE, prefs.getString(KEY_LAST_SYNC_DOWN_VEHICLE, "2019-10-04 18:00:00"));
+        transport.put(KEY_LAST_SYNC_DOWN_HSF, prefs.getString(KEY_LAST_SYNC_DOWN_HSF, "2019-10-04 18:00:00"));
+        transport.put(KEY_LAST_SYNC_DOWN_PAYMENT, prefs.getString(KEY_LAST_SYNC_DOWN_PAYMENT, "2019-10-04 18:00:00"));
 
         return transport;
     }

@@ -1,4 +1,4 @@
-package com.bgenterprise.transporterapp.Network.Responses;
+package com.bgenterprise.transporterapp.Network.ModelClasses;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

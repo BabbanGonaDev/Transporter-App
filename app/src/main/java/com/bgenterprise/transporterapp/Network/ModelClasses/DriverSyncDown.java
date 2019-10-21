@@ -1,9 +1,9 @@
-package com.bgenterprise.transporterapp.Network.Responses;
+package com.bgenterprise.transporterapp.Network.ModelClasses;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DriverSync {
+public class DriverSyncDown {
 
     @SerializedName("driver_id")
     @Expose
@@ -65,9 +65,9 @@ public class DriverSync {
     @Expose
     private String last_sync_time;
 
-    public DriverSync() {}
+    public DriverSyncDown() {}
 
-    public DriverSync(String driver_id, String first_name, String last_name, String phone_number, String no_of_vehicles, String training_date, String driver_state, String driver_lga, String driver_ward, String driver_village, String manager_id, String template, String reg_date, String sync_status, String last_sync_time) {
+    public DriverSyncDown(String driver_id, String first_name, String last_name, String phone_number, String no_of_vehicles, String training_date, String driver_state, String driver_lga, String driver_ward, String driver_village, String manager_id, String template, String reg_date, String sync_status, String last_sync_time) {
         this.driver_id = driver_id;
         this.first_name = first_name;
         this.last_name = last_name;

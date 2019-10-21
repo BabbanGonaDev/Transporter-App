@@ -7,9 +7,9 @@ import android.os.AsyncTask;
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
-import com.bgenterprise.transporterapp.Network.Responses.DriverResponse;
-import com.bgenterprise.transporterapp.Network.Responses.OperatingAreaResponse;
-import com.bgenterprise.transporterapp.Network.Responses.VehicleResponse;
+import com.bgenterprise.transporterapp.Network.ModelClasses.DriverResponse;
+import com.bgenterprise.transporterapp.Network.ModelClasses.OperatingAreaResponse;
+import com.bgenterprise.transporterapp.Network.ModelClasses.VehicleResponse;
 
 import java.util.List;
 
