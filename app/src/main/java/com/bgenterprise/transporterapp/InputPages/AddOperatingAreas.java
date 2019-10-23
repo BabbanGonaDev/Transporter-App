@@ -366,9 +366,14 @@ public class AddOperatingAreas extends AppCompatActivity {
     }
 
     public void beginLuxandActivity(){
-        new LuxandInfo(this).putTemplate(transport_details.get(SessionManager.KEY_REG_TEMPLATE));
-        Intent LuxandIntent = new Intent(this, LuxandAuthActivity.class);
-        startActivityForResult(LuxandIntent, 419);
+        if(sessionM.getFacialRegChoice()){
+            new LuxandInfo(this).putTemplate(transport_details.get(SessionManager.KEY_REG_TEMPLATE));
+            Intent LuxandIntent = new Intent(this, LuxandAuthActivity.class);
+            startActivityForResult(LuxandIntent, 419);
+        }else{
+            saveAllValues();
+        }
+
     }
 
     @Override

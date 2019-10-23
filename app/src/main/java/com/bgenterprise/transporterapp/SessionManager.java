@@ -24,11 +24,14 @@ public class SessionManager {
     public static final String KEY_TOTAL_VEHICLE = "total_vehicle";
     public static final String KEY_REG_TEMPLATE = "registered_template";
     public static final String KEY_TRANSPORTER_ID = "transporter_id";
+    public static final String KEY_ONBOARD_STATUS = "onboarding_status";
     public static final String KEY_LAST_SYNC_DOWN_DRIVER = "last_sync_down_driver";
-    public static final String KEY_LAST_SYNC_DOWN_VEHICLE = "last_sync_down_vehicle";
+    //Added an extra 'e' to last sync down vehicle because of initial bug that was saving text.
+    public static final String KEY_LAST_SYNC_DOWN_VEHICLE = "last_sync_down_vehiclee";
     public static final String KEY_LAST_SYNC_DOWN_AREA = "last_sync_down_area";
     public static final String KEY_LAST_SYNC_DOWN_PAYMENT = "last_sync_down_payment";
     public static final String KEY_LAST_SYNC_DOWN_HSF = "last_sync_down_hsf";
+    public static final String KEY_FACE_REG_CHOICE = "face_reg_choice";
 
     public SessionManager(Context context) {
         this.mCtx = context;
@@ -114,6 +117,24 @@ public class SessionManager {
     public void SET_LAST_SYNC_DOWN_PAYMENT(String value){
         editor.putString(KEY_LAST_SYNC_DOWN_PAYMENT, value);
         editor.commit();
+    }
+
+    public void SET_ONBOARD_STATUS(boolean value){
+        editor.putBoolean(KEY_ONBOARD_STATUS, value);
+        editor.commit();
+    }
+
+    public void SET_FACIAL_REG_CHOICE(boolean value){
+        editor.putBoolean(KEY_FACE_REG_CHOICE, value);
+        editor.commit();
+    }
+
+    public boolean getOnboardStatus(){
+        return prefs.getBoolean(KEY_ONBOARD_STATUS, false);
+    }
+
+    public boolean getFacialRegChoice(){
+        return prefs.getBoolean(KEY_FACE_REG_CHOICE, false);
     }
 
     public Boolean getImportStatus(){

@@ -45,6 +45,7 @@ import com.bgenterprise.transporterapp.Network.ModelClasses.VehicleResponse;
 import com.bgenterprise.transporterapp.Network.ModelClasses.VehicleSyncDown;
 import com.bgenterprise.transporterapp.Network.RetrofitApiCalls;
 import com.bgenterprise.transporterapp.Network.RetrofitClient;
+import com.bgenterprise.transporterapp.Onboarding.OnBoardingActivity;
 import com.bgenterprise.transporterapp.RecyclerAdapters.ViewTransporterAdapter;
 import com.bgenterprise.transporterapp.TransporterDetails.ProfileActivity;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -130,14 +131,27 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
         mtv_copyright.setText("© Enterprise Systems 2019 v" + BuildConfig.VERSION_NAME);
         //confirmPhoneDate();
         sv_transporters.setOnQueryTextListener(this);
+        redirectToOnboard();
 
     }
 
     @OnClick(R.id.btn_add_transporter)
     public void addTransport(){
-        //startActivity(new Intent(Main2Activity.this, AddTransporter.class));
-        Intent LuxandIntent = new Intent(this, LuxandActivity.class);
-        startActivityForResult(LuxandIntent, 519);
+        new MaterialAlertDialogBuilder(Main2Activity.this)
+                .setTitle("Facial Recognition")
+                .setMessage("Do you want to take the facial template of this driver ?")
+                .setPositiveButton("Yes", (dialogInterface, i) -> {
+                    sessionM.SET_FACIAL_REG_CHOICE(true);
+                    Intent LuxandIntent = new Intent(Main2Activity.this, LuxandActivity.class);
+                    startActivityForResult(LuxandIntent, 519);
+
+                })
+                .setNegativeButton("No", (dialogInterface, i) -> {
+                    sessionM.SET_FACIAL_REG_CHOICE(false);
+                    startActivity(new Intent(Main2Activity.this, AddTransporter.class));
+                })
+                .show();
+
     }
 
     @Override
@@ -594,5 +608,17 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
         }
 
         return false;
+    }
+
+    public void redirectToOnboard(){
+        //The purpose of this function is to redirect to the onboarding activity for first time users.
+        if(!sessionM.getOnboardStatus()){
+            startActivity(new Intent(Main2Activity.this, OnBoardingActivity.class));
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
