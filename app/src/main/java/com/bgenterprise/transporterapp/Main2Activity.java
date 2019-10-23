@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.babbangona.bg_face.LuxandActivity;
@@ -46,6 +47,7 @@ import com.bgenterprise.transporterapp.Network.RetrofitApiCalls;
 import com.bgenterprise.transporterapp.Network.RetrofitClient;
 import com.bgenterprise.transporterapp.RecyclerAdapters.ViewTransporterAdapter;
 import com.bgenterprise.transporterapp.TransporterDetails.ProfileActivity;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
@@ -79,6 +81,9 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
 
     @BindView(R.id.sv_transporters)
     SearchView sv_transporters;
+
+    @BindView(R.id.shimmer_layout)
+    ShimmerFrameLayout shimmer_layout;
 
     String[] appPermissions = {
             Manifest.permission.INTERNET,
@@ -334,12 +339,18 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                         protected void onPreExecute() {
                             //Initialize the shimmer
                             super.onPreExecute();
+                            rv_view_transporters.setVisibility(View.GONE);
+                            shimmer_layout.setVisibility(View.VISIBLE);
+                            shimmer_layout.startShimmer();
                         }
 
                         @Override
                         protected void onPostExecute(Void aVoid) {
                             //End the Shimmer
                             super.onPostExecute(aVoid);
+                            shimmer_layout.stopShimmer();
+                            shimmer_layout.setVisibility(View.GONE);
+                            rv_view_transporters.setVisibility(View.VISIBLE);
                             initDriverRecycler();
                         }
                     }; insert.execute(driveResponse);
@@ -509,8 +520,8 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                 adapter = new ViewTransporterAdapter(Main2Activity.this, drivers, new ViewTransporterAdapter.OnItemClickListener() {
                     @Override
                     public void onClick(Drivers drivers) {
-                        startActivity(new Intent(Main2Activity.this, ProfileActivity.class)
-                                            .putExtra("driver_id", drivers.getDriver_id()));
+                        sessionM.SET_TRANSPORTER_ID(drivers.getDriver_id());
+                        startActivity(new Intent(Main2Activity.this, ProfileActivity.class));
                     }
                 });
 

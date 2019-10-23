@@ -28,4 +28,7 @@ public interface PaymentsDAO {
 
     @Query("SELECT SUM(amount_paid) FROM payments_table WHERE transporter_id = :driverID")
     int amountPaid(String driverID);
+
+    @Query("SELECT * FROM payments_table WHERE transporter_id = :driverID")
+    List<Payments> getTransporterPayments(String driverID);
 }

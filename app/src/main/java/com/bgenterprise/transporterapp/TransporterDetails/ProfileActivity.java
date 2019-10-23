@@ -97,15 +97,15 @@ public class ProfileActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         transportdb = TransporterDatabase.getInstance(ProfileActivity.this);
         sessionM = new SessionManager(ProfileActivity.this);
+        transport_details = sessionM.getTransporterDetails();
 
         try {
-            driver_id = getIntent().getStringExtra("driver_id");
+            driver_id = transport_details.get(SessionManager.KEY_TRANSPORTER_ID);
         } catch (Exception e) {
             e.printStackTrace();
             startActivity(new Intent(this, Main2Activity.class));
         }
 
-        transport_details = sessionM.getTransporterDetails();
         collapsingToolbarTitle();
         setSupportActionBar(xToolbar);
         getDriverDetails(driver_id);
@@ -166,6 +166,18 @@ public class ProfileActivity extends AppCompatActivity {
     @OnClick(R.id.btn_call)
     public void CallTransporter() {
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + driver.getPhone_number())));
+    }
+
+    @OnClick(R.id.btn_view_hsf)
+    public void viewHSF(){
+        sessionM.SET_TRANSPORTER_ID(driver_id);
+        startActivity(new Intent(ProfileActivity.this, ViewTransporterHSF.class));
+    }
+
+    @OnClick(R.id.btn_view_payments)
+    public void viewPayments(){
+        sessionM.SET_TRANSPORTER_ID(driver_id);
+        startActivity(new Intent(ProfileActivity.this, ViewTransporterPayments.class));
     }
 
     public void getDriverDetails(String driverID){

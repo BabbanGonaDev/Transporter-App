@@ -31,4 +31,7 @@ public interface HSFDAO {
 
     @Query("SELECT SUM(bags_transported) FROM hsf_table WHERE transporter_id = :driverID")
     int bagsTransported(String driverID);
+
+    @Query("SELECT * FROM hsf_table WHERE transporter_id = :driverID")
+    List<HSF> getTransporterHSF(String driverID);
 }
