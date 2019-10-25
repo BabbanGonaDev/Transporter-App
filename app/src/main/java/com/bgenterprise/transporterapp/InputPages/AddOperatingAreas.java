@@ -485,11 +485,10 @@ public class AddOperatingAreas extends AppCompatActivity {
                 .setIcon(R.drawable.ic_success_checked)
                 .setCancelable(false)
                 .setMessage(savedDrivers.get(0).getFirst_name() + " " + savedDrivers.get(0).getLast_name() + " has been successfully registered as a transporter. ")
-                .setPositiveButton("Thank You", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(AddOperatingAreas.this, Main2Activity.class));
-                    }
+                .setPositiveButton("Thank You", (dialogInterface, i) -> {
+                    sessionM.CLEAR_FACE_REG_STATUS();
+                    startActivity(new Intent(AddOperatingAreas.this, Main2Activity.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                 }).show();
     }
 

@@ -75,7 +75,10 @@ public class ViewTransporterAdapter extends RecyclerView.Adapter<ViewTransporter
                 }else{
                     List<Drivers> filteredList = new ArrayList<>();
                     for(Drivers drive: driversList){
-                        if(drive.getFirst_name().toLowerCase().contains(charString) || drive.getLast_name().toLowerCase().contains(charString) || drive.getPhone_number().toLowerCase().contains(charString)){
+                        if(drive.getFirst_name().toLowerCase().contains(charString) || drive.getLast_name().toLowerCase().contains(charString)
+                                || drive.getPhone_number().toLowerCase().contains(charString) || drive.getDriver_state().toLowerCase().contains(charString)
+                                || drive.getDriver_lga().toLowerCase().contains(charString) || drive.getDriver_ward().toLowerCase().contains(charString)){
+
                             filteredList.add(drive);
                         }
                     }

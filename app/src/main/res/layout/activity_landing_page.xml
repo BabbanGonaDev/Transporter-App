@@ -15,17 +15,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/landing_text"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-                android:textSize="25sp"
-                android:visibility="visible" />
-
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,24 +62,23 @@
                     </LinearLayout>
                 </com.facebook.shimmer.ShimmerFrameLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_view_transporters"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:background="#D3D3D3" />
-
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="1dp"
                     android:background="@drawable/rounded_corners"
                     android:text="View All Transporters"
                     android:textAlignment="center"
                     android:textAppearance="@android:style/TextAppearance.Material.Title"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_view_transporters"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:background="#D3D3D3" />
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton

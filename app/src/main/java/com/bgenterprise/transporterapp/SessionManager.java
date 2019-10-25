@@ -180,4 +180,10 @@ public class SessionManager {
         editor.remove(KEY_TOTAL_VEHICLE);
         editor.commit();
     }
+
+    public void CLEAR_FACE_REG_STATUS(){
+        editor.remove(KEY_FACE_REG_CHOICE);
+        editor.commit();
+    }
+
 }

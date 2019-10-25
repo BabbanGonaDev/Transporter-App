@@ -21,8 +21,11 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -80,8 +83,14 @@ public class ProfileActivity extends AppCompatActivity {
     @BindView(R.id.mtv_pending_balance)
     MaterialTextView mtv_pending_balance;
 
+    @BindView(R.id.mtv_last_payment_time)
+    MaterialTextView mtv_last_payment_time;
+
+    @BindView(R.id.mtv_hsf_processed)
+    MaterialTextView mtv_hsf_processed;
+
     String driver_id;
-    int bags_transported, amount_earned, amount_paid, pending_balance;
+    int bags_transported, amount_earned, amount_paid, pending_balance, hsf_processed;
     TransporterDatabase transportdb;
     Drivers driver;
     List<OperatingAreas> driverAreas;
@@ -140,6 +149,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void initUIDisplay() {
         try {
+            SimpleDateFormat sdfSource = new SimpleDateFormat(
+                    "yyyy-MM-dd hh:mm:ss");
+            // parse the string into Date object
+            Date srcDate = sdfSource.parse(transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_HSF));
+
             mtv_driver_id.setText("Driver ID: " + driver.getDriver_id());
             mtv_driver_name.setText("Driver Name: " + driver.getFirst_name() + " " + driver.getLast_name());
             mtv_driver_phone.setText(driver.getPhone_number());
@@ -151,7 +165,8 @@ public class ProfileActivity extends AppCompatActivity {
             mtv_amount_earned.setText("NGN " + formatter.format(amount_earned));
             mtv_amount_paid.setText("NGN " + formatter.format(amount_paid));
             mtv_pending_balance.setText("NGN " + formatter.format(pending_balance));
-            mtv_balance_headline.setText("Balance as at (" + transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_HSF) + "):");
+            mtv_last_payment_time.setText("(As at: " + new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(srcDate)+ ")");
+            mtv_hsf_processed.setText(String.valueOf(hsf_processed) + " HSF(s)");
             mtv_vehicles.setText("");
             mtv_areas.setText("");
 
@@ -225,6 +240,7 @@ public class ProfileActivity extends AppCompatActivity {
             bags_transported = transportdb.getHsfDao().bagsTransported(driverID);
             amount_earned = transportdb.getHsfDao().amountEarned(driverID);
             amount_paid = transportdb.getPaymentsDao().amountPaid(driverID);
+            hsf_processed = transportdb.getHsfDao().hsfProcessed(driverID);
 
             runOnUiThread(() -> {
                 pending_balance = (amount_earned - amount_paid);

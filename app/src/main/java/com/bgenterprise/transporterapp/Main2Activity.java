@@ -3,6 +3,7 @@ package com.bgenterprise.transporterapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -17,6 +18,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -128,7 +130,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
         sessionM.CLEAR_REGISTRATION_SESSION();
         transport_details = sessionM.getTransporterDetails();
         initDriverRecycler();
-        mtv_copyright.setText("© Enterprise Systems 2019 v" + BuildConfig.VERSION_NAME);
+        mtv_copyright.setText("© Transporter App v" + BuildConfig.VERSION_NAME);
         //confirmPhoneDate();
         sv_transporters.setOnQueryTextListener(this);
         redirectToOnboard();
@@ -192,6 +194,9 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
         switch (item.getItemId()){
             case R.id.sync_table:
                 executeDriverSyncFunctions();
+                return true;
+            case R.id.app_info:
+                showAppInfo();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -621,4 +626,66 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
     public void onBackPressed() {
         super.onBackPressed();
     }
+
+    public void showAppInfo(){
+        //Display all sync times and any other important info about the Transporter App in an alert dialog.
+        LinearLayoutCompat infoLayout = new LinearLayoutCompat(Main2Activity.this);
+        infoLayout.setOrientation(LinearLayoutCompat.VERTICAL);
+
+        int paddingDp = 20;
+        float density = getResources().getDisplayMetrics().density;
+        int paddingPixel = (int)(paddingDp * density);
+
+        final MaterialTextView mtvHeadline = new MaterialTextView(Main2Activity.this);
+        mtvHeadline.setText("Last sync times");
+        mtvHeadline.setPadding(paddingPixel, 0, 0, 15);
+        mtvHeadline.setTypeface(null, Typeface.BOLD);
+        infoLayout.addView(mtvHeadline);
+
+        final MaterialTextView mtvDriverT = new MaterialTextView(Main2Activity.this);
+        mtvDriverT.setText("Drivers: " + transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_DRIVER));
+        mtvDriverT.setPadding(paddingPixel, 0, 0, 5);
+        mtvDriverT.setTypeface(null, Typeface.ITALIC);
+        infoLayout.addView(mtvDriverT);
+
+        final MaterialTextView mtvVehicleT = new MaterialTextView(Main2Activity.this);
+        mtvVehicleT.setText("Vehicles: " + transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_VEHICLE));
+        mtvVehicleT.setPadding(paddingPixel, 0, 0, 5);
+        mtvVehicleT.setTypeface(null, Typeface.ITALIC);
+        infoLayout.addView(mtvVehicleT);
+
+        final MaterialTextView mtvAreaT = new MaterialTextView(Main2Activity.this);
+        mtvAreaT.setText("Operating Areas: " + transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_AREA));
+        mtvAreaT.setPadding(paddingPixel, 0, 0, 5);
+        mtvAreaT.setTypeface(null, Typeface.ITALIC);
+        infoLayout.addView(mtvAreaT);
+
+        final MaterialTextView mtvPaymentT = new MaterialTextView(Main2Activity.this);
+        mtvPaymentT.setText("Payments: " + transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_PAYMENT));
+        mtvPaymentT.setPadding(paddingPixel, 0, 0, 5);
+        mtvPaymentT.setTypeface(null, Typeface.ITALIC);
+        infoLayout.addView(mtvPaymentT);
+
+        final MaterialTextView mtvHSFT = new MaterialTextView(Main2Activity.this);
+        mtvHSFT.setText("HSF: " + transport_details.get(SessionManager.KEY_LAST_SYNC_DOWN_HSF));
+        mtvHSFT.setPadding(paddingPixel, 0, 0, 5);
+        mtvHSFT.setTypeface(null, Typeface.ITALIC);
+        infoLayout.addView(mtvHSFT);
+
+        final MaterialTextView mtvVersion = new MaterialTextView(Main2Activity.this);
+        mtvVersion.setText("App Version: " + BuildConfig.VERSION_NAME);
+        mtvVersion.setPadding(paddingPixel, 30, 0, 5);
+        mtvVersion.setTypeface(null, Typeface.BOLD_ITALIC);
+        infoLayout.addView(mtvVersion);
+
+        new MaterialAlertDialogBuilder(Main2Activity.this)
+                .setIcon(R.drawable.ic_info_outline_bgblue_24dp)
+                .setTitle("App Information")
+                .setPositiveButton("OK", (dialogInterface, i) -> {
+                    //Do Nothing
+                })
+                .setView(infoLayout)
+                .show();
+    }
+
 }
