@@ -195,6 +195,54 @@
                 android:background="@drawable/rounded_corners_blue"
                 android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewPayments"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Payment Option:"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="italic" />
+
+                    <ImageButton
+                        android:id="@+id/edit_payment_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/ic_edit_blue_24dp" />
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mtv_payment_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rounded_corners_blue"
+                android:orientation="vertical">
+
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textView6"
                     android:layout_width="match_parent"

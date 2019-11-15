@@ -2,10 +2,13 @@ package com.bgenterprise.transporterapp.TransporterDetails;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.bgenterprise.transporterapp.AppExecutors;
@@ -13,6 +16,7 @@ import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
 import com.bgenterprise.transporterapp.Database.TransporterDatabase;
+import com.bgenterprise.transporterapp.InputPages.PaymentOptionFrag;
 import com.bgenterprise.transporterapp.Main2Activity;
 import com.bgenterprise.transporterapp.R;
 import com.bgenterprise.transporterapp.SessionManager;
@@ -40,6 +44,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     @BindView(R.id.collapsingToolbar)
     CollapsingToolbarLayout collapsingToolbar;
+
+    @BindView(R.id.edit_payment_icon)
+    ImageButton edit_payment_icon;
+
+    @BindView(R.id.mtv_payment_option)
+    MaterialTextView mtv_payment_option;
 
     @BindView(R.id.mtv_driver_name)
     MaterialTextView mtv_driver_name;
@@ -106,6 +116,7 @@ public class ProfileActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         transportdb = TransporterDatabase.getInstance(ProfileActivity.this);
         sessionM = new SessionManager(ProfileActivity.this);
+        sessionM.CLEAR_PAYMENT_DETAILS();
         transport_details = sessionM.getTransporterDetails();
 
         try {
@@ -169,9 +180,11 @@ public class ProfileActivity extends AppCompatActivity {
             mtv_hsf_processed.setText(String.valueOf(hsf_processed) + " HSF(s)");
             mtv_vehicles.setText("");
             mtv_areas.setText("");
+            mtv_payment_option.setText("");
 
             displayVehicles();
             displayOperatingAreas();
+            displayPaymentOption();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -193,6 +206,16 @@ public class ProfileActivity extends AppCompatActivity {
     public void viewPayments(){
         sessionM.SET_TRANSPORTER_ID(driver_id);
         startActivity(new Intent(ProfileActivity.this, ViewTransporterPayments.class));
+    }
+
+    @OnClick(R.id.edit_payment_icon)
+    public void editPaymentOption(){
+        Bundle bundle = new Bundle();
+        bundle.putString("driver_id", driver_id);
+        FragmentManager fm = getSupportFragmentManager();
+        PaymentOptionFrag optionFrag = new PaymentOptionFrag();
+        optionFrag.setArguments(bundle);
+        optionFrag.show(fm, "PaymentOptionFrag");
     }
 
     public void getDriverDetails(String driverID){
@@ -273,6 +296,30 @@ public class ProfileActivity extends AppCompatActivity {
                 mtv_areas.append(j + ". " + opArea.getState_id() + ", " + opArea.getLga_id() + ", " + opArea.getWard_id() + ", " + opArea.getVillage_id() + "\n");
             }
             j++;
+        }
+    }
+
+    public void displayPaymentOption(){
+        switch (driver.getPayment_option()){
+            case "BG Prepaid Card":
+                mtv_payment_option.append("Option: " + driver.getPayment_option() + "\n");
+                mtv_payment_option.append("Card Number: " + driver.getBg_card() + "\n");
+                edit_payment_icon.setVisibility(View.GONE);
+                break;
+            case "Bank Account":
+                mtv_payment_option.append("Option: " + driver.getPayment_option() + "\n");
+                mtv_payment_option.append("Bank Name: " + driver.getBank_name() + "\n");
+                mtv_payment_option.append("Account Number: " + driver.getAccount_number() + "\n");
+                mtv_payment_option.append("Account Name: " + driver.getAccount_name() + "\n");
+                edit_payment_icon.setVisibility(View.GONE);
+                break;
+            case "Cash":
+                mtv_payment_option.append("Option: " + driver.getPayment_option() + "\n");
+                edit_payment_icon.setVisibility(View.GONE);
+                break;
+            default:
+                mtv_payment_option.append("N/A");
+                edit_payment_icon.setVisibility(View.VISIBLE);
         }
     }
 }

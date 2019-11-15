@@ -346,6 +346,11 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                                 z.getDriver_lga(),
                                 z.getDriver_ward(),
                                 z.getDriver_village(),
+                                z.getPayment_option(),
+                                z.getBg_card(),
+                                z.getAccount_number(),
+                                z.getAccount_name(),
+                                z.getBank_name(),
                                 z.getManager_id(),
                                 z.getTemplate(),
                                 z.getReg_date(),
@@ -536,12 +541,9 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
             @Override
             protected void onPostExecute(List<Drivers> drivers) {
                 super.onPostExecute(drivers);
-                adapter = new ViewTransporterAdapter(Main2Activity.this, drivers, new ViewTransporterAdapter.OnItemClickListener() {
-                    @Override
-                    public void onClick(Drivers drivers) {
-                        sessionM.SET_TRANSPORTER_ID(drivers.getDriver_id());
-                        startActivity(new Intent(Main2Activity.this, ProfileActivity.class));
-                    }
+                adapter = new ViewTransporterAdapter(Main2Activity.this, drivers, drivers1 -> {
+                    sessionM.SET_TRANSPORTER_ID(drivers1.getDriver_id());
+                    startActivity(new Intent(Main2Activity.this, ProfileActivity.class));
                 });
 
                 RecyclerView.LayoutManager vLayoutManager = new LinearLayoutManager(getApplicationContext());

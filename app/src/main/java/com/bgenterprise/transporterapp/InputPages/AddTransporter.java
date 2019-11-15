@@ -3,6 +3,7 @@ package com.bgenterprise.transporterapp.InputPages;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -68,7 +69,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
     DatePickerDialog datePickerDialog ;
     int Year, Month, Day;
     Calendar calendar;
-    HashMap<String, String> transport_details;
+    HashMap<String, String> transport_details, payment_details;
     List<Drivers> drivers;
     SessionManager sessionM;
     String driver_id, driver_template, manager_id, staff_id;
@@ -83,47 +84,36 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
         manager_layout.setVisibility(View.GONE);
         transportdb = TransporterDatabase.getInstance(AddTransporter.this);
         sessionM = new SessionManager(AddTransporter.this);
+        sessionM.CLEAR_PAYMENT_DETAILS();
         transport_details = sessionM.getTransporterDetails();
         staff_id = transport_details.get(SessionManager.KEY_STAFF_ID);
         driver_id = staff_id + "_" +new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(new Date());
         driver_template = transport_details.get(SessionManager.KEY_REG_TEMPLATE);
         initStateAdapter();
 
-        edit_state.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                edit_lga.setText("");
-                edit_ward.setText("");
-                initLGAdapter();
-            }
+        edit_state.setOnItemClickListener((adapterView, view, i, l) -> {
+            edit_lga.setText("");
+            edit_ward.setText("");
+            initLGAdapter();
         });
 
-        edit_lga.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                edit_ward.setText("");
-                initWardsAdapter();
-            }
+        edit_lga.setOnItemClickListener((adapterView, view, i, l) -> {
+            edit_ward.setText("");
+            initWardsAdapter();
         });
 
-        input_select_date.setEndIconOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                datePickerDialog = DatePickerDialog.newInstance(AddTransporter.this, Year, Month, Day);
-                datePickerDialog.setThemeDark(false);
-                datePickerDialog.showYearPickerFirst(false);
-                datePickerDialog.setMinDate(Calendar.getInstance());
-                datePickerDialog.setTitle("Select Training Date");
+        input_select_date.setEndIconOnClickListener(view -> {
+            datePickerDialog = DatePickerDialog.newInstance(AddTransporter.this, Year, Month, Day);
+            datePickerDialog.setThemeDark(false);
+            datePickerDialog.showYearPickerFirst(false);
+            datePickerDialog.setMinDate(Calendar.getInstance());
+            datePickerDialog.setTitle("Select Training Date");
 
-                datePickerDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialogInterface) {
+            datePickerDialog.setOnCancelListener(dialogInterface -> {
 
-                    }
-                });
+            });
 
-                datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
-            }
+            datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
         });
 
         //TODO ---> Check whether the manager_id variable is empty, especially if the person acknowledges working for a transporter.
@@ -136,43 +126,53 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
 
     @OnClick(R.id.btn_next)
     public void next_to_vehicle(){
+        payment_details = sessionM.getPaymentDetails();
         if(!checkEmptyInputs()){
             if(!chkIsDriver.isChecked()){
                 /**Set manager_id as the owner_id if the driver is an independent.*/
                 manager_id = driver_id;
             }
 
-            try {
-                /**Get the entered values into the model class.*/
+            if(payment_details.get(SessionManager.KEY_PAYMENT_OPTION).equals("")){
+                getPaymentOption();
+            } else {
+                try {
+                    /**Get the entered values into the model class.*/
 
-                drivers = new ArrayList<>();
-                drivers.add(new Drivers(driver_id,
-                        edit_first_name.getText().toString(),
-                        edit_last_name.getText().toString(),
-                        edit_phone_number.getText().toString(),
-                        edit_no_of_vehicles.getText().toString(),
-                        "",
-                        edit_state.getText().toString(),
-                        edit_lga.getText().toString(),
-                        edit_ward.getText().toString(),
-                        edit_village.getText().toString(),
-                        manager_id,
-                        driver_template,
-                        new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()),
-                        "no"));
+                    drivers = new ArrayList<>();
+                    drivers.add(new Drivers(driver_id,
+                            edit_first_name.getText().toString(),
+                            edit_last_name.getText().toString(),
+                            edit_phone_number.getText().toString(),
+                            edit_no_of_vehicles.getText().toString(),
+                            "",
+                            edit_state.getText().toString(),
+                            edit_lga.getText().toString(),
+                            edit_ward.getText().toString(),
+                            edit_village.getText().toString(),
+                            payment_details.get(SessionManager.KEY_PAYMENT_OPTION),
+                            payment_details.get(SessionManager.KEY_BG_CARD),
+                            payment_details.get(SessionManager.KEY_ACCOUNT_NUMBER),
+                            payment_details.get(SessionManager.KEY_ACCOUNT_NAME),
+                            payment_details.get(SessionManager.KEY_BANK_NAME),
+                            manager_id,
+                            driver_template,
+                            new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()),
+                            "no"));
 
-                //Convert model class to gson and store in shared preferences.
-                Gson gson = new Gson();
-                sessionM.SET_DRIVER_DETAILS(gson.toJson(drivers));
-                sessionM.SET_DRIVER_ID(driver_id);
-                sessionM.SET_DRIVER_TEMPLATE(driver_template);
-                sessionM.SET_VEHICLE_NO("1");
-                sessionM.SET_TOTAL_VEHICLE(edit_no_of_vehicles.getText().toString());
-                redirectToNextPage();
+                    //Convert model class to gson and store in shared preferences.
+                    Gson gson = new Gson();
+                    sessionM.SET_DRIVER_DETAILS(gson.toJson(drivers));
+                    sessionM.SET_DRIVER_ID(driver_id);
+                    sessionM.SET_DRIVER_TEMPLATE(driver_template);
+                    sessionM.SET_VEHICLE_NO("1");
+                    sessionM.SET_TOTAL_VEHICLE(edit_no_of_vehicles.getText().toString());
+                    redirectToNextPage();
 
-            }catch (NullPointerException e){
-                e.printStackTrace();
-                Log.d("CHECK", "Unable to create object list");
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                    Log.d("CHECK", "Unable to create object list");
+                }
             }
 
         }
@@ -333,4 +333,12 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
             return transportdb.getLocationDao().getWard(params[0]);
         }
     }
+
+    public void getPaymentOption() {
+        FragmentManager fm = getSupportFragmentManager();
+        PaymentOptionFrag optionFrag = new PaymentOptionFrag();
+        optionFrag.show(fm, "PaymentOptionFrag");
+    }
+
+
 }

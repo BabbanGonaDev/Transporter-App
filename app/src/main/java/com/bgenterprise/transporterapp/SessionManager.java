@@ -33,6 +33,12 @@ public class SessionManager {
     public static final String KEY_LAST_SYNC_DOWN_HSF = "last_sync_down_hsf";
     public static final String KEY_FACE_REG_CHOICE = "face_reg_choice";
 
+    public static final String KEY_PAYMENT_OPTION = "payment_option";
+    public static final String KEY_BG_CARD = "bg_card";
+    public static final String KEY_ACCOUNT_NUMBER = "account_number";
+    public static final String KEY_ACCOUNT_NAME = "account_name";
+    public static final String KEY_BANK_NAME = "bank_name";
+
     public SessionManager(Context context) {
         this.mCtx = context;
         prefs = mCtx.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
@@ -129,6 +135,27 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void SET_PAYMENT_DETAILS(String payment, String bg_card, String accNo, String accName, String bankName){
+        editor.putString(KEY_PAYMENT_OPTION, payment);
+        editor.putString(KEY_BG_CARD, bg_card);
+        editor.putString(KEY_ACCOUNT_NAME, accName);
+        editor.putString(KEY_ACCOUNT_NUMBER, accNo);
+        editor.putString(KEY_BANK_NAME, bankName);
+        editor.commit();
+    }
+
+    public HashMap<String, String> getPaymentDetails(){
+        HashMap<String, String> payment = new HashMap<>();
+
+        payment.put(KEY_PAYMENT_OPTION, prefs.getString(KEY_PAYMENT_OPTION, ""));
+        payment.put(KEY_BG_CARD, prefs.getString(KEY_BG_CARD, ""));
+        payment.put(KEY_BANK_NAME, prefs.getString(KEY_BANK_NAME, ""));
+        payment.put(KEY_ACCOUNT_NAME, prefs.getString(KEY_ACCOUNT_NAME, ""));
+        payment.put(KEY_ACCOUNT_NUMBER, prefs.getString(KEY_ACCOUNT_NUMBER, ""));
+
+        return payment;
+    }
+
     public boolean getOnboardStatus(){
         return prefs.getBoolean(KEY_ONBOARD_STATUS, false);
     }
@@ -186,4 +213,12 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void CLEAR_PAYMENT_DETAILS(){
+        editor.remove(KEY_PAYMENT_OPTION);
+        editor.remove(KEY_BG_CARD);
+        editor.remove(KEY_ACCOUNT_NAME);
+        editor.remove(KEY_ACCOUNT_NUMBER);
+        editor.remove(KEY_BANK_NAME);
+        editor.commit();
+    }
 }

@@ -20,6 +20,11 @@ public class Drivers {
     private String driver_lga;
     private String driver_ward;
     private String driver_village;
+    private String payment_option;
+    private String bg_card;
+    private String account_number;
+    private String account_name;
+    private String bank_name;
     private String manager_id;
     private String template;
     private String reg_date;
@@ -30,9 +35,7 @@ public class Drivers {
     public Drivers() {
     }
 
-    public Drivers(@NonNull String driver_id, String first_name, String last_name, String phone_number, String no_of_vehicles,
-                   String training_date, String driver_state, String driver_lga, String driver_ward, String driver_village,
-                   String manager_id, String template, String reg_date, String sync_status) {
+    public Drivers(@NonNull String driver_id, String first_name, String last_name, String phone_number, String no_of_vehicles, String training_date, String driver_state, String driver_lga, String driver_ward, String driver_village, String payment_option, String bg_card, String account_number, String account_name, String bank_name, String manager_id, String template, String reg_date, String sync_status) {
         this.driver_id = driver_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -43,6 +46,11 @@ public class Drivers {
         this.driver_lga = driver_lga;
         this.driver_ward = driver_ward;
         this.driver_village = driver_village;
+        this.payment_option = payment_option;
+        this.bg_card = bg_card;
+        this.account_number = account_number;
+        this.account_name = account_name;
+        this.bank_name = bank_name;
         this.manager_id = manager_id;
         this.template = template;
         this.reg_date = reg_date;
@@ -104,6 +112,46 @@ public class Drivers {
 
     public String getSync_status() {
         return sync_status;
+    }
+
+    public String getPayment_option() {
+        return payment_option;
+    }
+
+    public void setPayment_option(String payment_option) {
+        this.payment_option = payment_option;
+    }
+
+    public String getBg_card() {
+        return bg_card;
+    }
+
+    public void setBg_card(String bg_card) {
+        this.bg_card = bg_card;
+    }
+
+    public String getAccount_number() {
+        return account_number;
+    }
+
+    public void setAccount_number(String account_number) {
+        this.account_number = account_number;
+    }
+
+    public String getAccount_name() {
+        return account_name;
+    }
+
+    public void setAccount_name(String account_name) {
+        this.account_name = account_name;
+    }
+
+    public String getBank_name() {
+        return bank_name;
+    }
+
+    public void setBank_name(String bank_name) {
+        this.bank_name = bank_name;
     }
 
     public void setDriver_id(@NonNull String driver_id) {

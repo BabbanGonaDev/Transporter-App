@@ -2,6 +2,7 @@ package com.bgenterprise.transporterapp.InputPages;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,15 +11,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import com.babbangona.bg_face.LuxandActivity;
 import com.babbangona.bg_face.LuxandAuthActivity;
 import com.babbangona.bg_face.LuxandInfo;
+import com.bgenterprise.transporterapp.Database.Dao.PaymentsDAO_Impl;
 import com.bgenterprise.transporterapp.Database.Tables.Drivers;
 import com.bgenterprise.transporterapp.Database.Tables.OperatingAreas;
 import com.bgenterprise.transporterapp.Database.Tables.Vehicles;
@@ -83,21 +82,15 @@ public class AddOperatingAreas extends AppCompatActivity {
         initStateAdapter();
         displayCurrentAreasAdded();
 
-        edit_operating_state.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                edit_operating_lga.setText("");
-                edit_operating_ward.setText("");
-                initLGAdapter();
-            }
+        edit_operating_state.setOnItemClickListener((adapterView, view, i, l) -> {
+            edit_operating_lga.setText("");
+            edit_operating_ward.setText("");
+            initLGAdapter();
         });
 
-        edit_operating_lga.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                edit_operating_ward.setText("");
-                initWardsAdapter();
-            }
+        edit_operating_lga.setOnItemClickListener((adapterView, view, i, l) -> {
+            edit_operating_ward.setText("");
+            initWardsAdapter();
         });
     }
 
@@ -140,25 +133,14 @@ public class AddOperatingAreas extends AppCompatActivity {
 
     @OnClick(R.id.btn_finish_reg)
     public void finishRegistration(){
-
         if(transport_details.get(SessionManager.KEY_OPERATING_AREA_DETAILS).isEmpty()){
             Toast.makeText(AddOperatingAreas.this, "Kindly add an Operating Area", Toast.LENGTH_LONG).show();
         }else {
             new MaterialAlertDialogBuilder(AddOperatingAreas.this)
                     .setTitle("Submit All Entered Details ?")
                     .setMessage("Do you want to submit registration details of this transporter ?")
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            beginLuxandActivity();
-                        }
-                    })
-                    .setNegativeButton("No, Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                        }
-                    }).show();
+                    .setPositiveButton("Yes", (dialogInterface, i) -> beginLuxandActivity())
+                    .setNegativeButton("No, Cancel", (dialogInterface, i) -> dialogInterface.dismiss()).show();
         }
     }
 
@@ -548,6 +530,5 @@ public class AddOperatingAreas extends AppCompatActivity {
 
         return false;
     }
-
 
 }
