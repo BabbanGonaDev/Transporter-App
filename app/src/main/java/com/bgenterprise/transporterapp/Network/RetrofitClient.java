@@ -9,9 +9,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
     private static Retrofit retrofit;
-    /*private static final String BASE_URL = "http://apps.babbangona.com/transporter-api/";*/
+    private static final String BASE_URL = "http://apps.babbangona.com/transporter-api/";
 
-    private static final String BASE_URL = "http://192.168.137.1/transporter-api/";
+    /*private static final String BASE_URL = "http://192.168.137.1/transporter-api/";*/
 
 
 
