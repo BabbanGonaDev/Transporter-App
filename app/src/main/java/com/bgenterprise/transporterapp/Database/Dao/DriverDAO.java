@@ -41,6 +41,6 @@ public interface DriverDAO {
     @Query("SELECT * FROM drivers_table WHERE driver_id = :driver_id")
     Drivers getDriverDetails(String driver_id);
 
-    @Query("UPDATE drivers_table SET payment_option = :payment_option, bg_card = :bg_card, account_number = :account_number, account_name = :account_name, bank_name = :bank_name, sync_status = :sync_status WHERE driver_id = :driverID")
-    void updatePaymentOption(String payment_option, String bg_card, String account_number, String account_name, String bank_name, String driverID, String sync_status);
+    @Query("UPDATE drivers_table SET payment_option = :payment_option, bg_card = :bg_card, account_number = :account_number, account_name = :account_name, bank_name = :bank_name, staff_id = :staff_id, sync_status = :sync_status WHERE driver_id = :driverID")
+    void updatePaymentOption(String payment_option, String bg_card, String account_number, String account_name, String bank_name, String driverID, String staff_id, String sync_status);
 }

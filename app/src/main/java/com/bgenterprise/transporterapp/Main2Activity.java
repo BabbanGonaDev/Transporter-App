@@ -354,6 +354,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                                 z.getManager_id(),
                                 z.getTemplate(),
                                 z.getReg_date(),
+                                z.getStaff_id(),
                                 z.getSync_status()));
                         sessionM.SET_LAST_SYNC_DOWN_DRIVER(z.getLast_sync_time());
                     }
@@ -630,6 +631,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
     }
 
     public void showAppInfo(){
+        transport_details = sessionM.getTransporterDetails();
         //Display all sync times and any other important info about the Transporter App in an alert dialog.
         LinearLayoutCompat infoLayout = new LinearLayoutCompat(Main2Activity.this);
         infoLayout.setOrientation(LinearLayoutCompat.VERTICAL);

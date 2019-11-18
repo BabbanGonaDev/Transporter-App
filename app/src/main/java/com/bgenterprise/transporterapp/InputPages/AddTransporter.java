@@ -158,6 +158,7 @@ public class AddTransporter extends AppCompatActivity implements DatePickerDialo
                             manager_id,
                             driver_template,
                             new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()),
+                            transport_details.get(SessionManager.KEY_STAFF_ID),
                             "no"));
 
                     //Convert model class to gson and store in shared preferences.

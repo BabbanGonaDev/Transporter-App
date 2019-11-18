@@ -95,6 +95,7 @@ public abstract class TransporterDatabase extends RoomDatabase {
                     "manager_id TEXT, " +
                     "template TEXT, " +
                     "reg_date TEXT, " +
+                    "staff_id TEXT, " +
                     "sync_status TEXT, " +
                     "PRIMARY KEY(driver_id))");
 

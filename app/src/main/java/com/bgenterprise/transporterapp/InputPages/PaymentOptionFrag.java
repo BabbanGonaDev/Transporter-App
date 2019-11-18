@@ -66,6 +66,7 @@ public class PaymentOptionFrag extends DialogFragment {
     private SessionManager sessionM;
     private String driver_id;
     TransporterDatabase transportdb;
+    HashMap<String, String> transport_details;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,6 +79,7 @@ public class PaymentOptionFrag extends DialogFragment {
         setCancelable(false);
         ButterKnife.bind(this, view);
         sessionM =  new SessionManager(getActivity());
+        transport_details = sessionM.getTransporterDetails();
         transportdb = TransporterDatabase.getInstance(getActivity());
         driver_id = "";
 
@@ -123,6 +125,7 @@ public class PaymentOptionFrag extends DialogFragment {
                             edit_account_name.getText().toString(),
                             atv_bank_name.getText().toString(),
                             driver_id,
+                            transport_details.get(SessionManager.KEY_STAFF_ID),
                             "no");
 
                     getActivity().runOnUiThread(() -> getActivity().recreate());

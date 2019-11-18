@@ -28,6 +28,7 @@ public class Drivers {
     private String manager_id;
     private String template;
     private String reg_date;
+    private String staff_id;
     private String sync_status;
 
     //Required Empty Constructor
@@ -35,7 +36,7 @@ public class Drivers {
     public Drivers() {
     }
 
-    public Drivers(@NonNull String driver_id, String first_name, String last_name, String phone_number, String no_of_vehicles, String training_date, String driver_state, String driver_lga, String driver_ward, String driver_village, String payment_option, String bg_card, String account_number, String account_name, String bank_name, String manager_id, String template, String reg_date, String sync_status) {
+    public Drivers(@NonNull String driver_id, String first_name, String last_name, String phone_number, String no_of_vehicles, String training_date, String driver_state, String driver_lga, String driver_ward, String driver_village, String payment_option, String bg_card, String account_number, String account_name, String bank_name, String manager_id, String template, String reg_date, String staff_id, String sync_status) {
         this.driver_id = driver_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -54,6 +55,7 @@ public class Drivers {
         this.manager_id = manager_id;
         this.template = template;
         this.reg_date = reg_date;
+        this.staff_id = staff_id;
         this.sync_status = sync_status;
     }
 
@@ -204,6 +206,14 @@ public class Drivers {
 
     public void setReg_date(String reg_date) {
         this.reg_date = reg_date;
+    }
+
+    public String getStaff_id() {
+        return staff_id;
+    }
+
+    public void setStaff_id(String staff_id) {
+        this.staff_id = staff_id;
     }
 
     public void setSync_status(String sync_status) {
