@@ -60,7 +60,10 @@ public class ViewTransporterAdapter extends RecyclerView.Adapter<ViewTransporter
 
     @Override
     public int getItemCount() {
-        return mFilteredList.size();
+        if(mFilteredList != null){
+            return mFilteredList.size();
+        }
+        return 0;
     }
 
     @Override
